@@ -1,0 +1,51 @@
+.about-me-container {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    justify-content: center; /* Center items */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between elements */
+    margin: 20px;
+    background-color:rgb(142, 155, 172); /* Light background for contrast */
+}
+
+.about-me {
+    flex: 1;
+    padding: 20px;
+    max-width: 45%; /* Optimal width for readability */
+    min-width: 300px; /* Minimum width */
+}
+
+.resume-section {
+    flex: 1;
+    padding: 20px;
+    text-align: center; /* Center align the image */
+    max-width: 45%;
+    min-width: 300px;
+}
+
+.about-me p {
+    color: #000000; /* Darker color for better readability */
+    font-size: 18px;
+    line-height: 1.7;
+    font-family: 'Arial', sans-serif; /* More readable font */
+}
+
+.resume-image {
+    max-width: 75%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Slightly rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow to the image */
+
+}
+
+@media screen and (max-width: 900px) {
+    .about-me-container {
+        flex-direction: column; /* Stack elements in a column on smaller screens */
+    }
+
+    .about-me, .resume-section {
+        max-width: 100%;
+    }
+}
+

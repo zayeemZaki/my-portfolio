@@ -1,0 +1,93 @@
+.certificates-container {
+  text-align: center;
+  margin: 20px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 200px; /* Adjusted padding */
+  padding-top: 100px;
+}
+
+
+.certificate-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Align items in the center */
+  align-items: flex-start;
+  max-width: 60%; /* Reduce the max-width for a closer layout */
+  margin: auto; /* Center the container horizontally */
+}
+
+.certificate-names, .certificate-images {
+  flex: 0 0 50%; /* Set flex-basis to 50% for each section */
+  padding: 0 10px; /* Add padding to create space between elements */
+  /* Other styles remain unchanged */
+}
+
+.certificate-names {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items to the start */
+  padding-left: 10px; /* Adjust padding to align with the list */
+  /* Other styles remain unchanged */
+}
+.certificate-names h1 {
+  padding-left: 70px;
+}
+
+.certificate-names ul {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.certificate-names li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-bottom: 10px; /* Adjust spacing between list items */
+  text-align: center; /* Center text for each list item */
+}
+
+.certificate-names li:hover {
+  color: #007bff;
+}
+
+.certificate-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0; /* Reduce or remove top margin */
+}
+
+.certificate-images img {
+  padding-top: 100px;
+  max-width: 100%; /* Adjust width as needed */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  opacity: 1; /* Default opacity */
+  transition: opacity 0.3s ease;
+}
+
+.certificate-images img.fading {
+  opacity: 0;
+}
+
+
+.certificate-images img:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .certificate-list {
+    flex-direction: column;
+  }
+
+  .certificate-names, .certificate-images {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
