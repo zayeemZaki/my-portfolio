@@ -5,7 +5,6 @@
     align-items: flex-start;
     padding: 20px;
     flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    background-color: #eef2f7;
     font-family: 'Arial', sans-serif;
     padding-top: 120px;
     padding-bottom: 220px;
@@ -14,7 +13,7 @@
 .skill-section {
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #9394a5;
     margin: 10px;
     width: 30%; /* Adjust based on your preference */
     min-width: 300px; /* Minimum width for readability */
@@ -24,7 +23,7 @@
 .skill-section-database{
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #9394a5;
     margin: 10px;
     width: 15%; /* Adjust based on your preference */
     min-width: 300px; /* Minimum width for readability */
@@ -35,8 +34,8 @@
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-.skill-section h2 {
-    color: #08335a; /* Dark color for heading */
+.skill-section h2, .skill-section-database h2 {
+    color: #9394a5; /* Dark color for heading */
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
@@ -71,6 +70,7 @@
     font-size: 24px; /* Adjust size for icons */
     margin-right: 10px;
 }
+
 
 
 @media (max-width: 768px) {

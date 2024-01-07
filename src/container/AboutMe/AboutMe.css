@@ -6,7 +6,6 @@
     align-items: flex-start; /* Align items to the top */
     gap: 20px; /* Space between elements */
     margin: 20px;
-    background-color:rgb(142, 155, 172); /* Light background for contrast */
 }
 
 .about-me {
@@ -25,7 +24,7 @@
 }
 
 .about-me p {
-    color: #000000; /* Darker color for better readability */
+    color: #9394a5; /* Darker color for better readability */
     font-size: 18px;
     line-height: 1.7;
     font-family: 'Arial', sans-serif; /* More readable font */
@@ -35,9 +34,10 @@
     max-width: 75%; /* Responsive image width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Slightly rounded corners for the image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow to the image */
-
+    box-shadow: 0 4px 8px #9394a5;
 }
+
+
 
 @media screen and (max-width: 900px) {
     .about-me-container {

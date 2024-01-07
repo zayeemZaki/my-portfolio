@@ -5,10 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #08060a; /* Replace with your chosen color */
+  background-color: #fafafa; /* You can keep this as a fallback */
+  /* background-image: url('./constants/background4.jpeg'); */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image in the viewport */
+  background-repeat: no-repeat; /* Do not repeat the image */
   overflow-x: hidden;
-
+  background-color: #000000;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

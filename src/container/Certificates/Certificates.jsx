@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Certificate1 from '../../constants/Certificates/Certificate1.jpg';
 import Certificate2 from '../../constants/Certificates/Certificate2.jpg';
 import Certificate3 from '../../constants/Certificates/Certificate3.jpg';
@@ -15,52 +15,52 @@ import './Certificates.css';
 
 const certificatesData = [
   {
-    title: 'Certificate 1',
+    title: 'Programming For Everybody(Python)',
     imageURL: Certificate1, 
     websiteURL: Certificate1, 
   },
   {
-    title: 'Certificate 2',
+    title: 'Python Data Structures',
     imageURL: Certificate2, 
     websiteURL: Certificate2, 
   },
     {
-    title: 'Certificate 3',
+    title: 'Capstone(Python)',
     imageURL: Certificate3, 
     websiteURL: Certificate3, 
   },
   {
-    title: 'Certificate 4',
+    title: 'Using Python to Access Web Data',
     imageURL: Certificate4, 
     websiteURL: Certificate4, 
   },
     {
-    title: 'Certificate 5',
+    title: 'HTML5, CSS3, JS and Bootstrap',
     imageURL: Certificate5, 
     websiteURL: Certificate5, 
   },
   {
-    title: 'Certificate 6',
+    title: 'Customer Service',
     imageURL: Certificate6, 
     websiteURL: Certificate6, 
   },
     {
-    title: 'Certificate 7',
+    title: 'Operating Systems',
     imageURL: Certificate7, 
     websiteURL: Certificate7, 
   },
   {
-    title: 'Certificate 8',
+    title: 'Technical Support',
     imageURL: Certificate8, 
     websiteURL: Certificate8, 
   },
     {
-    title: 'Certificate 9',
+    title: 'The Bits and Bytes of Computer Networking',
     imageURL: Certificate9, 
     websiteURL: Certificate9, 
   },
   {
-    title: 'Certificate 10',
+    title: 'Wix',
     imageURL: Certificate10, 
     websiteURL: Certificate10, 
   },
@@ -69,34 +69,54 @@ const certificatesData = [
 const Certificates = () => {
   const [selectedCertificate, setSelectedCertificate] = useState(certificatesData[0]);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const scrollRef = useRef(null);  // Ref for scrolling
+  const certificateNamesRef = useRef(null); // Ref for the certificate names container
 
-  const handleCertificateClick = (certificate) => {
+  const handleCertificateClick = (certificate, index) => {
     setIsTransitioning(true);
     setTimeout(() => {
       setSelectedCertificate(certificate);
+      setSelectedIndex(index);
+  
+      if (window.innerWidth <= 768) {
+        // Scroll to 50% of the certificate names container height
+        const namesHeight = certificateNamesRef.current.clientHeight;
+        window.scrollTo({
+          top: certificateNamesRef.current.offsetTop + namesHeight * 4 / 5,
+          behavior: 'smooth'
+        });
+      }
+  
       setIsTransitioning(false);
-    }, 300); // The timeout duration should match the CSS transition time
+    }, 300); 
   };
-
+  
   return (
     <div className="certificates-container">
-      <div className="certificate-list">
-        <div className="certificate-names">
-          <h1>Certificates</h1> {/* Moved this line here */}
-          <ul>
-            {certificatesData.map((certificate, index) => (
-              <li key={index} onClick={() => handleCertificateClick(certificate)}>
-                {certificate.title}
-              </li>
-            ))}
-          </ul>
+      <div className="certificate-list" id="certificates">
+        <div className="certificate-names" ref={certificateNamesRef}>
+          <h1><u>Certificates</u></h1>
+          <div className="certificate-names-inner">
+            <ul>
+              {certificatesData.map((certificate, index) => (
+                <li 
+                  key={index} 
+                  onClick={() => handleCertificateClick(certificate, index)}
+                  className={selectedIndex === index ? 'selected' : ''}
+                >
+                  {certificate.title}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="certificate-images">
-        <img
-          className={isTransitioning ? 'fading' : ''}
-          src={selectedCertificate.imageURL}
-          alt={selectedCertificate.title}
-        />
+        <div className="certificate-images" ref={scrollRef}> {/* Attach ref here */}
+          <img
+            className={isTransitioning ? 'fading' : ''}
+            src={selectedCertificate.imageURL}
+            alt={selectedCertificate.title}
+          />
         </div>
       </div>
     </div>

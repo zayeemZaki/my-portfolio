@@ -6,9 +6,9 @@ import resumePDF from '../../constants/Zayeem_zaki_resume.pdf'; // Import the re
 const AboutMe = () => {
     return (
         <div className="about-me-container">
-            <div className="about-me">
+            <div className="about-me" id="about-me">
                 <p>
-                    I am a passionate and dedicated Computer Science student set to graduate in December 2025.
+                    A passionate and dedicated Computer Science student set to graduate in December 2025.
                     My academic journey has been marked by a strong GPA of 3.7, and I've earned recognition on the 
                     President’s List and Dean’s List for my academic excellence. I take pride in my robust foundation
                     in key areas like <b>Data Structures</b> and <b>Object-Oriented Programming</b>.
