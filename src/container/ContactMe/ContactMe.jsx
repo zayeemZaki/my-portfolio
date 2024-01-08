@@ -17,7 +17,7 @@ const ContactMe = () => {
 
   return (
     <section className="contact-container">
-      <div className="top-section" id="contact-me">
+      <div className="top-section" id="contact-me" data-aos="fade-up">
         <h1>Get in Touch!</h1>
         <p>I would be delighted to hear from you if you're interested in discussing new opportunities.</p>
         {!showForm && (

@@ -93,8 +93,8 @@ const Certificates = () => {
   };
   
   return (
-    <div className="certificates-container">
-      <div className="certificate-list" id="certificates">
+    <div className="certificates-container" id="certificates" data-aos="fade-up">
+      <div className="certificate-list" >
         <div className="certificate-names" ref={certificateNamesRef}>
           <h1><u>Certificates</u></h1>
           <div className="certificate-names-inner">

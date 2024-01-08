@@ -140,7 +140,7 @@
 .animated-text {
     /* Example styling, adjust as needed */
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -170,6 +170,7 @@
 
 
 @media screen and (max-width: 650px) {
+    
     .full-screen-animation {
         padding-left: 50px; /* Remove left padding on smaller screens */
         align-items: flex-start; /* Align items to the left */

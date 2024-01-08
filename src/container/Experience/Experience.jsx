@@ -34,7 +34,7 @@ const Experience = () => {
     };
   
     return (
-      <div className="experience-container" id="experience">
+      <div className="experience-container" id="experience" data-aos="fade-up">
         <div className="experience-list">
           <div className="experience-names">
             <h1><u>Experience</u></h1>
