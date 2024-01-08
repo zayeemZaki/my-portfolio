@@ -8,8 +8,8 @@ function App() {
     { /*  <TextAnimation /> */}
       <AboutMe />
       <Skills />
-      {/* <Experience />
-      <Projects />*/}
+      <Experience />
+      {/*<Projects />*/}
       <Certificates />
       <ContactMe /> 
     </div>
