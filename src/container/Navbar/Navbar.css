@@ -224,6 +224,50 @@
     }
 }
 
+/* Existing CSS styles */
+
+@media screen and (max-width: 450px) {
+    .navbar {
+        /* Adjust the navbar styles for smaller screens */
+        padding: 5px 10px; /* Reduce padding */
+    }
+
+    .nav-links {
+        width: 40%; /* Increase the width for smaller screens */
+        /* Other styles remain the same */
+    }
+
+    .nav-links li {
+        margin: 5px 0; /* Adjust margin for nav items */
+    }
+
+    .nav-links a {
+        font-size: 13px; /* Reduce font size for links */
+    }
+
+    .hamburger {
+        top: 5px;
+        right: 10px;
+        /* Other styles remain the same */
+    }
+
+    .full-screen-animation {
+        padding-left: 20px; /* Reduce left padding */
+        padding-top: 150px; /* Adjust top padding */
+        /* Other styles remain the same */
+    }
+
+    .static-text p, .animated-text h1 {
+        font-size: 3rem; /* Reduce font size for text */
+    }
+
+    .resume-link {
+        padding: 5px 10px; /* Adjust padding inside the button */
+        font-size: 13px; /* Reduce font size */
+    }
+
+    /* Add any additional styles that need to be adjusted for screens <= 450px */
+}
 
 
 
