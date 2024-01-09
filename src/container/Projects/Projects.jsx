@@ -6,6 +6,39 @@ import Certificate10 from '../../constants/Certificates/Certificate10.jpg';
 
 const Projects = () => {
     const [currentImage, setCurrentImage] = useState({});
+    const [dragStartX, setDragStartX] = useState(0);
+
+    const handleDragStart = (e) => {
+        setDragStartX(e.clientX || e.touches[0].clientX);
+    };
+
+    const handleDragMove = (e, projectIndex) => {
+        const currentX = e.clientX || e.touches[0].clientX;
+        const dragDistance = dragStartX - currentX;
+
+        if (dragDistance > 50) {
+            selectNextImage(projectIndex);
+            setDragStartX(currentX);
+        } else if (dragDistance < -50) {
+            selectPrevImage(projectIndex);
+            setDragStartX(currentX);
+        }
+    };
+
+    const selectNextImage = (projectIndex) => {
+        setCurrentImage(prevState => ({
+            ...prevState,
+            [projectIndex]: (prevState[projectIndex] + 1) % projects[projectIndex].images.length
+        }));
+    };
+
+    const selectPrevImage = (projectIndex) => {
+        setCurrentImage(prevState => ({
+            ...prevState,
+            [projectIndex]: (prevState[projectIndex] - 1 + projects[projectIndex].images.length) % projects[projectIndex].images.length
+        }));
+    };
+
     
     const projects = [
         {
@@ -32,15 +65,15 @@ const Projects = () => {
     };
 
     return (
-        <div >
-        <div className="heading-container" >
-            <div className="line"></div>
+        <div>
+            <div className="heading-container">
+                <div className="line"></div>
                 <h2 className="projects-heading">Projects</h2>
                 <div className="line"></div>
             </div>
-        <div className='full-section'>
-            {projects.map((project, index) => (
-                <div key={index} className="project-container">
+            <div className='full-section'>
+                {projects.map((project, index) => (
+                    <div key={index} className="project-container">
                     <div className="project-description">
                         <h2>{project.title}</h2>
                         <p>{project.description}</p>
@@ -50,21 +83,30 @@ const Projects = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="project-images">
-                        <img src={project.images[currentImage[index] || 0]} alt="Project" />
-                        <div className="image-navigation">
-                            {project.images.map((_, imgIndex) => (
-                                <span
-                                    key={imgIndex}
-                                    className={`nav-dot ${imgIndex === (currentImage[index] || 0) ? 'active' : ''}`}
-                                    onClick={() => selectImage(index, imgIndex)}
-                                ></span>
-                            ))}
+
+                        <div className="project-images">
+                            <img 
+                                src={project.images[currentImage[index] || 0]} 
+                                alt="Project" 
+                                draggable="false"
+                                onMouseDown={handleDragStart}
+                                onMouseMove={(e) => handleDragMove(e, index)}
+                                onTouchStart={handleDragStart}
+                                onTouchMove={(e) => handleDragMove(e, index)}
+                            />
+                            <div className="image-navigation">
+                                {project.images.map((_, imgIndex) => (
+                                    <span
+                                        key={imgIndex}
+                                        className={`nav-dot ${imgIndex === (currentImage[index] || 0) ? 'active' : ''}`}
+                                        onClick={() => selectImage(index, imgIndex)}
+                                    ></span>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
         </div>
     );
 };
