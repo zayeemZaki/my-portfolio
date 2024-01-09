@@ -9,7 +9,7 @@ const Navbar = () => {
     const [subIndex, setSubIndex] = useState(0);
     const [blink, setBlink] = useState(true);
     const [reverse, setReverse] = useState(false);
-    const texts = ["Zayeem Zaki", "Computer Science Student", "A Software Developer", "A Full Stack Developer"];
+    const texts = ["Zayeem Zaki", "A Computer Science Student", "A Software Developer", "A Full Stack Developer"];
 
     // Typing Effect Logic
     useEffect(() => {
