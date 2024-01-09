@@ -1,11 +1,30 @@
 .experience-container {
     text-align: center;
     margin: 20px;
-    color: #9394a5;
     border-radius: 10px;
     padding: 50px 20px;
-    padding-bottom: 200px;
+    padding-top: 50px;
   }
+
+  .heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.experience-heading {
+    text-align: center; /* Center the heading */
+    color: #00f2fe; /* Choose a color that fits your design */
+    font-size: 2.5rem; /* Adjust the size as needed */
+    margin: 0 15px; /* Adjust space around the heading */
+    font-family: 'Arial', sans-serif; /* Font style, can be adjusted */
+}
+
+.line {
+    flex: 1; /* Allow lines to take up equal space on both sides */
+    height: 2px; /* Line thickness */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), #9394a5, rgba(0, 0, 0, 0)); /* Horizontal fade effect */
+}
   
   .experience-list {
     display: flex;
@@ -14,30 +33,29 @@
     align-items: flex-start;
     max-width: 60%;
     margin: auto;
+    
   }
   
   .experience-names {
     flex: 0 0 5%;
     padding: 0 30px;
-    position: relative; /* Needed for positioning the pseudo-element */
-  }
+    position: relative;
+    color: #9394a5;
+    margin-top: 50px; /* Adjust this value as needed */
+}
   
   .experience-names::before {
     content: '';
     position: absolute;
-    left: 15px; /* Position the line 20px left of the certificate names */
-    top: 60px;
-    bottom: -50px;
+    left: 5px; /* Position the line 20px left of the certificate names */
+    top: 20px;
+    bottom: -100px;
     width: 2px;
     background-color: #00f2fe;
     border-radius: 2px;
     /* Other styles remain unchanged */
   }  
-  
-  .experience-names h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
+
   
   .experience-names ul {
     padding: 0;
@@ -46,6 +64,10 @@
   }
   
   .experience-names li {
+    box-sizing: border-box;
+    white-space: nowrap; /* Prevents wrapping text into a new line */
+    overflow-wrap: break-word; /* To break long words */
+
     cursor: pointer;
     margin-bottom: 15px;
     font-size: 18px;
@@ -55,26 +77,35 @@
     transition: border-color 0.3s ease; /* Smooth transition for the border color */
 }
   
-  .experience-names li.selected {
-    background-color: #00f2fe;
-    color: black;
-    font-weight: bold;
-    padding: 10px;
+.experience-names li.selected,
+.experience-names li.selected:hover {
+    background-color: #00f2fe; /* Fill with color */
+    color: black; /* Text color for contrast */
+    font-weight: bold; /* Keep the text bold */
+    padding: 10px; /* Padding inside the box */
+}
 
-  }
-  
-
-  .experience-names li:hover {
+.experience-names li:hover {
     border-color: #00f2fe; /* Rectangle border color on hover */
     color: white; /* Text color for contrast */
     background-color: transparent; /* Make background transparent or set to a desired color */
-  }
+}
+
+
+/* Add this to handle focus state */
+.experience-names li:focus {
+  outline: none;
+}
+
+
 
   .experience-details {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    color: #9394a5;
+
   }
   
 .experience-details h2 {
@@ -102,26 +133,48 @@
     margin-bottom: 10px;
     text-align: left;
   }
+
   
-  @media screen and (max-width: 768px) {
-    .experience-list {
+@media screen and (max-width: 768px) {
+  .experience-list {
       flex-direction: column;
       align-items: center;
-    }
-  
-    .experience-names, .experience-details {
+  }
+
+  .experience-names, .experience-details {
       flex: 1 1 100%;
       max-width: 100%;
       margin-bottom: 20px;
-    }
-  
-    .experience-names {
+  }
+
+  .experience-names {
       order: 1;
       margin-left: 0;
-    }
-  
-    .experience-details {
-      order: 2;
-    }
+      padding: 0;
   }
-  
+
+  .experience-details {
+      order: 2;
+  }
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .experience-container {
+      padding: 20px 10px; /* Reduced padding for smaller screens */
+  }
+
+  .experience-list {
+      max-width: 100%; /* Use the full width of the screen */
+  }
+
+  .experience-names h1, .experience-names li, .experience-details h2, .experience-details p, .experience-details li {
+      font-size: 16px; /* Smaller font size for smaller screens */
+  }
+
+  .experience-names::before {
+      left: 0px; /* Adjust the position of the vertical line */
+      bottom: - 50px;
+  }
+}

@@ -16,6 +16,12 @@ const ContactMe = () => {
   };
 
   return (
+    <div >
+    <div className="heading-container" >
+        <div className="line"></div>
+            <h2 className="contact-me-heading">Contact Me</h2>
+            <div className="line"></div>
+        </div>
     <section className="contact-container">
       <div className="top-section" id="contact-me" data-aos="fade-up">
         <h1>Get in Touch!</h1>
@@ -69,22 +75,29 @@ const ContactMe = () => {
       )}
 
 
-<      div className="links">
-        <a href="https://www.linkedin.com/in/zayeem-zaki/" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://github.com/zayeemZaki" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-github"></i> GitHub
-        </a>
-        <p>
-          <i className="fas fa-phone"></i> 567-801-7023
-          <span className="contact-space"></span>
-          <i className="fas fa-envelope"></i> zayeemzaki45@gmail.com
-        </p>
-      </div>    
+        <div className="links">
+          <div className="social-links">
+            <a href="https://www.linkedin.com/in/zayeem-zaki/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin"></i>LinkedIn
+            </a>
+            <p>5678017023</p>
+            <a href="https://github.com/zayeemZaki" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i>GitHub
+            </a>
+          </div>
+          <div className="email-contact">
+            <p>
+              <i className="fas fa-envelope"></i> zayeemzaki45@gmail.com
+            </p>
+          </div>
+        </div>
+
       </section>
+      </div>
   );
 };
 
 export default ContactMe;
+
+
 

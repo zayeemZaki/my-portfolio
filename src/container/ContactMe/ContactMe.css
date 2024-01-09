@@ -1,205 +1,263 @@
 /* Main container for the contact section */
 .contact-container {
-    margin: 20px;
-    font-family: Arial, sans-serif; /* Example font, change as needed */
-    padding-top: 70px;
-    padding-bottom: 100px;
+  margin: 20px;
+  font-family: Arial, sans-serif; /* Example font, change as needed */
+  padding-top: 50px;
 
-  }
-  
-  /* Styling for the top section containing the 'Get in Touch' button */
-  .top-section {
-    text-align: center; /* Center the button horizontally */
-    margin-bottom: 20px;
-  }
-  .top-section h1 {
-    font-size: 3rem;
-    color: #9394a5;
-  }
-
-  .top-section p {
-    font-size: 18px;
-    margin-top: 0px; /* Reduce the top margin */
-    margin-bottom: 60px; /* Reduce the bottom margin */
-    color: #9394a5;
 }
 
-  /* Styling for the 'Get in Touch' button */
-  .get-in-touch-button {
-    background-color: transparent; /* No background initially */
-    color: white;
-    padding: 10px 15px;
-    border: 2px solid #00f2fe; /* Border color */
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease; /* Smooth transition for the background color */
+.heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  padding-top: 50px;
 }
-  
+.contact-me-heading {
+  text-align: center; /* Center the heading */
+  color: #00f2fe; /* Choose a color that fits your design */
+  font-size: 2.5rem; /* Adjust the size as needed */
+  margin: 0 15px; /* Adjust space around the heading */
+  font-family: 'Arial', sans-serif; /* Font style, can be adjusted */
+}
+
+.line {
+  flex: 1; /* Allow lines to take up equal space on both sides */
+  height: 2px; /* Line thickness */
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), #9394a5, rgba(0, 0, 0, 0)); /* Horizontal fade effect */
+}
+
+/* Styling for the top section containing the 'Get in Touch' button */
+.top-section {
+  text-align: center; /* Center the button horizontally */
+  margin-bottom: 20px;
+}
+.top-section h1 {
+  font-size: 3rem;
+  color: #9394a5;
+}
+
+.top-section p {
+  font-size: 18px;
+  margin-top: 0px; /* Reduce the top margin */
+  margin-bottom: 60px; /* Reduce the bottom margin */
+  color: #9394a5;
+}
+
+/* Styling for the 'Get in Touch' button */
+.get-in-touch-button {
+  background-color: transparent; /* No background initially */
+  color: white;
+  padding: 10px 15px;
+  border: 2px solid #00f2fe; /* Border color */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth transition for the background color */
+}
+
 /* Hover effect for the button */
 .get-in-touch-button:hover {
-  background-color: #00f2fe; /* Background color on hover */
-  color: black; /* Text color remains the same */
+background-color: #00f2fe; /* Background color on hover */
+color: black; /* Text color remains the same */
 }
 
-  
-  /* Styling for the links container */
-  .links {
-    text-align: center; /* Center the links horizontally */
-    margin-bottom: 20px;
-    padding-top: 50px;
 
-  }
+/* Styling for the links container */
+.links {
+  text-align: center; /* Center the links horizontally */
+  margin-bottom: 20px;
+  padding-top: 50px;
+
+}
+
+/* Styling for each link */
+.links a {
+  margin-right: 15px; /* Space between links */
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Hover effect for links */
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Styling for the email form */
+.email-form {
+  position: relative;
+  background-color: #9394a5;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%; /* Adjust width as needed */
+  max-width: 500px; /* Maximum width */
+  margin: auto; /* Center the form in the container */
+}
+
+/* Styling for form groups (label and input/textarea) */
+.email-form .form-group {
+  margin-bottom: 15px;
+}
+
+/* Styling for labels */
+.email-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
   
-  /* Styling for each link */
-  .links a {
-    margin-right: 15px; /* Space between links */
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  /* Hover effect for links */
-  .links a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Styling for the email form */
-  .email-form {
-    position: relative;
-    background-color: #9394a5;
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%; /* Adjust width as needed */
-    max-width: 500px; /* Maximum width */
-    margin: auto; /* Center the form in the container */
-  }
-  
-  /* Styling for form groups (label and input/textarea) */
-  .email-form .form-group {
-    margin-bottom: 15px;
-  }
-  
-  /* Styling for labels */
-  .email-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    
-  }
-  
-  /* Styling for input fields */
-  .email-form input[type="email"],
-  .email-form input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-  }
-  
-  /* Styling for the textarea */
-  .email-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    min-height: 100px; /* Minimum height */
-  }
-  
-  .email-form-button {
-    position: absolute;
-    bottom: 3px; /* Position from the bottom */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for the width of the button */
-    background-color: transparent;
-    color: black;
-    border-radius: 7px;
-    cursor: pointer;
-    padding-top: 10px 10px; /* Padding on top/bottom and left/right */
-    font-size: 20px;
-    box-sizing: border-box;
-    height: 30px;
-    width: auto; /* Width adjusted to content */
-    background-color: #00f2fe; /* Background color on hover */
+}
+
+/* Styling for input fields */
+.email-form input[type="email"],
+.email-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Styling for the textarea */
+.email-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 100px; /* Minimum height */
+}
+
+.email-form-button {
+  position: absolute;
+  bottom: 3px; /* Position from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for the width of the button */
+  background-color: transparent;
+  color: black;
+  border-radius: 7px;
+  cursor: pointer;
+  padding-top: 10px 10px; /* Padding on top/bottom and left/right */
+  font-size: 20px;
+  box-sizing: border-box;
+  height: 30px;
+  width: auto; /* Width adjusted to content */
+  background-color: #00f2fe; /* Background color on hover */
 
 }
 
 .email-form-button:hover {
-  transform: translateX(-50%) scale(1.1); /* Zoom effect on hover */
+transform: translateX(-50%) scale(1.1); /* Zoom effect on hover */
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* adjust gap as needed */
+}
 
-  .links {
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Align items vertically */
-    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
-    text-align: center;
-    margin-bottom: 20px;
-    padding-top: 50px;
+.email-contact {
+  margin-top: 10px; /* adjust as needed */
 }
 
 .links a, .links p {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between icon and text */
-    margin: 0 10px; /* Space between items */
-    color: #9394a5;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  margin: 0 10px; /* Space between items */
+  color: #9394a5;
 
-  }
+}
 
 .contact-space {
-    display: inline-block;
-    margin: 0 10px; /* Additional space between phone number and email */
+  display: inline-block;
+  margin: 0 10px; /* Additional space between phone number and email */
 }
 
 /* Style for Font Awesome icons (optional) */
 .links i {
-    color: #9394a5;
+  color: #9394a5;
 }
-  
+
 .close-form-button {
-  position: absolute;
-  top: 10px; /* Adjusted to move the button slightly inside the form */
-  right: 10px; /* Adjusted to move the button slightly inside the form */
-  background-color: transparent;
-  color: black;
-  border-radius: 7px;
-  background-color: #00f2fe; /* Background color on hover */
-  cursor: pointer;
-  padding: 10px;
-  padding-right: 30px;
-  padding-left: 30px;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  width: 30px;
-  box-sizing: border-box;
+position: absolute;
+top: 10px; /* Adjusted to move the button slightly inside the form */
+right: 10px; /* Adjusted to move the button slightly inside the form */
+background-color: transparent;
+color: black;
+border-radius: 7px;
+background-color: #00f2fe; /* Background color on hover */
+cursor: pointer;
+padding: 10px;
+padding-right: 30px;
+padding-left: 30px;
+font-size: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 30px;
+width: 30px;
+box-sizing: border-box;
 }
 
 .close-form-button:hover {
-  transform:  scale(1.1); /* Zoom effect on hover */
+transform:  scale(1.1); /* Zoom effect on hover */
 }
 
 
 
 
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .contact-container {
-      flex-direction: column;
-    }
-  
-    .links-container,
-    .email-form {
-      flex: none;
-      margin-right: 0;
-      width: 100%;
-    }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
   }
-  
+
+  .links-container,
+  .email-form {
+    flex: none;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-and-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.email-and-social .social-link, .email-and-social .email {
+    flex: 1;
+    text-align: center;
+}
+
+.phone-number {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+}
+
+
+
+/* Ensure that the close button is always visible and accessible */
+.close-form-button {
+  top: 10px;
+  right: 10px;
+  z-index: 10; /* Higher z-index to ensure it's above other elements */
+}

@@ -25,44 +25,49 @@ const experienceData = [
 ];
 
 const Experience = () => {
-    const [selectedExperience, setSelectedExperience] = useState(experienceData[0]);
-    const [selectedIndex, setSelectedIndex] = useState(0);
-  
-    const handleExperienceClick = (experience, index) => {
-      setSelectedExperience(experience);
-      setSelectedIndex(index);
-    };
-  
-    return (
-      <div className="experience-container" id="experience" data-aos="fade-up">
-        <div className="experience-list">
-          <div className="experience-names">
-            <h1><u>Experience</u></h1>
-            <ul>
-              {experienceData.map((experience, index) => (
-                <li 
-                  key={index} 
-                  onClick={() => handleExperienceClick(experience, index)}
-                  className={selectedIndex === index ? 'selected' : ''}
-                >
-                  {experience.title}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="experience-details">
-            <h2>{selectedExperience.role}</h2>
-            <p>{`${selectedExperience.startDate} - ${selectedExperience.endDate}`}</p>
-            <ul>
-              {selectedExperience.details.map((detail, index) => (
-                <li key={index}>{detail}</li>
-              ))}
-            </ul>
-          </div>
+  const [selectedExperience, setSelectedExperience] = useState(experienceData[0]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleExperienceClick = (experience, index) => {
+    setSelectedExperience(experience);
+    setSelectedIndex(index);
+  };
+
+  return (
+    <div >
+    <div className="heading-container" >
+        <div className="line"></div>
+            <h2 className="experience-heading">Experience</h2>
+        <div className="line"></div>
+    </div>
+    <div className="experience-container" id="experience" data-aos="fade-up">
+      <div className="experience-list">
+        <div className="experience-names">
+          <ul>
+            {experienceData.map((experience, index) => (
+              <li 
+                key={index} 
+                onClick={() => handleExperienceClick(experience, index)}
+                className={selectedIndex === index ? 'selected' : ''}
+              >
+                {experience.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="experience-details">
+          <h2>{selectedExperience.role}</h2>
+          <p>{`${selectedExperience.startDate} - ${selectedExperience.endDate}`}</p>
+          <ul>
+            {selectedExperience.details.map((detail, index) => (
+              <li key={index}>{detail}</li>
+            ))}
+          </ul>
         </div>
       </div>
-    );
-  };
-  
-  export default Experience;
-  
+    </div>
+    </div>
+  );
+};
+
+export default Experience;

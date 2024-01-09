@@ -76,23 +76,35 @@ const Certificates = () => {
   const handleCertificateClick = (certificate, index) => {
     setIsTransitioning(true);
     setTimeout(() => {
-      setSelectedCertificate(certificate);
-      setSelectedIndex(index);
-  
-      if (window.innerWidth <= 768) {
-        // Scroll to 50% of the certificate names container height
-        const namesHeight = certificateNamesRef.current.clientHeight;
-        window.scrollTo({
-          top: certificateNamesRef.current.offsetTop + namesHeight * 4 / 5,
-          behavior: 'smooth'
-        });
-      }
-  
-      setIsTransitioning(false);
-    }, 300); 
-  };
+        setSelectedCertificate(certificate);
+        setSelectedIndex(index);
+
+        if (window.innerWidth <= 768) {
+            // Get the bounding rectangle of the certificate image container
+            const imageContainerRect = scrollRef.current.getBoundingClientRect();
+
+            // Calculate the position to scroll to
+            // The current scroll position plus the top position of the image container relative to the viewport
+            const scrollPosition = window.pageYOffset + imageContainerRect.top - 100; // 10 pixels for a small offset
+
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        setIsTransitioning(false);
+    }, 300);
+};
+
   
   return (
+    <div >
+    <div className="heading-container" >
+        <div className="line"></div>
+            <h2 className="certificates-heading">Certificates</h2>
+            <div className="line"></div>
+        </div>
     <div className="certificates-container" id="certificates" data-aos="fade-up">
       <div className="certificate-list" >
         <div className="certificate-names" ref={certificateNamesRef}>
@@ -119,6 +131,7 @@ const Certificates = () => {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 };

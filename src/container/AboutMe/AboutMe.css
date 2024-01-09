@@ -15,6 +15,26 @@
     min-width: 300px; /* Minimum width */
 }
 
+.heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.about-me-heading {
+    text-align: center; /* Center the heading */
+    color: #00f2fe; /* Choose a color that fits your design */
+    font-size: 2.5rem; /* Adjust the size as needed */
+    margin: 0 15px; /* Adjust space around the heading */
+    font-family: 'Arial', sans-serif; /* Font style, can be adjusted */
+}
+
+.line {
+    flex: 1; /* Allow lines to take up equal space on both sides */
+    height: 2px; /* Line thickness */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), #9394a5, rgba(0, 0, 0, 0)); /* Horizontal fade effect */
+}
+
 .resume-section {
     flex: 1;
     padding: 20px;

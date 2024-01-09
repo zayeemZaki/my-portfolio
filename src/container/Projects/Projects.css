@@ -1,0 +1,134 @@
+/* Base Styles */
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns children at their start (top) */
+    text-align: center;
+    color: #9394a5;
+    margin-bottom: 40px; /* Spacing between projects */
+    padding-top: 50px;
+}
+
+.heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding-top: 50px;
+}
+.projects-heading {
+    text-align: center; /* Center the heading */
+    color: #00f2fe; /* Choose a color that fits your design */
+    font-size: 2.5rem; /* Adjust the size as needed */
+    margin: 0 15px; /* Adjust space around the heading */
+    font-family: 'Arial', sans-serif; /* Font style, can be adjusted */
+}
+
+.line {
+    flex: 1; /* Allow lines to take up equal space on both sides */
+    height: 2px; /* Line thickness */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), #9394a5, rgba(0, 0, 0, 0)); /* Horizontal fade effect */
+}
+.project-description, .project-images {
+    flex: 1;
+    margin: 20px;
+}
+
+.project-description {
+    max-width: 40%;
+    text-align: left;
+    padding-left: 200px;
+}
+
+.project-description h2 {
+    margin-top: 0;
+    padding-top: 0;
+    color: #00f2fe; /* Darker color for the title */
+}
+
+.project-images {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 200px;
+}
+
+.project-images img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.nav-dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-dot.active {
+    background-color: #00f2fe;
+}
+
+.project-technologies {
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the tech items */
+}
+
+.tech-item {
+    margin: 5px; /* Uniform margin for spacing */
+    padding: 10px 15px; /* Padding similar to the button */
+    color: white; /* Text color as in the button */
+    background-color: transparent; /* Transparent background initially */
+    border: 2px solid #00f2fe; /* Border color similar to the button */
+    border-radius: 4px; /* Border radius as in the button */
+    cursor: pointer; /* Hand cursor on hover */
+    font-size: 16px; /* Font size as in the button */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.tech-item:hover {
+    background-color: #00f2fe; /* Background color on hover */
+    color: black; /* Text color on hover */
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 650px) {
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-description, .project-images {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .project-description {
+        order: 2; /* Display images first on small screens */
+    }
+
+    .project-images {
+        order: 1;
+    }
+}
+
+@media (max-width: 450px) {
+    .tech-item {
+        margin-bottom: 5px; /* Provide more space between tech items */
+    }
+}

@@ -10,6 +10,8 @@
     justify-content: space-between;
     background-color: black;
     top: 0;
+    z-index: 1000; /* or a higher value if needed */
+
 }
 
 .nav-links {
@@ -229,7 +231,7 @@
 @media screen and (max-width: 450px) {
     .navbar {
         /* Adjust the navbar styles for smaller screens */
-        padding: 5px 10px; /* Reduce padding */
+        padding: 5px 15px; /* Reduce padding */
     }
 
     .nav-links {
@@ -246,15 +248,20 @@
     }
 
     .hamburger {
-        top: 5px;
+        display: flex;
+        position: absolute;
+        top: 10px;
         right: 10px;
-        /* Other styles remain the same */
+        justify-content: flex-end;
+        margin-right: 40px; /* Adjusts the right margin to move the icon to the left */
+        /* other styles */
+        width: 50px;
     }
-
+    
     .full-screen-animation {
         padding-left: 20px; /* Reduce left padding */
         padding-top: 150px; /* Adjust top padding */
-        /* Other styles remain the same */
+        background-position: top; /* Shift the background image to the left */
     }
 
     .static-text p, .animated-text h1 {
