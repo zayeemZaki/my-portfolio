@@ -5,12 +5,14 @@ import Certificate9 from '../../constants/Certificates/Certificate9.jpg';
 import Certificate10 from '../../constants/Certificates/Certificate10.jpg';
 
 const Projects = () => {
-    const [currentImage, setCurrentImage] = useState({});
+
     const [dragStartX, setDragStartX] = useState(0);
 
     const handleDragStart = (e) => {
         setDragStartX(e.clientX || e.touches[0].clientX);
     };
+
+    
 
     const handleDragMove = (e, projectIndex) => {
         const currentX = e.clientX || e.touches[0].clientX;
@@ -56,6 +58,14 @@ const Projects = () => {
         }
         // Add more projects as needed
     ];
+
+    const [currentImage, setCurrentImage] = useState(() => {
+        const initialState = {};
+        projects.forEach((_, index) => {
+            initialState[index] = 0;
+        });
+        return initialState;
+    });
 
     const selectImage = (projectIndex, imageIndex) => {
         setCurrentImage(prevState => ({
