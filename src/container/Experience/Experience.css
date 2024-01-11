@@ -174,7 +174,7 @@
   }
 
   .experience-names::before {
-      left: 0px; /* Adjust the position of the vertical line */
-      bottom: - 50px;
+      left: -30px; /* Adjust the position of the vertical line */
+      bottom: 0px;
   }
 }

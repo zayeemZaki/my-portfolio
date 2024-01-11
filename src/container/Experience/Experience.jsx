@@ -5,8 +5,8 @@ const experienceData = [
     {
         title: 'First Solar',
         role: 'IT Business Intelligence Intern',
-        startDate: 'June 2021',
-        endDate: 'June 2022',
+        startDate: 'Jan 2024',
+        endDate: 'Current',
         details: [
           'Undertake a one-year IT Business Intelligence internship at First Solar, focusing on data troubleshooting, syncing, and migrating reports from Tableau to PowerBI.',
           'Work with the IT data services team on diverse tasks, including enhancing existing solutions and crafting new PowerBI dashboards and reports, ensuring effective time management and clear communication.',
@@ -15,8 +15,8 @@ const experienceData = [
       {
         title: 'University of Toledo',
         role: 'IT Support Specialist',
-        startDate: 'September 2019',
-        endDate: 'May 2021',
+        startDate: 'Sept 2021',
+        endDate: 'Current',
         details: [
           'Successfully resolved over 100 software and IT-related challenges with an average solution time of less than 24 hours...',
           'Diagnose and debug staff and lab desktops of the University, employing techniques such as PXE boot and archive directory management...'
