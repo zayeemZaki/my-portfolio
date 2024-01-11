@@ -3,6 +3,9 @@ import './Projects.css';
 import Certificate8 from '../../constants/Certificates/Certificate8.jpg';
 import Certificate9 from '../../constants/Certificates/Certificate9.jpg';
 import Certificate10 from '../../constants/Certificates/Certificate10.jpg';
+import ueats1 from '../../constants/u-eats1.png';
+import ueats2 from '../../constants/u-eats2.png';
+import ueats3 from '../../constants/u-eats3.png';
 
 const Projects = () => {
 
@@ -46,13 +49,13 @@ const Projects = () => {
         {
             title: "U-Eats",
             description: "Deployed an online-ordering restaurant website on AWS amplify in collaboration with my roommate Dec 2023. The website is expected to increase monthly sales by 5%. Integrated React.js and Node.js technologies to enhance the website's performance, as evidenced by improved loading times and interactivity. Implemented Stripe payment for secure and efficient online transactions.",
-            technologies: ["React", "Node.js", "MongoDB"],
-            images: [Certificate8, Certificate9, Certificate10]
+            technologies: ["React", "Node.js", "Stripe", "Aws Amplify", "Rest API"],
+            images: [ueats1, ueats2, ueats3]
         },
         {
             title: "NeuroTransmitter",
             description: "Developed an iOS app for the University of Toledo that combines Swift UI and UI Kit to enhance research paper management and improve communication among doctors, thereby boosting user satisfaction and efficiency. The app, which has been accepted by the university and is set to be deployed in January 2024, features strengthened security using Firebase Authentication and Face ID integration, ensuring robust data protection and privacy. Additionally, it includes real-time chat threads and advanced annotation features like text highlighting, commenting, writing directly on documents, and Text-to-Speech functionality, fostering improved collaboration and facilitating research progress.",
-            technologies: ["Tech1", "Tech2", "Tech3"],
+            technologies: ["Swift", "Firebase", "Firestore", "Swift UI"],
             images: [Certificate8, Certificate9, Certificate10]
             // Replace with actual image paths
         }
