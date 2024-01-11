@@ -1,9 +1,12 @@
 {
   "files": {
     "main.css": "/MyPortfolio/static/css/main.8958218c.css",
-    "main.js": "/MyPortfolio/static/js/main.2b7bea5e.js",
+    "main.js": "/MyPortfolio/static/js/main.4ab96042.js",
     "static/js/787.7da95b79.chunk.js": "/MyPortfolio/static/js/787.7da95b79.chunk.js",
+    "static/media/u-eats1.png": "/MyPortfolio/static/media/u-eats1.69c03581f541956f315d.png",
     "static/media/MyPic.jpg": "/MyPortfolio/static/media/MyPic.af9427ef6d3e729257e0.jpg",
+    "static/media/u-eats2.png": "/MyPortfolio/static/media/u-eats2.3754dda6038d304fa8c8.png",
+    "static/media/u-eats3.png": "/MyPortfolio/static/media/u-eats3.60af15d48a376c1b1416.png",
     "static/media/Certificate5.jpg": "/MyPortfolio/static/media/Certificate5.852ecb50183756f4f33d.jpg",
     "static/media/Certificate10.jpg": "/MyPortfolio/static/media/Certificate10.6de88f682cada94f3cea.jpg",
     "static/media/Certificate3.jpg": "/MyPortfolio/static/media/Certificate3.a442c80ff23889ad7ef8.jpg",
@@ -18,11 +21,11 @@
     "static/media/background3.jpeg": "/MyPortfolio/static/media/background3.c2db74fed15bc8f3cb4d.jpeg",
     "index.html": "/MyPortfolio/index.html",
     "main.8958218c.css.map": "/MyPortfolio/static/css/main.8958218c.css.map",
-    "main.2b7bea5e.js.map": "/MyPortfolio/static/js/main.2b7bea5e.js.map",
+    "main.4ab96042.js.map": "/MyPortfolio/static/js/main.4ab96042.js.map",
     "787.7da95b79.chunk.js.map": "/MyPortfolio/static/js/787.7da95b79.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8958218c.css",
-    "static/js/main.2b7bea5e.js"
+    "static/js/main.4ab96042.js"
   ]
 }
