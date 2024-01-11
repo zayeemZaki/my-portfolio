@@ -76,7 +76,7 @@ const Projects = () => {
 
     return (
         <div>
-            <div className="heading-container">
+            <div className="heading-container" id="projects">
                 <div className="line"></div>
                 <h2 className="projects-heading">Projects</h2>
                 <div className="line"></div>
