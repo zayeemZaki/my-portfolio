@@ -104,6 +104,24 @@
     color: black; /* Text color on hover */
 }
 
+.link-icon {
+    color: #9394a5;
+    padding-left: 10px;
+}
+
+.project-title-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherits the color from the parent element */
+    cursor: pointer; /* Changes the cursor to a hand pointer to indicate a link */
+}
+
+.project-title-link:hover, .project-title-link:focus {
+    text-decoration: underline; /* Adds underline on hover/focus for visual feedback */
+}
+.grabbing {
+    cursor: grabbing;
+}
+
 
 
 /* Responsive Styles */

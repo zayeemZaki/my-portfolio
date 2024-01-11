@@ -10,17 +10,22 @@ import ueats3 from '../../constants/u-eats3.png';
 const Projects = () => {
 
     const [dragStartX, setDragStartX] = useState(0);
+    const [isMouseDown, setIsMouseDown] = useState(false);
 
     const handleDragStart = (e) => {
+        setIsMouseDown(true); // Set the mouse down state to true
         setDragStartX(e.clientX || e.touches[0].clientX);
     };
 
-    
 
+    
+    
     const handleDragMove = (e, projectIndex) => {
+        if (!isMouseDown) return; // Only proceed if the mouse is down
+    
         const currentX = e.clientX || e.touches[0].clientX;
         const dragDistance = dragStartX - currentX;
-
+    
         if (dragDistance > 50) {
             selectNextImage(projectIndex);
             setDragStartX(currentX);
@@ -29,6 +34,10 @@ const Projects = () => {
             setDragStartX(currentX);
         }
     };
+    const handleMouseUp = () => {
+        setIsMouseDown(false); // Reset the mouse down state
+    };
+        
 
     const selectNextImage = (projectIndex) => {
         setCurrentImage(prevState => ({
@@ -50,14 +59,15 @@ const Projects = () => {
             title: "U-Eats",
             description: "Deployed an online-ordering restaurant website on AWS amplify in collaboration with my roommate Dec 2023. The website is expected to increase monthly sales by 5%. Integrated React.js and Node.js technologies to enhance the website's performance, as evidenced by improved loading times and interactivity. Implemented Stripe payment for secure and efficient online transactions.",
             technologies: ["React", "Node.js", "Stripe", "Aws Amplify", "Rest API"],
-            images: [ueats1, ueats2, ueats3]
+            images: [ueats1, ueats2, ueats3],
+            url: "http://u-eats.com"
         },
         {
             title: "NeuroTransmitter",
             description: "Developed an iOS app for the University of Toledo that combines Swift UI and UI Kit to enhance research paper management and improve communication among doctors, thereby boosting user satisfaction and efficiency. The app, which has been accepted by the university and is set to be deployed in January 2024, features strengthened security using Firebase Authentication and Face ID integration, ensuring robust data protection and privacy. Additionally, it includes real-time chat threads and advanced annotation features like text highlighting, commenting, writing directly on documents, and Text-to-Speech functionality, fostering improved collaboration and facilitating research progress.",
             technologies: ["Swift", "Firebase", "Firestore", "Swift UI"],
-            images: [Certificate8, Certificate9, Certificate10]
-            // Replace with actual image paths
+            images: [Certificate8, Certificate9, Certificate10],
+            url: "http://u-eats.com"
         }
         // Add more projects as needed
     ];
@@ -87,25 +97,33 @@ const Projects = () => {
             <div className='full-section'>
                 {projects.map((project, index) => (
                     <div key={index} className="project-container">
-                    <div className="project-description">
-                        <h2>{project.title}</h2>
-                        <p>{project.description}</p>
-                        <div className="project-technologies">
-                            {project.technologies.map((tech, techIndex) => (
-                                <span key={techIndex} className="tech-item">{tech}</span>
-                            ))}
+                        <div className="project-description">
+                            <h2>
+                                <a href={project.url} className="project-title-link">
+                                    {project.title} <i className="fas fa-external-link-alt link-icon"></i>
+                                </a>
+                            </h2>
+                            <p>{project.description}</p>
+                            <div className="project-technologies">
+                                {project.technologies.map((tech, techIndex) => (
+                                    <span key={techIndex} className="tech-item">{tech}</span>
+                                ))}
+                            </div>
                         </div>
-                    </div>
+
 
                         <div className="project-images">
                             <img 
                                 src={project.images[currentImage[index] || 0]} 
                                 alt="Project" 
                                 draggable="false"
+                                className={isMouseDown ? 'grabbing' : ''}
                                 onMouseDown={handleDragStart}
                                 onMouseMove={(e) => handleDragMove(e, index)}
+                                onMouseUp={handleMouseUp} // Reset the mouse state
                                 onTouchStart={handleDragStart}
                                 onTouchMove={(e) => handleDragMove(e, index)}
+                                onTouchEnd={handleMouseUp} // Reset the mouse state for touch devices
                             />
                             <div className="image-navigation">
                                 {project.images.map((_, imgIndex) => (
