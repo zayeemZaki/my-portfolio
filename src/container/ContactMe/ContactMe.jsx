@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './ContactMe.css';
 
 const ContactMe = () => {
@@ -9,10 +10,31 @@ const ContactMe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, subject, message });
-    setEmail('');
-    setSubject('');
-    setMessage('');
+
+    // Define your serviceID, templateID, and userID
+    const serviceID = 'service_sh02tmn';
+    const templateID = 'template_9yfpm61';
+    const userID = 'bnSRnJ0LF9kbj6pwd';
+
+    const templateParams = {
+      to_name: 'Zayeem Zaki',  // 'to_name' should match the placeholder in your EmailJS template
+      from_name: email,  // 'from_name' should ideally be an identifier of the person sending the message, like their name or email
+      message: message,  // 'message' should match the placeholder in your EmailJS template
+    };
+
+    // Send email using EmailJS
+    emailjs.send(serviceID, templateID, templateParams, userID)
+      .then(response => {
+        console.log('Email successfully sent!', response);
+        alert('Your message has been sent successfully!');
+        // Clear the form
+        setEmail('');
+        setSubject('');
+        setMessage('');
+      }, err => {
+        console.error('Failed to send the email, Error: ', err);
+        alert('Failed to send the message, please try again.');
+      });
   };
 
   return (
