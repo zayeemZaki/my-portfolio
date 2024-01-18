@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Projects.css';
-import Certificate8 from '../../constants/Certificates/Certificate8.jpg';
-import Certificate9 from '../../constants/Certificates/Certificate9.jpg';
-import Certificate10 from '../../constants/Certificates/Certificate10.jpg';
+import NeuroTransmitter1 from '../../constants/NeuroTransmitter1.png';
+import NeuroTransmitter2 from '../../constants/NeuroTransmitter2.png';
+import NeuroTransmitter3 from '../../constants/NeuroTransmitter3.png';
 import ueats1 from '../../constants/u-eats1.png';
 import ueats2 from '../../constants/u-eats2.png';
 import ueats3 from '../../constants/u-eats3.png';
@@ -69,7 +69,7 @@ const Projects = () => {
             title: "NeuroTransmitter",
             description: "Developed an iOS app for the University of Toledo that combines Swift UI and UI Kit to enhance research paper management and improve communication among doctors, thereby boosting user satisfaction and efficiency. The app, which has been accepted by the university and is set to be deployed in January 2024, features strengthened security using Firebase Authentication and Face ID integration, ensuring robust data protection and privacy. Additionally, it includes real-time chat threads and advanced annotation features like text highlighting, commenting, writing directly on documents, and Text-to-Speech functionality, fostering improved collaboration and facilitating research progress.",
             technologies: ["Swift", "Firebase", "Firestore", "Swift UI"],
-            images: [Certificate8, Certificate9, Certificate10],
+            images: [NeuroTransmitter1, NeuroTransmitter2, NeuroTransmitter3],
             url: "http://u-eats.com"
         }
         // Add more projects as needed

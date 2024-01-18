@@ -82,6 +82,8 @@ color: black; /* Text color remains the same */
 /* Hover effect for links */
 .links a:hover {
   text-decoration: underline;
+  color: #00f2fe; /* Change color on hover */
+
 }
 
 /* Styling for the email form */
