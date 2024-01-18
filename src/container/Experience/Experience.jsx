@@ -8,7 +8,7 @@ const experienceData = [
         startDate: 'Jan 2024',
         endDate: 'Current',
         details: [
-          'Undertake a one-year IT Business Intelligence internship at First Solar, focusing on data troubleshooting, syncing, and migrating reports from Tableau to PowerBI.',
+          'A one-year IT Business Intelligence internship at First Solar, focusing on data troubleshooting, syncing, and migrating reports from Tableau to PowerBI.',
           'Work with the IT data services team on diverse tasks, including enhancing existing solutions and crafting new PowerBI dashboards and reports, ensuring effective time management and clear communication.',
         ],
       },

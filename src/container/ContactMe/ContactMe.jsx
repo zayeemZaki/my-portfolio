@@ -90,6 +90,16 @@ const ContactMe = () => {
               <i className="fas fa-envelope"></i> zayeemzaki45@gmail.com
             </p>
           </div>
+          <div className="credit-line">
+            <p>Developed by Zayeem Zaki using React</p>
+            <p>
+              <a href="https://github.com/Zarak-Shah-ji" target="_blank" rel="noopener noreferrer">
+                Inspired by Zarak Shah Ji
+              </a>.
+            </p>
+          </div>
+
+
         </div>
 
       </section>

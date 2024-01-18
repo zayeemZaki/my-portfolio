@@ -58,6 +58,13 @@
     max-width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for transform and opacity */
+}
+
+/* Add styles for when an image is being dragged */
+.project-images img.grabbing {
+    transform: scale(1.05); /* Slightly enlarge the image */
+    opacity: 0.7; /* Reduce the opacity to give a feedback effect */
 }
 
 .image-navigation {

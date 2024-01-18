@@ -13,30 +13,33 @@ const Projects = () => {
     const [isMouseDown, setIsMouseDown] = useState(false);
 
     const handleDragStart = (e) => {
-        setIsMouseDown(true); // Set the mouse down state to true
+        setIsMouseDown(true);
         setDragStartX(e.clientX || e.touches[0].clientX);
+        e.target.classList.add('grabbing'); // Add grabbing class on drag start
     };
-
-
-    
     
     const handleDragMove = (e, projectIndex) => {
-        if (!isMouseDown) return; // Only proceed if the mouse is down
+        if (!isMouseDown) return;
     
         const currentX = e.clientX || e.touches[0].clientX;
         const dragDistance = dragStartX - currentX;
     
-        if (dragDistance > 50) {
-            selectNextImage(projectIndex);
-            setDragStartX(currentX);
-        } else if (dragDistance < -50) {
-            selectPrevImage(projectIndex);
+        if (dragDistance > 50 || dragDistance < -50) {
+            // If dragging is significant, update image and reset dragStartX
+            if (dragDistance > 50) {
+                selectNextImage(projectIndex);
+            } else {
+                selectPrevImage(projectIndex);
+            }
             setDragStartX(currentX);
         }
     };
-    const handleMouseUp = () => {
-        setIsMouseDown(false); // Reset the mouse down state
+    
+    const handleMouseUp = (e) => {
+        setIsMouseDown(false);
+        e.target.classList.remove('grabbing'); // Remove grabbing class on mouse up
     };
+    
         
 
     const selectNextImage = (projectIndex) => {
