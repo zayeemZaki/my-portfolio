@@ -156,6 +156,11 @@
   .experience-details {
       order: 2;
   }
+  
+  .experience-names::before {
+    left: -30px; /* Adjust the position of the vertical line */
+    bottom: 0px;
+  }
 }
 
 
