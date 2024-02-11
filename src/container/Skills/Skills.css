@@ -70,7 +70,7 @@
 .skill-item {
     display: flex;
     align-items: center;
-    justify-content: start;
+    align-items: flex-start;
     background-color: #fff;
     padding: 10px;
     border-radius: 8px;
