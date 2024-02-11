@@ -1,3 +1,5 @@
+/* AboutMe.css */
+
 .about-me-container {
     display: flex;
     flex-direction: row; /* Align items in a row */
@@ -21,6 +23,7 @@
     justify-content: center;
     margin: 20px 0;
 }
+
 .about-me-heading {
     text-align: center; /* Center the heading */
     color: #00f2fe; /* Choose a color that fits your design */
@@ -57,8 +60,6 @@
     box-shadow: 0 4px 8px #9394a5;
 }
 
-
-
 @media screen and (max-width: 900px) {
     .about-me-container {
         flex-direction: column; /* Stack elements in a column on smaller screens */
@@ -68,4 +69,3 @@
         max-width: 100%;
     }
 }
-
