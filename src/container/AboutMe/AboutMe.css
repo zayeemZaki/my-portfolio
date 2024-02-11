@@ -54,10 +54,16 @@
 }
 
 .resume-image {
-    max-width: 75%; /* Responsive image width */
+    max-width: 100%; /* Responsive image width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Slightly rounded corners for the image */
     box-shadow: 0 4px 8px #9394a5;
+}
+
+@media screen and (min-width: 1200px) {
+    .resume-image {
+        max-width: 50%; /* Adjust the image size for larger screens */
+    }
 }
 
 @media screen and (max-width: 900px) {
