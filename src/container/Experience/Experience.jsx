@@ -18,8 +18,8 @@ const experienceData = [
         startDate: 'Sept 2021',
         endDate: 'Current',
         details: [
-          'Successfully resolved over 100 software and IT-related challenges with an average solution time of less than 24 hours...',
-          'Diagnose and debug staff and lab desktops of the University, employing techniques such as PXE boot and archive directory management...'
+          'Successfully resolved over 100 software and IT-related challenges with an average solution time of less than 24 hours, addressing issues like devices not powering on, water damage, hardware replacement, screen replacement, network connectivity problems, and virus infections.',
+          'Diagnose and debug staff and lab desktops of the University, employing techniques such as PXE boot and archive directory management to address issues like slowdowns, re-imaging, networking, and related issues.'
         ],
       },
 ];
