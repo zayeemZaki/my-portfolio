@@ -15,7 +15,7 @@ const experienceData = [
           'Service Desk Intern',
            'Orchestrated the imaging of 500+ laptops for new hires and refresh cycles, seamlessly integrating devices into the domain and transitioning them to Active Directory (AD).',
            'Proficiently addressed IT-related tickets, resolving technical issues for employees in a timely manner to ensure uninterrupted workflow.',
-           'Streamlined ticket management processes by routing over 1000 tickets to respective departments, optimizing operational efficiency and customer service delivery.',
+           'Streamlined ticket  management processes by routing over 1000 tickets to respective departments, optimizing operational efficiency and customer service delivery.',
         ],
       },
       {
