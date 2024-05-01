@@ -8,7 +8,7 @@ const experienceData = [
         startDate: 'Jan 2024',
         endDate: 'Current',
         details: [
-          'Networking Intern April 2024 - Present',
+          '<b>Networking Intern</b>',
           'Upgrading and configuring switches to optimize network performance and reliability.',
           'Implementing new firewall rules to enhance network security and ensure compliance with organizational policies and industry standards.',
           'Provisioning and configuring servers to support various network services and applications, fostering scalability and resource efficiency.',
