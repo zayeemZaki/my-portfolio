@@ -8,8 +8,14 @@ const experienceData = [
         startDate: 'Jan 2024',
         endDate: 'Current',
         details: [
-          'A one-year IT Business Intelligence internship at First Solar, focusing on data troubleshooting, syncing, and migrating reports from Tableau to PowerBI.',
-          'Work with the IT data services team on diverse tasks, including enhancing existing solutions and crafting new PowerBI dashboards and reports, ensuring effective time management and clear communication.',
+          'Networking Intern April 2024 - Present',
+          'Upgrading and configuring switches to optimize network performance and reliability.',
+          'Implementing new firewall rules to enhance network security and ensure compliance with organizational policies and industry standards.',
+          'Provisioning and configuring servers to support various network services and applications, fostering scalability and resource efficiency.',
+          'Service Desk Intern January 2024–March 2024',
+          'Orchestrated the imaging of 500+ laptops for new hires and refresh cycles, seamlessly integrating devices into the domain and transitioning them to Active Directory (AD).',
+          'Proficiently addressed IT-related tickets, resolving technical issues for employees in a timely manner to ensure uninterrupted workflow.',
+          'Streamlined ticket management processes by routing over 1000 tickets to respective departments, optimizing operational efficiency and customer service delivery.',
         ],
       },
       {
