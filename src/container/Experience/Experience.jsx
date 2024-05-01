@@ -2,33 +2,46 @@ import React, { useState } from 'react';
 import './Experience.css';
 
 const experienceData = [
-    {
-        title: 'First Solar',
-        role: 'IT Business Intelligence Intern',
+  {
+    title: 'First Solar',
+    role: 'IT Business Intelligence Intern',
+    startDate: 'Jan 2024',
+    endDate: 'Current',
+    details: [
+      {
+        title: 'Networking Intern',
         startDate: 'Jan 2024',
         endDate: 'Current',
-        details: [
-          '<b>Networking Intern</b>',
+        tasks: [
           'Upgrading and configuring switches to optimize network performance and reliability.',
           'Implementing new firewall rules to enhance network security and ensure compliance with organizational policies and industry standards.',
-          'Provisioning and configuring servers to support various network services and applications, fostering scalability and resource efficiency.',
-          'Service Desk Intern January 2024–March 2024',
-          'Orchestrated the imaging of 500+ laptops for new hires and refresh cycles, seamlessly integrating devices into the domain and transitioning them to Active Directory (AD).',
-          'Proficiently addressed IT-related tickets, resolving technical issues for employees in a timely manner to ensure uninterrupted workflow.',
-          'Streamlined ticket management processes by routing over 1000 tickets to respective departments, optimizing operational efficiency and customer service delivery.',
-        ],
+          'Provisioning and configuring servers to support various network services and applications, fostering scalability and resource efficiency.'
+        ]
       },
       {
-        title: 'University of Toledo',
-        role: 'IT Support Specialist',
-        startDate: 'Sept 2021',
-        endDate: 'Current',
-        details: [
-          'Successfully resolved over 100 software and IT-related challenges with an average solution time of less than 24 hours, addressing issues like devices not powering on, water damage, hardware replacement, screen replacement, network connectivity problems, and virus infections.',
-          'Diagnose and debug staff and lab desktops of the University, employing techniques such as PXE boot and archive directory management to address issues like slowdowns, re-imaging, networking, and related issues.'
-        ],
-      },
+        title: 'Service Desk Intern',
+        startDate: 'Jan 2024',
+        endDate: 'March 2024',
+        tasks: [
+          'Orchestrated the imaging of 500+ laptops for new hires and refresh cycles, seamlessly integrating devices into the domain and transitioning them to Active Directory (AD).',
+          'Proficiently addressed IT-related tickets, resolving technical issues for employees in a timely manner to ensure uninterrupted workflow.',
+          'Streamlined ticket management processes by routing over 1000 tickets to respective departments, optimizing operational efficiency and customer service delivery.'
+        ]
+      }
+    ]
+  },
+  {
+    title: 'University of Toledo',
+    role: 'IT Support Specialist',
+    startDate: 'Sept 2021',
+    endDate: 'Current',
+    details: [
+      'Successfully resolved over 100 software and IT-related challenges with an average solution time of less than 24 hours, addressing issues like devices not powering on, water damage, hardware replacement, screen replacement, network connectivity problems, and virus infections.',
+      'Diagnose and debug staff and lab desktops of the University, employing techniques such as PXE boot and archive directory management to address issues like slowdowns, re-imaging, networking, and related issues.'
+    ]
+  }
 ];
+
 
 const Experience = () => {
   const [selectedExperience, setSelectedExperience] = useState(experienceData[0]);
@@ -65,9 +78,17 @@ const Experience = () => {
           <h2>{selectedExperience.role}</h2>
           <p>{`${selectedExperience.startDate} - ${selectedExperience.endDate}`}</p>
           <ul>
-            {selectedExperience.details.map((detail, index) => (
-              <li key={index}>{detail}</li>
-            ))}
+          {selectedExperience.details.map((detail, index) => (
+            <div key={index}>
+              <h2>{detail.title}</h2>
+              <p>{`${detail.startDate} - ${detail.endDate}`}</p>
+              <ul>
+                {detail.tasks.map((task, i) => (
+                  <li key={i}>{task}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
           </ul>
         </div>
       </div>
