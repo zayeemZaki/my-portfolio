@@ -102,23 +102,24 @@ const ContactMe = () => {
             <a href="https://www.linkedin.com/in/zayeem-zaki/" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin"></i>LinkedIn
             </a>
-            <p>5678017023</p>
             <a href="https://github.com/zayeemZaki" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-github"></i>GitHub
             </a>
+            <a href="https://leetcode.com/u/zayeem_zaki/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i>LeetCode
+            </a>
+                       
           </div>
           <div className="email-contact">
-            <p>
-              <i className="fas fa-envelope"></i> zayeemzaki45@gmail.com
-            </p>
+            <p> <i className="fas fa-envelope"></i> zayeemzaki45@gmail.com  |  5678017023 </p>
           </div>
           <div className="credit-line">
             <p>Developed by Zayeem Zaki using React</p>
-            <p>
+            {/* <p>
               <a href="https://github.com/Zarak-Shah-ji" target="_blank" rel="noopener noreferrer">
                 Inspired by Zarak Shah Ji
               </a>.
-            </p>
+            </p> */}
           </div>
 
 
