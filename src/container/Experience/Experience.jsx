@@ -9,9 +9,19 @@ const experienceData = [
     endDate: 'Current',
     subBranches: [
       {
+        title: 'IT Security Intern',
+        startDate: 'July 2024',
+        endDate: 'current',
+        tasks: [
+          'Contributing to CrowdStrike automation projects, streamlining IT security processes and increasing operational efficiency.',
+          'Developed python script to identify and sort stale accounts based on domain, inactivity period, and other criteria, enhancing account management efficiency.',
+          'Automated the removal of admin rights from specific users, improving overall security and reducing manual intervention.'
+        ]
+      },
+      {
         title: 'Networking Intern',
         startDate: 'April 2024',
-        endDate: 'Current',
+        endDate: 'June 2024',
         tasks: [
           'Upgrading and configuring switches to optimize network performance and reliability.',
           'Implementing new firewall rules to enhance network security and ensure compliance with organizational policies and industry standards.',
