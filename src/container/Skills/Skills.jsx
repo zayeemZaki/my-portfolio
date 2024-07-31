@@ -38,14 +38,16 @@ const Skills = () => {
                 {/* Framework And Tools Section */}
                 <div className="skill-section">
                     <h2>Framework And Tools</h2>
-                    <div className="skills-grid">
+                        <div className="skills-grid">
+                        <div className="skill-item"><span className="icon">⚛️</span> React</div>
+                        <div className="skill-item"><span className="icon">🟩</span> Node.js </div>
+                        <div className="skill-item"><span className="icon">🌿</span> Flask </div>
+                        <div className="skill-item"><span className="icon">🔷</span> .Net </div>
                         <div className="skill-item"><span className="icon">🌱</span> Spring Boot </div>
                         <div className="skill-item"><span className="icon">🔁</span> Rest API </div>
                         <div className="skill-item"><span className="icon">☁️</span> AWS </div>
-                        <div className="skill-item"><span className="icon">🔊</span> AWS Amplify </div>
+                        <div className="skill-item"><span className="icon">🛡️</span> CrowdStrike </div>
                         <div className="skill-item"><span className="icon">🔥</span> Firebase </div>
-                        <div className="skill-item"><span className="icon">⚛️</span> React</div>
-                        <div className="skill-item"><span className="icon">🟩</span> Node.js </div>
                         <div className="skill-item"><span className="icon">💳</span> Stripe </div>
                     </div>
                 </div>
