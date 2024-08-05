@@ -131,14 +131,3 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
-
-
-
-
-
-
-
-
-
-a = 2
-print(a)
