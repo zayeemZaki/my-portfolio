@@ -21,7 +21,7 @@ const experienceData = [
       {
         title: 'Networking Intern',
         startDate: 'April 2024',
-        endDate: 'June 2024',
+        endDate: 'June 2024 ',
         tasks: [
           'Upgrading and configuring switches to optimize network performance and reliability.',
           'Implementing new firewall rules to enhance network security and ensure compliance with organizational policies and industry standards.',
