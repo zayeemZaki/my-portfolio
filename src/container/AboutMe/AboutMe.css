@@ -3,7 +3,7 @@
     flex-direction: row; /* Align items in a row */
     flex-wrap: wrap; /* Wrap items on smaller screens */
     justify-content: center; /* Center items */
-    align-items: flex-start; /* Align items to the top */
+    align-items: center; /* Center items vertically */
     gap: 20px; /* Space between elements */
     margin: 20px;
 }
@@ -21,6 +21,7 @@
     justify-content: center;
     margin: 20px 0;
 }
+
 .about-me-heading {
     text-align: center; /* Center the heading */
     color: #00f2fe; /* Choose a color that fits your design */
@@ -57,15 +58,13 @@
     box-shadow: 0 4px 8px #9394a5;
 }
 
-
-
 @media screen and (max-width: 900px) {
     .about-me-container {
         flex-direction: column; /* Stack elements in a column on smaller screens */
+        align-items: center; /* Center items on smaller screens */
     }
 
     .about-me, .resume-section {
         max-width: 100%;
     }
 }
-

@@ -39,7 +39,7 @@ const AboutMe = () => {
                     </p>
                 </div>
                 <div className="resume-section">
-                        <img src={MyPic} alt="Zayeem Zaki's" className="resume-image" />
+                    <img src={MyPic} alt="Zayeem Zaki's" className="resume-image" />
                 </div>
             </div>
         </div>
@@ -47,5 +47,3 @@ const AboutMe = () => {
 }
 
 export default AboutMe;
-
-
