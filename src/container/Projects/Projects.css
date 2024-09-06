@@ -1,75 +1,44 @@
-/* Base Styles */
 .project-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Aligns children at their start (top) */
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
     color: #9394a5;
-    margin-bottom: 40px; /* Spacing between projects */
-    padding-top: 50px;
+    margin-bottom: 40px;
+    padding: 50px 0;
 }
 
-.heading-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-    padding-top: 50px;
-}
-.projects-heading {
-    text-align: center; /* Center the heading */
-    color: #00f2fe; /* Choose a color that fits your design */
-    font-size: 2.5rem; /* Adjust the size as needed */
-    margin: 0 15px; /* Adjust space around the heading */
-    font-family: 'Arial', sans-serif; /* Font style, can be adjusted */
-}
-
-.line {
-    flex: 1; /* Allow lines to take up equal space on both sides */
-    height: 2px; /* Line thickness */
-    background: linear-gradient(to left, rgba(0, 0, 0, 0), #9394a5, rgba(0, 0, 0, 0)); /* Horizontal fade effect */
-}
 .project-description, .project-images {
     flex: 1;
     margin: 20px;
+    max-width: 50%; /* Ensures the text and images take up similar width */
 }
 
 .project-description {
-    max-width: 40%;
     text-align: left;
-    padding-left: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the text content */
 }
 
-.project-description h2 {
-    margin-top: 0;
-    padding-top: 0;
-    color: #00f2fe; /* Darker color for the title */
+.project-description h2, .project-description p {
+    margin: 0;
+    padding: 0;
 }
 
 .project-images {
-    max-width: 50%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-right: 200px;
 }
 
 .project-images img {
     max-width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for transform and opacity */
-}
-
-/* Add styles for when an image is being dragged */
-.project-images img.grabbing {
-    transform: scale(1.05); /* Slightly enlarge the image */
-    opacity: 0.7; /* Reduce the opacity to give a feedback effect */
+    max-height: 300px; /* Limits image height for balance */
+    object-fit: cover; /* Ensures the image scales well */
 }
 
 .image-navigation {
-    display: flex;
-    justify-content: center;
     margin-top: 10px;
 }
 
@@ -91,48 +60,28 @@
     display: flex;
     margin-top: 10px;
     flex-wrap: wrap;
-    justify-content: center; /* Centers the tech items */
+    justify-content: center;
 }
 
 .tech-item {
-    margin: 5px; /* Uniform margin for spacing */
-    padding: 10px 15px; /* Padding similar to the button */
-    color: white; /* Text color as in the button */
-    background-color: transparent; /* Transparent background initially */
-    border: 2px solid #00f2fe; /* Border color similar to the button */
-    border-radius: 4px; /* Border radius as in the button */
-    cursor: pointer; /* Hand cursor on hover */
-    font-size: 16px; /* Font size as in the button */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    margin: 5px;
+    padding: 10px 15px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #00f2fe;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .tech-item:hover {
-    background-color: #00f2fe; /* Background color on hover */
-    color: black; /* Text color on hover */
+    background-color: #00f2fe;
+    color: black;
 }
-
-.link-icon {
-    color: #9394a5;
-    padding-left: 10px;
-}
-
-.project-title-link {
-    text-decoration: none; /* Removes the underline */
-    color: inherit; /* Inherits the color from the parent element */
-    cursor: pointer; /* Changes the cursor to a hand pointer to indicate a link */
-}
-
-.project-title-link:hover, .project-title-link:focus {
-    text-decoration: underline; /* Adds underline on hover/focus for visual feedback */
-}
-.grabbing {
-    cursor: grabbing;
-}
-
-
 
 /* Responsive Styles */
-@media (max-width: 650px) {
+@media (max-width: 768px) {
     .project-container {
         flex-direction: column;
         align-items: center;
@@ -140,20 +89,19 @@
 
     .project-description, .project-images {
         max-width: 100%;
-        padding: 0;
     }
 
-    .project-description {
-        order: 2; /* Display images first on small screens */
-    }
-
-    .project-images {
-        order: 1;
+    .project-images img {
+        max-height: 250px; /* Adjusts image height for smaller screens */
     }
 }
 
 @media (max-width: 450px) {
+    .project-description {
+        padding: 0;
+    }
+    
     .tech-item {
-        margin-bottom: 5px; /* Provide more space between tech items */
+        margin-bottom: 5px;
     }
 }
