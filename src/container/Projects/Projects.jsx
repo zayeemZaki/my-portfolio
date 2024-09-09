@@ -66,18 +66,18 @@ const Projects = () => {
             url: "http://u-eats.com"
         },
         {
+            title: "AlgoAce - YouTube Channel Project",
+            description: "AlgoAce is a YouTube channel I created to share my expertise in data structures, algorithms, and LeetCode problem-solving. Through this project, I develop and deliver clear, concise, and engaging tutorials aimed at helping students and professionals improve their coding skills and excel in technical interviews. This project showcases my ability to break down complex topics, create educational content, and engage with an audience in the tech community.",
+            technologies: ["Python", "Data Structures and Algorithms", "LeetCode"],
+            images: [AlgoAce1, AlgoAce2, AlgoAce3],
+            url: "https://www.youtube.com/@AlgoAcez"
+        },
+        {
             title: "NeuroTransmitter - iOS application",
             description: "Developed an iOS app for the University of Toledo that combines Swift UI and UI Kit to enhance research paper management and improve communication among doctors, thereby boosting user satisfaction and efficiency. The app, which has been accepted by the university and is set to be deployed in January 2024, features strengthened security using Firebase Authentication and Face ID integration, ensuring robust data protection and privacy. Additionally, it includes real-time chat threads and advanced annotation features like text highlighting, commenting, writing directly on documents, and Text-to-Speech functionality, fostering improved collaboration and facilitating research progress.",
             technologies: ["Swift", "Firebase", "Firestore", "Swift UI"],
             images: [NeuroTransmitter1, NeuroTransmitter2, NeuroTransmitter3],
             url: "http://u-eats.com"
-        },
-        {
-            title: "AlgoAce - YouTube Channel Project",
-            description: "AlgoAce is a YouTube channel I created to share my expertise in data structures, algorithms, and LeetCode problem-solving. Through this project, I develop and deliver clear, concise, and engaging tutorials aimed at helping students and professionals improve their coding skills and excel in technical interviews. This project showcases my ability to break down complex topics, create educational content, and engage with an audience in the tech community.",
-            technologies: ["Python", "Data Structures and Algorithms", "LeetCode"],
-            images: [NeuroTransmitter1, NeuroTransmitter2, NeuroTransmitter3],
-            url: "https://www.youtube.com/@AlgoAcez"
         }
     ];
 
