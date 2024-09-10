@@ -6,6 +6,11 @@ import NeuroTransmitter3 from '../../constants/NeuroTransmitter3.png';
 import ueats1 from '../../constants/u-eats1.png';
 import ueats2 from '../../constants/u-eats2.png';
 import ueats3 from '../../constants/u-eats3.png';
+import AlgoAce1 from '../../constatnts/algo-ace1.png';
+import AlgoAce2 from '../../constatnts/algo-ace2.png';
+import AlgoAce3 from '../../constatnts/algo-ace3.png';
+
+
 
 const Projects = () => {
 
