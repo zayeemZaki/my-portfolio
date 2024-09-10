@@ -1,9 +1,11 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.0f6a8d13.css",
-    "main.js": "/my-portfolio/static/js/main.3865946f.js",
+    "main.css": "/my-portfolio/static/css/main.9d0e6a26.css",
+    "main.js": "/my-portfolio/static/js/main.f308ba4b.js",
     "static/js/787.2dcca737.chunk.js": "/my-portfolio/static/js/787.2dcca737.chunk.js",
     "static/media/u-eats1.png": "/my-portfolio/static/media/u-eats1.69c03581f541956f315d.png",
+    "static/media/algo-ace3.png": "/my-portfolio/static/media/algo-ace3.8f71dd7be3b2603cf915.png",
+    "static/media/algo-ace2.png": "/my-portfolio/static/media/algo-ace2.eb484afe34f62676871e.png",
     "static/media/NeuroTransmitter3.png": "/my-portfolio/static/media/NeuroTransmitter3.e7e1dca27ef5257e30b9.png",
     "static/media/NeuroTransmitter1.png": "/my-portfolio/static/media/NeuroTransmitter1.19c6ad319ea3ec35b3e8.png",
     "static/media/NeuroTransmitter2.png": "/my-portfolio/static/media/NeuroTransmitter2.8e45f578f861b4db6511.png",
@@ -23,12 +25,12 @@
     "static/media/Certificate6.jpg": "/my-portfolio/static/media/Certificate6.262c293396dd5d46244f.jpg",
     "static/media/background3.jpeg": "/my-portfolio/static/media/background3.c2db74fed15bc8f3cb4d.jpeg",
     "index.html": "/my-portfolio/index.html",
-    "main.0f6a8d13.css.map": "/my-portfolio/static/css/main.0f6a8d13.css.map",
-    "main.3865946f.js.map": "/my-portfolio/static/js/main.3865946f.js.map",
+    "main.9d0e6a26.css.map": "/my-portfolio/static/css/main.9d0e6a26.css.map",
+    "main.f308ba4b.js.map": "/my-portfolio/static/js/main.f308ba4b.js.map",
     "787.2dcca737.chunk.js.map": "/my-portfolio/static/js/787.2dcca737.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f6a8d13.css",
-    "static/js/main.3865946f.js"
+    "static/css/main.9d0e6a26.css",
+    "static/js/main.f308ba4b.js"
   ]
 }
