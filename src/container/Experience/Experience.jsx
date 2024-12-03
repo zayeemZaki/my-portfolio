@@ -13,11 +13,14 @@ const experienceData = [
         startDate: 'July 2024',
         endDate: 'current',
         tasks: [
-          'Contributing to CrowdStrike automation projects, streamlining IT security processes and increasing operational efficiency.',
-          'Developed python script to identify and sort stale accounts based on domain, inactivity period, and other criteria, enhancing account management efficiency.',
-          'Automated the removal of admin rights from specific users, improving overall security and reducing manual intervention.'
+          'Contributed to CrowdStrike automation projects, streamlining IT security processes and increasing operational efficiency.',
+          'Developed Python scripts to identify and sort stale accounts using domain, inactivity period, and other criteria, enhancing account management efficiency.',
+          'Automated the removal of admin rights from specific users, improving security posture and reducing manual intervention.',
+          'Designed and implemented a Flask-based website with a Bootstrap-powered front end to manage administrative tasks, improving usability and productivity.',
+          'Executed real-time security commands using CrowdStrike APIs, ensuring quick and effective incident response.',
+          'Collaborated with cross-functional teams to integrate automation solutions, driving scalability and adaptability in a fast-paced environment.'
         ]
-      },
+      },      
       {
         title: 'Networking Intern',
         startDate: 'April 2024',
