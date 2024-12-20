@@ -9,11 +9,16 @@ import Certificate7 from '../../constants/Certificates/Certificate7.jpg';
 import Certificate8 from '../../constants/Certificates/Certificate8.jpg';
 import Certificate9 from '../../constants/Certificates/Certificate9.jpg';
 import Certificate10 from '../../constants/Certificates/Certificate10.jpg';
-
+import ML from '../../constants/Certificates/ML.jpeg';
 
 import './Certificates.css';
 
 const certificatesData = [
+  {
+    title: 'Supervised Machine Learning',
+    imageURL: ML, 
+    websiteURL: ML, 
+  },
   {
     title: 'Programming For Everybody(Python)',
     imageURL: Certificate1, 
