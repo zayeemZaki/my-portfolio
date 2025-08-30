@@ -1,3 +1,9 @@
+/* HTML & Body - Single scroll context */
+html {
+  overflow-x: hidden !important;
+  overflow-y: auto;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,18 +11,105 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa; /* You can keep this as a fallback */
-  /* background-image: url('./constants/background4.jpeg'); */
-  background-size: cover; /* Cover the entire viewport */
-  background-position: center; /* Center the image in the viewport */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  overflow-x: hidden;
-  background-color: #000000;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
+/* Remove default margins and ensure seamless section transitions */
+* {
+  box-sizing: border-box;
+}
+
+/* FORCE PROPER SCROLL BEHAVIOR */
+*, *::before, *::after {
+  /* Prevent any element from creating its own scroll context */
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+/* Only allow HTML to control scrolling */
+html {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body {
+  overflow: hidden !important;
+}
+
+/* Prevent horizontal overflow globally */
+*:not(.allow-overflow) {
+  max-width: 100%;
+}
+
+/* Flex container overflow fix */
+.app-container > * {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(78, 205, 196, 0.6);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(78, 205, 196, 0.8);
+}
+
+/* Root container */
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+/* App container */
+.app-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure sections fit together seamlessly */
+section {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  max-width: 100vw;
+  overflow: visible;
+  position: relative;
+  z-index: auto;
+}
+
+/* Ensure main section containers have proper stacking order */
+.hero-section { z-index: 1; }
+.about-me-section { z-index: 1; }
+.skills-section { z-index: 1; }
+.github-stats-section { z-index: 1; }
+.experience-section { z-index: 1; }
+.projects-section { z-index: 1; }
+.leetcode-section { z-index: 1; }
+.certificates-section { z-index: 1; }
+.contact-me-section { z-index: 1; }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-

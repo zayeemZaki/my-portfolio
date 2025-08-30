@@ -1,49 +1,70 @@
 import React from 'react';
 import './AboutMe.css';
-import MyPic from '../../constants/MyPic.jpg'; // Adjust as per your directory structure
-import resumePDF from '../../constants/Zayeem_zaki_resume.pdf'; // Import the resume PDF
+import MyPic from '../../constants/MyPic.jpg';
 
 const AboutMe = () => {
+    const aboutStats = [
+        { label: 'Graduation', value: 'Dec 2025', icon: '📅' }
+    ];
+
     return (
-        <div>
+        <div className="about-me-section" id="about-me">
             <div className="heading-container">
                 <div className="line"></div>
                 <h2 className="about-me-heading">About Me</h2>
                 <div className="line"></div>
             </div>
-            <div className="about-me-container" id="about-me" data-aos="fade-up">
-                <div className="about-me">
-                    <p data-aos="fade-up">
-                        I am a passionate and driven Computer Science student at The University of Toledo, set to graduate in December 2025. 
-                        With a strong GPA of 3.7 and recognition on the President's and Dean's Lists, I have cultivated a solid foundation in 
-                        <b> Data Structures</b>, <b>Object-Oriented Programming</b>, and <b>Software Development</b>.
-                    </p>
-                    <p data-aos="fade-up">
-                        My internship at <b>First Solar</b> as an IT Security Intern allowed me to apply my technical expertise to 
-                        automate workflows using <b>Python</b> and <b>CrowdStrike APIs</b>, manage user permissions, and execute real-time 
-                        security commands. Additionally, I developed a <b>Flask-based</b> website with a <b>Bootstrap-powered</b> front-end, streamlining 
-                        administrative tasks and enhancing user experience. This hands-on experience strengthened my problem-solving abilities and exposed 
-                        me to dynamic, cross-functional teamwork in a fast-paced environment.
-                    </p>
-                    <p data-aos="fade-up">
-                        I have developed and deployed innovative solutions, including an <b>online ordering restaurant website, U-Eats,</b> 
-                        hosted on AWS Amplify, leveraging <b>React.js</b> and <b>Node.js</b> to create a seamless user experience. My work 
-                        on the <b>NeuroTransmitter iOS app</b> for the University of Toledo enhanced research paper management and doctor 
-                        communication through user-centric design and advanced document editing features.
-                    </p>
-                    <p data-aos="fade-up">
-                        My technical toolkit includes proficiency in <b>Python, Java, Swift, C++, JavaScript,</b> and expertise in 
-                        frameworks and tools like <b>Spring Boot, React, Firebase, Docker, Kubernetes,</b> and <b>AWS</b>. 
-                        I am equally passionate about exploring machine learning concepts and backend infrastructure systems.
-                    </p>
-                    <p data-aos="fade-up">
-                        As I aspire to become a <b>Software Developer</b>, I am eager to contribute to innovative projects and solve 
-                        real-world problems. I thrive in dynamic environments and am committed to creating impactful solutions that 
-                        drive progress and efficiency.
-                    </p>
+            
+            <div className="about-me-container" data-aos="fade-up">
+                {/* Stats Cards */}
+                <div className="about-stats-grid">
+                    {aboutStats.map((stat, index) => (
+                        <div key={index} className="about-stat-card" data-aos="zoom-in" data-aos-delay={index * 100}>
+                            <div className="stat-icon">{stat.icon}</div>
+                            <div className="stat-value">{stat.value}</div>
+                            <div className="stat-label">{stat.label}</div>
+                        </div>
+                    ))}
                 </div>
-                <div className="resume-section">
-                    <img src={MyPic} alt="Zayeem Zaki" className="resume-image" />
+                
+                {/* Main Content */}
+                <div className="about-content-wrapper">
+                    <div className="about-me-content">
+                        <div className="about-text" data-aos="fade-right">
+                            <p>
+                                Computer Science student at University of Toledo, graduating December 2025. 
+                                <b> 3.7 GPA</b> with <b>President's and Dean's List</b> recognition. 
+                                Passionate about <b>Software Development</b> and <b>Problem Solving</b>.
+                            </p>
+                            <p>
+                                Currently a <b>Software Engineer Intern at CCC Intelligent Solutions</b>, where I am working on <b>Spring Boot</b>, <b>Vue.js</b>, and <b>Docker</b>. 
+                                Previously interned at <b>First Solar</b> as IT Security Intern, where I automated workflows 
+                                using <b>Python</b> and <b>CrowdStrike APIs</b>, and built a <b>Flask website</b> with 
+                                <b>Bootstrap</b> frontend.
+                            </p>
+                            <p>
+                                Built <b>U-Eats</b> restaurant platform on <b>AWS Amplify</b> using <b>React.js</b> and <b>Node.js</b>. 
+                                Created <b>NeuroTransmitter iOS app</b> for University of Toledo's Neurology department, 
+                                featuring real-time collaboration and document management.
+                            </p>
+                            <p>
+                                Skilled in <b>Python, Java, Swift, JavaScript, React, AWS, Firebase</b> and more. 
+                                Always excited to learn new technologies and solve challenging problems.
+                            </p>
+                        </div>
+                        <div className="about-image" data-aos="fade-left">
+                            <img src={MyPic} alt="Zayeem Zaki" className="resume-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {/* Smooth transition element */}
+            <div className="section-transition">
+                <div className="wave-container">
+                    <svg className="wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="m0,6C0,6,347.333,18,505.333,18C663.333,18,1200,6,1200,6L1200,120L0,120z" />
+                    </svg>
                 </div>
             </div>
         </div>

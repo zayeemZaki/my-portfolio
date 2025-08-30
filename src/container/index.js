@@ -5,7 +5,9 @@ import Experience from './Experience/Experience';
 import Projects from './Projects/Projects';
 import Navbar from './Navbar/Navbar';
 import Certificates from './Certificates/Certificates';
-import TextAnimation from './TextAnimation/TextAnimation';
+import HeroSection from './HeroSection/HeroSection';
+import GitHubStats from './GitHubStats/GitHubStats';
+import LeetCode from './LeetCode/LeetCode';
 
 export {
     Navbar,
@@ -15,5 +17,7 @@ export {
     Projects,
     ContactMe,
     Certificates,
-    TextAnimation
+    HeroSection,
+    GitHubStats,
+    LeetCode
 };

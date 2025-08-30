@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import resumePDF from '../../constants/Zayeem_zaki_resume.pdf'; // Import the resume PDF
+import resumePDF from '../../constants/Zayeem_zaki_resume.pdf';
 import { Link } from 'react-scroll';
+
+const texts = ["Zayeem Zaki", "A Computer Science Student", "A Software Developer", "A Full Stack Developer"];
 
 const Navbar = () => {
     const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -9,7 +11,6 @@ const Navbar = () => {
     const [subIndex, setSubIndex] = useState(0);
     const [blink, setBlink] = useState(true);
     const [reverse, setReverse] = useState(false);
-    const texts = ["Zayeem Zaki", "A Computer Science Student", "A Software Developer", "A Full Stack Developer"];
 
     // Typing Effect Logic
     useEffect(() => {

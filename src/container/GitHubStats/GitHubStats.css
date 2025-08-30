@@ -1,0 +1,288 @@
+.github-stats-section {
+    padding: 5rem 2rem 8rem 2rem; /* Increased bottom padding */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    position: relative;
+    min-height: auto; /* Remove height constraints */
+}
+
+.heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding-top: 50px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.github-stats-heading {
+    text-align: center;
+    color: #00f5ff;
+    font-size: 2.5rem;
+    margin: 0 15px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.github-stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px); /* Reduced for better performance */
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.stat-card:hover::before {
+    left: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
+}
+
+.github-chart-container {
+    text-align: center;
+}
+
+.github-chart-container h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.github-chart {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 1rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .github-stats-section {
+        padding: 3rem 1rem 6rem 1rem;
+    }
+    
+    .github-stats-heading {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem 1rem;
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .github-stats-section {
+        padding: 2rem 0.5rem 4rem 0.5rem;
+    }
+    
+    .github-stats-heading {
+        font-size: 1.8rem;
+        margin: 0 10px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+        padding: 1.2rem 0.8rem;
+        min-height: 120px;
+        border-radius: 15px;
+    }
+    
+    .stat-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.3px;
+        line-height: 1.1;
+    }
+    
+    .wave-container {
+        height: 30px;
+    }
+
+    .wave {
+        height: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 280px;
+        margin: 0 auto 2rem auto;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Smooth Section Transition */
+.section-transition {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 3;
+}
+
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+.wave {
+    width: 100%;
+    height: 60px;
+    animation: waveMove 4s ease-in-out infinite;
+}
+
+.wave path {
+    fill: #16213e;
+    transition: all 0.3s ease;
+}
+
+@keyframes waveMove {
+    0%, 100% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-25px);
+    }
+}
+
+@media (max-width: 768px) {
+    .wave-container {
+        height: 40px;
+    }
+
+    .wave {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wave-container {
+        height: 30px;
+    }
+
+    .wave {
+        height: 30px;
+    }
+}

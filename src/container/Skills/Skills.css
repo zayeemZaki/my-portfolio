@@ -1,98 +1,240 @@
-.skills-container {
-    text-align: center;
+.skills-section {
+    min-height: auto; /* Remove fixed height constraint */
+    padding: 4rem 0 8rem 0; /* Significantly increased bottom padding */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    position: relative;
+    scroll-margin-top: 2rem;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 20px;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    font-family: 'Arial', sans-serif;
-    padding-top: 50px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem 2rem; /* Increased bottom padding */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem; /* Added margin bottom for extra space */
+}
+
 .heading-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0;
+    margin: 20px auto;
     padding-top: 50px;
+    max-width: 1200px;
+    width: 100%;
 }
+
 .skills-heading {
-    text-align: center; /* Center the heading */
-    color: #00f2fe; /* Choose a color that fits your design */
-    font-size: 2.5rem; /* Adjust the size as needed */
-    margin: 0 15px; /* Adjust space around the heading */
-    font-family: 'Arial', sans-serif; /* Font style, can be adjusted */
+    text-align: center;
+    color: #00f2fe;
+    font-size: 2.5rem;
+    margin: 0 15px;
+    font-family: 'Arial', sans-serif;
 }
 
 .line {
-    flex: 1; /* Allow lines to take up equal space on both sides */
-    height: 2px; /* Line thickness */
-    background: linear-gradient(to left, rgba(0, 0, 0, 0), #9394a5, rgba(0, 0, 0, 0)); /* Horizontal fade effect */
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), #9394a5, rgba(0, 0, 0, 0));
 }
+
 .skill-section {
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px #9394a5;
-    margin: 10px;
-    width: 30%; /* Adjust based on your preference */
-    min-width: 300px; /* Minimum width for readability */
-    transition: transform 0.3s ease;
+    margin-bottom: 3rem;
+    color: white;
 }
 
-.skill-section-database{
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px #9394a5;
-    margin: 10px;
-    width: 15%; /* Adjust based on your preference */
-    min-width: 300px; /* Minimum width for readability */
-    transition: transform 0.3s ease;
-}
-
-.skill-section:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-.skill-section h2, .skill-section-database h2 {
-    color: #9394a5; /* Dark color for heading */
-    font-size: 24px;
-    margin-bottom: 20px;
+.skill-section h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
     text-align: center;
-    font-weight: bold; /* Bold heading */
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-
-.skills-grid {
+.skills-bars {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid layout */
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
-.skill-item {
-    display: flex;
-    align-items: center;
-    align-items: flex-start;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.skill-bar-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
-.skill-item:hover {
+.skill-bar-container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.icon {
-    font-size: 24px; /* Adjust size for icons */
-    margin-right: 10px;
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
+.skill-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
 
+.skill-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.skill-percentage {
+    font-weight: bold;
+    color: #4ecdc4;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
 
 @media (max-width: 768px) {
-    .skill-section {
-        width: 100%; /* Full width on smaller screens */
+    .skills-section {
+        padding: 3rem 0;
+    }
+    
+    .skills-bars {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .skill-bar-container {
+        padding: 1rem;
+    }
+    
+    .skills-heading {
+        font-size: 2rem;
+    }
+    
+    .skills-container {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 2rem 0;
+    }
+    
+    .skills-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .skills-heading {
+        font-size: 1.8rem;
+    }
+    
+    .skill-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Smooth Section Transition */
+.section-transition {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 3;
+}
+
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+.wave {
+    width: 100%;
+    height: 60px;
+    animation: waveMove 4s ease-in-out infinite;
+}
+
+.wave path {
+    fill: #16213e;
+    transition: all 0.3s ease;
+}
+
+@keyframes waveMove {
+    0%, 100% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-25px);
+    }
+}
+
+@media (max-width: 768px) {
+    .wave-container {
+        height: 40px;
+    }
+
+    .wave {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wave-container {
+        height: 30px;
+    }
+
+    .wave {
+        height: 30px;
     }
 }
