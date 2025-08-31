@@ -112,7 +112,15 @@ const AIChat = () => {
         <>
             {/* Chat Toggle Button */}
             <div className={`chat-toggle ${isOpen ? 'open' : ''}`} onClick={toggleChat}>
-                <i className={`fas ${isOpen ? 'fa-times' : 'fa-robot'}`}></i>
+                {isOpen ? (
+                    <i className="fas fa-times"></i>
+                ) : (
+                    <div className="chat-button-content">
+                        <i className="fas fa-robot"></i>
+                        <span className="ai-text">AI</span>
+                        <span className="assistant-text">Assistant</span>
+                    </div>
+                )}
                 {!isOpen && <span className="chat-tooltip">Ask AI about Zayeem</span>}
             </div>
 
@@ -120,9 +128,6 @@ const AIChat = () => {
             <div className={`chat-container ${isOpen ? 'open' : ''}`}>
                 <div className="chat-header">
                     <div className="chat-header-info">
-                        <div className="ai-avatar">
-                            <i className="fas fa-robot"></i>
-                        </div>
                         <div className="chat-title">
                             <h4>Zayeem's AI Assistant</h4>
                             <span className="chat-status">

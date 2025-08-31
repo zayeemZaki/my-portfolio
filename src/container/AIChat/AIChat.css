@@ -3,10 +3,10 @@
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    width: 60px;
+    width: 120px;
     height: 60px;
     background: linear-gradient(45deg, #4ecdc4, #44a08d);
-    border-radius: 50%;
+    border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,18 +14,51 @@
     z-index: 1000;
     box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    color: white;
-    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
 }
 
 .chat-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 12px 35px rgba(78, 205, 196, 0.6);
 }
 
 .chat-toggle.open {
     background: linear-gradient(45deg, #ff6b6b, #f093fb);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
 }
+
+.chat-button-content {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    flex-direction: column;
+    text-align: center;
+}
+
+.ai-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    margin-top: 0.15rem;
+    color: linear-gradient(90deg, #FF512F, #DD2476);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.assistant-text {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    margin-top: -0.05rem;
+    color: #000000;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 
 .chat-tooltip {
     position: absolute;
@@ -95,17 +128,6 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
-}
-
-.ai-avatar {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(45deg, #4ecdc4, #44a08d);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
 }
 
 .chat-title h4 {
@@ -421,9 +443,25 @@
     .chat-toggle {
         bottom: 1rem;
         right: 1rem;
+        width: 100px;
+        height: 55px;
+        font-size: 1.1rem;
+    }
+    
+    .chat-toggle.open {
         width: 55px;
         height: 55px;
         font-size: 1.3rem;
+    }
+    
+    .ai-text {
+        font-size: 0.65rem;
+        margin-top: 0.1rem;
+    }
+    
+    .assistant-text {
+        font-size: 0.55rem;
+        margin-top: -0.1rem;
     }
     
     .chat-tooltip {
@@ -448,6 +486,28 @@
         bottom: 8rem;
         height: 450px;
         border-radius: 16px;
+    }
+    
+    .chat-toggle {
+        width: 90px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .chat-toggle.open {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .ai-text {
+        font-size: 0.6rem;
+        margin-top: 0.1rem;
+    }
+    
+    .assistant-text {
+        font-size: 0.5rem;
+        margin-top: -0.1rem;
     }
     
     .chat-header {
