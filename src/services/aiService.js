@@ -1,3 +1,4 @@
+// AI Service for enhanced chat functionality with Groq Cloud integration
 import Groq from 'groq-sdk';
 
 export class AIService {
@@ -5,28 +6,34 @@ export class AIService {
         this.knowledgeBase = this.initializeKnowledgeBase();
         this.groq = null;
         this.initializeGroq();
-        this.requestCache = new Map();
-        this.requestQueue = [];
+        this.requestCache = new Map(); // Cache for responses
+        this.requestQueue = []; // Queue for pending requests
         this.isProcessingQueue = false;
         this.lastRequestTime = 0;
-        this.minRequestInterval = 1000;
+        this.minRequestInterval = 1000; // 1 second between requests (Groq is much more generous)
         this.requestCount = 0;
-        this.maxRequestsPerMinute = 30;
+        this.maxRequestsPerMinute = 30; // Groq free tier is much more generous
         this.requestTimes = [];
     }
 
     initializeGroq() {
         const apiKey = process.env.REACT_APP_GROQ_API_KEY;
+        console.log('🔑 Groq API Key check:', apiKey ? 'Found' : 'Not found');
         
         if (apiKey && apiKey !== 'your_groq_api_key_here') {
             try {
                 this.groq = new Groq({
                     apiKey: apiKey,
-                    dangerouslyAllowBrowser: true
+                    dangerouslyAllowBrowser: true // Note: In production, use a backend proxy
                 });
+                console.log('✅ Groq initialized successfully - 100% AI-based responses with Groq Cloud');
             } catch (error) {
+                console.error('❌ Failed to initialize Groq:', error);
                 this.groq = null;
             }
+        } else {
+            console.log('⚠️ Groq API key not found - Please add your Groq API key to .env file');
+            console.log('📝 Get your free API key at: https://console.groq.com/keys');
         }
     }
 
@@ -34,363 +41,93 @@ export class AIService {
         return {
             personal: {
                 name: "Zayeem Zaki",
-                location: "Toledo, Ohio, USA",
-                status: "Senior Computer Science Student, graduating December 2025",
-                availability: "Actively seeking full-time Software Engineering opportunities",
-                nationality: "American",
-                passions: ["Full-stack development", "Mobile app development", "Cloud computing", "Algorithm optimization", "Teaching & mentoring"],
-                careerVision: "Aspiring to become a Software Architect and eventually a CTO, driving technological innovation",
-                personalTraits: ["Problem solver", "Quick learner", "Team collaborator", "Detail-oriented", "Innovation-driven"]
+                location: "USA",
+                status: "Computer Science Student, graduating December 2025",
+                availability: "Seeking full-time opportunities"
             },
             education: {
                 institution: "University of Toledo",
-                degree: "Bachelor of Science in Computer Science",
-                gpa: "3.7/4.0",
+                degree: "Computer Science",
+                gpa: "3.7",
                 graduation: "December 2025",
-                recognition: ["President's List (multiple semesters)", "Dean's List (multiple semesters)"],
-                relevantCoursework: [
-                    "Data Structures and Algorithms",
-                    "Software Engineering",
-                    "Database Systems",
-                    "Computer Networks",
-                    "Operating Systems",
-                    "Web Development",
-                    "Mobile Application Development",
-                    "Cybersecurity Fundamentals",
-                    "Machine Learning",
-                    "Software Testing"
-                ],
-                academicAchievements: [
-                    "Maintained 3.7+ GPA throughout academic career",
-                    "Multiple President's List recognitions for academic excellence",
-                    "Active participant in computer science projects and competitions"
-                ]
+                recognition: ["President's List", "Dean's List"]
             },
             experience: [
                 {
                     role: "Software Engineer Intern",
                     company: "CCC Intelligent Solutions",
-                    location: "Chicago, IL",
-                    period: "Summer 2024 - Present",
-                    technologies: ["Spring Boot", "Vue.js", "Docker", "Kafka", "PostgreSQL", "Kubernetes", "Microservices"],
-                    description: "Developing enterprise-grade web applications for the insurance industry",
-                    achievements: [
-                        "Built scalable microservices serving thousands of users",
-                        "Implemented CI/CD pipelines using Kubernetes",
-                        "Collaborated with cross-functional teams in agile environment",
-                        "Contributed to codebase with 99.9% uptime requirements",
-                        "Gained expertise in enterprise software development patterns"
-                    ],
-                    keyResponsibilities: [
-                        "Developing RESTful APIs with Spring Boot",
-                        "Building responsive frontends with Vue.js",
-                        "Containerizing applications with Docker",
-                        "Working with Kafka for message streaming",
-                        "Database optimization with PostgreSQL"
-                    ]
+                    period: "Current",
+                    technologies: ["Spring Boot", "Vue.js", "Docker"],
+                    description: "Working on full-stack development with modern technologies"
                 },
                 {
                     role: "IT Security Intern",
                     company: "First Solar",
-                    location: "Toledo, OH",
-                    period: "Summer 2023",
-                    technologies: ["Python", "CrowdStrike APIs", "Flask", "Bootstrap", "PowerShell", "Active Directory"],
-                    description: "Automated cybersecurity workflows and built security tools for enterprise environment",
-                    achievements: [
-                        "Automated user containment processes, reducing response time by 75%",
-                        "Built stale account detection system processing 10,000+ user accounts",
-                        "Created admin rights removal automation for compliance",
-                        "Developed web-based security dashboard for IT team",
-                        "Improved security team efficiency through process automation"
-                    ],
-                    keyResponsibilities: [
-                        "Developing Python scripts for security automation",
-                        "Integrating with CrowdStrike Falcon APIs",
-                        "Building internal web tools with Flask",
-                        "Creating PowerShell scripts for Active Directory management",
-                        "Collaborating with cybersecurity team on threat response"
-                    ]
+                    period: "Previous",
+                    technologies: ["Python", "CrowdStrike APIs", "Flask", "Bootstrap"],
+                    description: "Automated workflows and built security tools"
                 }
             ],
             projects: [
                 {
                     name: "U-Eats",
                     type: "Full-Stack Restaurant Platform",
-                    technologies: ["React.js", "Node.js", "Express.js", "Stripe API", "AWS Amplify", "REST API", "JavaScript", "HTML5", "CSS3"],
-                    description: "Complete online ordering restaurant platform with payment processing",
-                    detailedDescription: "A comprehensive restaurant management and ordering system featuring real-time order processing, secure payment integration, and responsive design. Expected to increase monthly sales by 5% for client restaurants.",
-                    features: [
-                        "Real-time order management system",
-                        "Secure Stripe payment integration",
-                        "Responsive design for mobile and desktop",
-                        "RESTful API architecture",
-                        "Admin dashboard for restaurant management",
-                        "Customer order tracking",
-                        "Inventory management system"
-                    ],
-                    technicalHighlights: [
-                        "Deployed on AWS Amplify with CI/CD pipeline",
-                        "Scalable backend API with Express.js",
-                        "Secure payment processing with Stripe",
-                        "Modern React.js frontend with hooks",
-                        "Production-ready with error handling"
-                    ],
-                    url: "https://main.d20ukwqpkslt8j.amplifyapp.com/",
-                    year: "2023",
-                    impact: "Modernized restaurant ordering process, improved customer experience",
-                    status: "Production - Live"
+                    technologies: ["React", "Node.js", "Stripe", "AWS Amplify", "REST API"],
+                    description: "Online-ordering restaurant website deployed on AWS, expected to increase monthly sales by 5%",
+                    url: "http://u-eats.com",
+                    year: "2023"
                 },
                 {
                     name: "NeuroTransmitter",
-                    type: "iOS Medical Research Application",
-                    technologies: ["Swift", "SwiftUI", "UIKit", "Firebase", "Firestore", "Face ID", "Core Data", "AVFoundation"],
-                    description: "Professional iOS application for University of Toledo Neurology department",
-                    detailedDescription: "A sophisticated iOS application developed for medical professionals in the University of Toledo's Neurology department, featuring real-time collaboration, secure authentication, and advanced document management capabilities.",
-                    features: [
-                        "Real-time chat and collaboration system",
-                        "Advanced document annotation tools",
-                        "Secure Face ID authentication",
-                        "Text-to-Speech functionality for accessibility",
-                        "Offline data synchronization",
-                        "Multi-user document sharing",
-                        "Medical-grade security compliance"
-                    ],
-                    technicalHighlights: [
-                        "Published on Apple App Store",
-                        "Firebase real-time database integration",
-                        "SwiftUI for modern iOS interface",
-                        "Face ID biometric security implementation",
-                        "Core Data for local storage",
-                        "AVFoundation for text-to-speech"
-                    ],
+                    type: "iOS Research Application",
+                    technologies: ["Swift", "Firebase", "Firestore", "SwiftUI", "UIKit"],
+                    description: "iOS app for University of Toledo Neurology department with real-time collaboration features",
                     url: "https://apps.apple.com/us/app/neuro-transmitter/id6463495879",
-                    year: "2024",
-                    impact: "Streamlined medical research collaboration for neurology professionals",
-                    status: "Production - App Store Published",
-                    recognition: "Officially adopted by University of Toledo Neurology Department"
+                    year: "2024"
                 },
                 {
-                    name: "AlgoAcez",
-                    type: "Educational YouTube Channel & Platform",
-                    technologies: ["Python", "Data Structures", "Algorithms", "LeetCode", "Video Production", "Education Technology"],
-                    description: "Educational platform teaching algorithms and data structures",
-                    detailedDescription: "A comprehensive educational initiative focused on making complex computer science concepts accessible through clear, engaging video tutorials and practical coding examples.",
-                    features: [
-                        "Algorithm visualization and explanation",
-                        "LeetCode problem walkthroughs",
-                        "Data structures deep dives",
-                        "Coding interview preparation",
-                        "Problem-solving strategies",
-                        "Code optimization techniques"
-                    ],
-                    technicalHighlights: [
-                        "Python-based algorithm implementations",
-                        "Clear visual explanations of complex concepts",
-                        "Real-world problem applications",
-                        "Interview preparation focus",
-                        "Community engagement and feedback"
-                    ],
+                    name: "AlgoAce",
+                    type: "Educational YouTube Channel",
+                    technologies: ["Python", "Data Structures", "Algorithms", "LeetCode", "Education"],
+                    description: "YouTube channel for teaching algorithms and data structures",
                     url: "https://www.youtube.com/@AlgoAcez",
-                    year: "2024",
-                    impact: "Helping students and professionals master algorithmic thinking",
-                    status: "Active - Regular Content Creation",
-                    metrics: "Growing subscriber base with positive community feedback"
-                },
-                {
-                    name: "Portfolio Website",
-                    type: "Personal Portfolio & AI Chat Interface",
-                    technologies: ["React.js", "JavaScript", "CSS3", "HTML5", "Groq AI API", "Node.js", "Responsive Design"],
-                    description: "Interactive portfolio website with AI-powered chat assistant",
-                    detailedDescription: "A modern, responsive portfolio website featuring an intelligent AI assistant powered by Groq Cloud API, showcasing projects, skills, and providing interactive user engagement.",
-                    features: [
-                        "AI-powered chat assistant",
-                        "Responsive design across all devices",
-                        "Interactive project showcases",
-                        "Real-time GitHub statistics integration",
-                        "LeetCode progress tracking",
-                        "Professional contact forms",
-                        "Smooth animations and transitions"
-                    ],
-                    technicalHighlights: [
-                        "Groq AI integration for intelligent responses",
-                        "Modern React.js with hooks and context",
-                        "Mobile-first responsive design",
-                        "API integration for dynamic content",
-                        "Performance optimized with lazy loading"
-                    ],
-                    year: "2024",
-                    impact: "Professional online presence with unique AI interaction",
-                    status: "Production - Continuously Updated"
+                    year: "2024"
                 }
             ],
             skills: {
-                programming: {
-                    primary: ["Python", "Java", "Swift", "JavaScript"],
-                    secondary: ["TypeScript", "SQL", "HTML5", "CSS3"],
-                    experience: {
-                        "Python": "3+ years - Advanced proficiency in data structures, algorithms, automation, web development",
-                        "Java": "2+ years - Spring Boot, enterprise applications, object-oriented design",
-                        "Swift": "2+ years - iOS development, SwiftUI, UIKit, App Store publishing",
-                        "JavaScript": "3+ years - Full-stack development, React.js, Node.js, modern ES6+"
-                    }
-                },
-                frontend: {
-                    frameworks: ["React.js", "Vue.js", "SwiftUI", "UIKit"],
-                    styling: ["CSS3", "Bootstrap", "Responsive Design", "Mobile-First Design"],
-                    tools: ["Webpack", "Babel", "NPM", "Yarn"],
-                    experience: "Expert in building responsive, user-friendly interfaces with modern frameworks"
-                },
-                backend: {
-                    frameworks: ["Node.js", "Express.js", "Spring Boot", "Flask"],
-                    databases: ["PostgreSQL", "MySQL", "MongoDB", "Firebase Firestore", "Core Data"],
-                    apis: ["RESTful APIs", "GraphQL", "Microservices", "API Design"],
-                    experience: "Proficient in designing scalable backend architectures and database systems"
-                },
-                cloud: {
-                    platforms: ["AWS", "AWS Amplify", "Firebase", "Google Cloud"],
-                    services: ["EC2", "S3", "Lambda", "RDS", "CloudFormation"],
-                    devops: ["Docker", "Kubernetes", "CI/CD", "Git", "Jenkins"],
-                    experience: "Hands-on experience deploying and managing production applications"
-                },
-                mobile: {
-                    platforms: ["iOS", "iPadOS"],
-                    technologies: ["Swift", "SwiftUI", "UIKit", "Core Data", "Firebase"],
-                    features: ["Face ID", "Push Notifications", "App Store Distribution", "Offline Storage"],
-                    experience: "Published iOS developer with App Store applications"
-                },
-                security: {
-                    areas: ["Cybersecurity Automation", "API Security", "Authentication", "Data Protection"],
-                    tools: ["CrowdStrike APIs", "Active Directory", "OAuth", "JWT", "Encryption"],
-                    experience: "Enterprise security experience with automated threat response"
-                },
-                problemSolving: {
-                    leetcode: {
-                        totalSolved: "369+ problems",
-                        breakdown: "Easy: 171, Medium: 180, Hard: 18",
-                        maxStreak: "97 days",
-                        achievements: ["LeetCode 75 completion", "Multiple coding challenge badges"],
-                        profile: "https://leetcode.com/u/zayeem_zaki/"
-                    },
-                    algorithms: ["Dynamic Programming", "Graph Algorithms", "Tree Traversal", "Sorting", "Searching"],
-                    dataStructures: ["Arrays", "Linked Lists", "Stacks", "Queues", "Trees", "Graphs", "Hash Tables"],
-                    complexity: "Strong understanding of time and space complexity analysis"
-                },
-                softSkills: [
-                    "Leadership and team collaboration",
-                    "Technical communication and documentation",
-                    "Problem-solving and analytical thinking",
-                    "Project management and planning",
-                    "Mentoring and teaching abilities",
-                    "Adaptability to new technologies",
-                    "Client communication and requirements gathering"
-                ],
-                tools: {
-                    development: ["VS Code", "IntelliJ IDEA", "Xcode", "Git", "GitHub"],
-                    design: ["Figma", "Adobe Creative Suite"],
-                    productivity: ["Jira", "Slack", "Notion", "Microsoft Office"],
-                    testing: ["Unit Testing", "Integration Testing", "Jest", "JUnit"]
-                },
-                certifications: [
-                    "AWS Cloud Practitioner (Preparing)",
-                    "Multiple university certificates in computer science",
-                    "Academic recognition certificates"
-                ]
+                programming: ["Python", "Java", "Swift", "JavaScript"],
+                frontend: ["React", "Vue.js", "SwiftUI", "UIKit", "Bootstrap"],
+                backend: ["Node.js", "Spring Boot", "Flask"],
+                cloud: ["AWS", "AWS Amplify", "Firebase", "Firestore"],
+                tools: ["Docker", "Git", "REST APIs"],
+                concepts: ["Data Structures", "Algorithms", "Software Development", "Mobile Development", "Web Development"]
             },
             contact: {
                 email: "zayeemzaki45@gmail.com",
-                phone: "+1 (567) 801-7023",
                 linkedin: "https://www.linkedin.com/in/zayeem-zaki/",
                 github: "https://github.com/zayeemZaki",
                 leetcode: "https://leetcode.com/u/zayeem_zaki/",
-                youtube: "https://www.youtube.com/@AlgoAcez",
-                location: "Toledo, Ohio, USA",
-                availability: "Available for relocation",
-                preferredContact: "Email or LinkedIn for professional inquiries"
-            },
-            achievements: {
-                academic: [
-                    "President's List recognition for multiple semesters",
-                    "Dean's List recognition for academic excellence",
-                    "3.7/4.0 GPA maintained throughout computer science program",
-                    "Consistent high performance in challenging coursework"
-                ],
-                professional: [
-                    "Successfully completed competitive internships at major companies",
-                    "Built and deployed production applications used by real users",
-                    "Published iOS application on Apple App Store",
-                    "Created educational content helping other developers"
-                ],
-                technical: [
-                    "369+ LeetCode problems solved with 97-day max streak",
-                    "Multiple GitHub repositories with clean, documented code",
-                    "Full-stack applications deployed on cloud platforms",
-                    "Experience with enterprise-grade development practices"
-                ],
-                leadership: [
-                    "Teaching and mentoring through AlgoAcez YouTube channel",
-                    "Collaborative team member in professional environments",
-                    "Self-directed learning and project completion",
-                    "Effective communication with technical and non-technical stakeholders"
-                ]
-            },
-            careerGoals: {
-                immediate: "Secure a full-time Software Engineer position upon graduation in December 2025",
-                shortTerm: [
-                    "Contribute to innovative software solutions in a collaborative team environment",
-                    "Gain expertise in advanced cloud technologies and microservices architecture",
-                    "Develop leadership skills through technical mentoring and project ownership",
-                    "Continue learning emerging technologies like AI/ML and blockchain"
-                ],
-                longTerm: [
-                    "Advance to Senior Software Engineer role within 3-5 years",
-                    "Transition to Software Architect position, designing scalable systems",
-                    "Eventually pursue CTO or technical leadership role",
-                    "Drive technological innovation and team development"
-                ],
-                interests: [
-                    "Full-stack web and mobile application development",
-                    "Cloud computing and DevOps practices",
-                    "Artificial Intelligence and Machine Learning applications",
-                    "Cybersecurity and secure software development",
-                    "Educational technology and developer tools"
-                ]
-            },
-            personalQualities: {
-                workStyle: [
-                    "Detail-oriented with strong attention to code quality",
-                    "Collaborative team player with excellent communication skills",
-                    "Self-motivated learner who stays current with technology trends",
-                    "Problem-solver who enjoys tackling complex technical challenges",
-                    "Reliable and consistent in meeting deadlines and commitments"
-                ],
-                values: [
-                    "Clean, maintainable code and best practices",
-                    "Continuous learning and professional development",
-                    "Helping others succeed through teaching and mentorship",
-                    "Building technology that makes a positive impact",
-                    "Ethical software development and user privacy"
-                ],
-                strengths: [
-                    "Quick adaptation to new technologies and frameworks",
-                    "Strong analytical and logical thinking abilities",
-                    "Excellent debugging and troubleshooting skills",
-                    "Effective at breaking down complex problems into manageable parts",
-                    "Natural ability to explain technical concepts clearly"
-                ]
+                phone: "+1 (567) 801-7023"
             }
         };
     }
 
+    // 100% AI-based response generation with Groq Cloud
     async generateResponse(message, conversationHistory = []) {
+        console.log('🤖 AI Service: Processing message with Groq Cloud (100% AI-based):', message);
+        
         if (!this.groq) {
             return "I need my AI connection to Groq Cloud to provide intelligent responses about Zayeem. Please add your Groq API key to the .env file. Get a free API key at: https://console.groq.com/keys";
         }
         
+        // Check cache first
         const cacheKey = this.getCacheKey(message);
         if (this.requestCache.has(cacheKey)) {
+            console.log('📦 Using cached AI response');
             return this.requestCache.get(cacheKey);
         }
         
+        // Add to queue and process
         return new Promise((resolve, reject) => {
             this.requestQueue.push({
                 message,
@@ -405,6 +142,7 @@ export class AIService {
         });
     }
     
+    // Process the request queue with rate limiting
     async processQueue() {
         if (this.isProcessingQueue || this.requestQueue.length === 0) {
             return;
@@ -416,8 +154,13 @@ export class AIService {
             const request = this.requestQueue.shift();
             
             try {
+                // Wait for rate limit compliance
                 await this.waitForRateLimit();
+                
+                console.log('🌐 Making Groq request...');
                 const response = await this.getGroqResponseWithRetry(request);
+                
+                // Cache the response
                 this.requestCache.set(request.cacheKey, response);
                 request.resolve(response);
                 
@@ -425,11 +168,13 @@ export class AIService {
                 console.error('❌ Failed to get AI response after retries:', error);
                 
                 if (request.retryCount < 3) {
+                    // Retry with exponential backoff
                     request.retryCount++;
-                    const delay = Math.pow(2, request.retryCount) * 1000;
+                    const delay = Math.pow(2, request.retryCount) * 1000; // 2s, 4s, 8s
+                    console.log(`🔄 Retrying in ${delay/1000}s (attempt ${request.retryCount}/3)`);
                     
                     setTimeout(() => {
-                        this.requestQueue.unshift(request);
+                        this.requestQueue.unshift(request); // Add back to front of queue
                         this.processQueue();
                     }, delay);
                 } else {
@@ -441,34 +186,45 @@ export class AIService {
         this.isProcessingQueue = false;
     }
     
+    // Wait for rate limit compliance
     async waitForRateLimit() {
         const now = Date.now();
+        
+        // Remove requests older than 1 minute
         this.requestTimes = this.requestTimes.filter(time => now - time < 60000);
         
+        // Wait if we need to respect rate limits
         if (this.requestTimes.length >= this.maxRequestsPerMinute) {
             const oldestRequest = this.requestTimes[0];
-            const waitTime = 60000 - (now - oldestRequest) + 1000;
+            const waitTime = 60000 - (now - oldestRequest) + 1000; // Wait until oldest request is 1 minute old + buffer
+            console.log(`⏳ Waiting ${waitTime/1000}s for rate limit reset...`);
             await this.delay(waitTime);
         }
         
+        // Wait for minimum interval
         const timeSinceLastRequest = now - this.lastRequestTime;
         if (timeSinceLastRequest < this.minRequestInterval) {
             const waitTime = this.minRequestInterval - timeSinceLastRequest;
+            console.log(`⏳ Waiting ${waitTime/1000}s for rate limit compliance...`);
             await this.delay(waitTime);
         }
     }
 
+    // Generate cache key for responses
     getCacheKey(message) {
         return message.toLowerCase().trim().substring(0, 50);
     }
     
+    // Groq request with retry logic
     async getGroqResponseWithRetry(request) {
         try {
             return await this.getGroqResponse(request.message, request.conversationHistory);
         } catch (error) {
             if (error.status === 429) {
+                // Rate limit error - throw to trigger retry
                 throw new Error(`Rate limit hit (attempt ${request.retryCount + 1})`);
             } else {
+                // Other errors - throw to trigger retry or final failure
                 throw error;
             }
         }
@@ -478,12 +234,13 @@ export class AIService {
         const systemPrompt = this.createSystemPrompt();
         const conversationMessages = this.formatConversationHistory(conversationHistory);
         
+        // Record this request
         const now = Date.now();
         this.requestTimes.push(now);
         this.lastRequestTime = now;
         
         const completion = await this.groq.chat.completions.create({
-            model: process.env.REACT_APP_GROQ_MODEL || 'llama-3.1-8b-instant',
+            model: process.env.REACT_APP_GROQ_MODEL || 'llama3-8b-8192',
             messages: [
                 { role: 'system', content: systemPrompt },
                 ...conversationMessages,
@@ -496,182 +253,115 @@ export class AIService {
         return completion.choices[0].message.content.trim();
     }
     
+    // Helper method to add delay between API calls
     delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
     createSystemPrompt() {
-        return `# Zayeem Zaki — Elite AI Profile Assistant & Career Advocate
+        return `# Zayeem Zaki — Professional AI Profile Assistant (System Prompt)
 
-## Your Mission & Identity
-You are Zayeem Zaki's dedicated AI representative and career advocate. Your purpose is to present him as an exceptional Computer Science talent ready to make significant contributions to any organization. You embody his professional persona: intelligent, passionate, results-driven, and technically excellent. Every response should position him as a standout candidate while maintaining authenticity and professionalism.
+## Role
+You are the dedicated AI assistant for **Zayeem Zaki**. Your purpose is to give **clear, accurate, and professional** answers about his background, education, skills, projects, and career goals. You represent him in a way that makes him stand out to recruiters, employers, and collaborators. Always sound helpful, intelligent, and enthusiastic.
 
-## Communication Excellence Standards
-- **Lead with impact** → Start with the most compelling fact or achievement
-- **Be specific and quantifiable** → Use numbers, metrics, and concrete examples
-- **Tell stories** → Transform technical details into engaging narratives
-- **Show progression** → Highlight growth, learning, and continuous improvement
-- **Connect to value** → Always relate his skills to business/organizational benefits
-- **Stay conversational** → Professional but approachable, enthusiastic but not overselling
-- **Encourage action** → Guide conversations toward next steps (interviews, connections, etc.)
+## Style & Tone
+- **Lead with the fact** → then add details, examples, and context.  
+- Conversational, confident, professional, and **personable**.  
+- Write in **short paragraphs** or **bullet points** when explaining achievements.  
+- Be **enthusiastic but not exaggerated** — showcase accomplishments naturally.  
+- Keep answers **complete** but not rambling (usually 3–6 sentences).  
+- **Show personality**: Mention Zayeem's passion for problem-solving, learning new technologies, and helping others.
+- **Be memorable**: Use specific examples and metrics when possible.
+- **Ask follow-up questions** when appropriate to keep the conversation engaging.  
 
-## Core Messaging Framework
+## Ground Truth Data (Authoritative Facts)
 
-### Elevator Pitch Elements
-"Zayeem Zaki is a high-achieving Computer Science senior (3.7 GPA, President's List) graduating December 2025 with proven industry experience at CCC Intelligent Solutions and First Solar. He's built production applications serving real users - including an iOS app published on the App Store for medical professionals and a full-stack restaurant platform on AWS. With 369+ LeetCode problems solved and expertise across the full technology stack, he's ready to drive innovation as a Software Engineer."
+### Personal & Education
+- **Name:** Zayeem Zaki  
+- **Current Status:** Senior-year Computer Science student at the University of Toledo  
+- **Degree:** Bachelor’s in Computer Science  
+- **GPA:** 3.7 (strong academic standing)  
+- **Honors:** President’s List, Dean’s List  
+- **Graduation:** **December 2025**  
+- **Location:** United States  
+- **Career Status:** Preparing for full-time Software Engineering roles post-graduation  
 
-### Key Differentiators
-1. **Real Production Experience**: Not just academic projects - built apps used by actual professionals and businesses
-2. **Full-Stack Versatility**: Equally strong in frontend (React, Swift), backend (Spring Boot, Node.js), and cloud (AWS)
-3. **Academic Excellence**: 3.7 GPA with consistent President's and Dean's List recognition
-4. **Problem-Solving Prowess**: 369+ LeetCode problems with 97-day streak demonstrates algorithmic thinking
-5. **Teaching Ability**: AlgoAcez YouTube channel shows communication skills and technical depth
-6. **Enterprise Experience**: Current intern at CCC Intelligent Solutions working with enterprise-scale systems
+### Current Professional Experience
+- **Software Engineer Intern — CCC Intelligent Solutions (Chicago)**  
+  - Building enterprise web applications in a **Spring Boot (Java) + Vue.js** stack  
+  - Developing microservices, APIs, and containerized deployments using **Docker**  
+  - Hands-on with **Kafka**, **PostgreSQL**, and **Kubernetes CI/CD pipelines**  
+  - Experience in **scaling applications** and following enterprise-grade best practices  
+  - **Impact**: Contributing to systems that serve thousands of users in the insurance industry
+  - **Growth**: Gained expertise in enterprise software development and agile methodologies  
 
-## Comprehensive Knowledge Base
+### Previous Professional Experience
+- **IT Security Intern — First Solar**  
+  - Tech stack: **Python, CrowdStrike APIs, Flask, Bootstrap**  
+  - Built automation scripts for **cybersecurity workflows** (e.g., user containment, stale account detection, admin rights removal)  
+  - Designed web-based tools for internal security teams  
+  - Improved efficiency and response times for the cybersecurity team  
 
-### Personal & Academic Excellence
-- **Name**: Zayeem Zaki
-- **Education**: B.S. Computer Science, University of Toledo (3.7/4.0 GPA)
-- **Graduation**: December 2025 (immediately available for full-time roles)
-- **Location**: Toledo, Ohio (available for relocation)
-- **Academic Honors**: Multiple President's List & Dean's List recognitions
-- **Coursework**: Data Structures, Algorithms, Software Engineering, Database Systems, Networks, Security, ML
+### Major Projects
+1. **NeuroTransmitter (2024)** — iOS App for University of Toledo Neurology Dept.  
+   - Tech: **Swift, Firebase, Firestore, SwiftUI/UIKit**  
+   - Features: Real-time collaboration, document annotation, secure Face ID authentication, Text-to-Speech  
+   - Published on the **App Store**: https://apps.apple.com/us/app/neuro-transmitter/id6463495879  
+   - **Impact:** Simplifies collaboration for neurologists and researchers  
 
-### Current Professional Experience - CCC Intelligent Solutions (Chicago)
-**Software Engineer Intern** | Summer 2024 - Present
-- **Tech Stack**: Spring Boot (Java), Vue.js, Docker, Kafka, PostgreSQL, Kubernetes
-- **Scope**: Enterprise applications serving thousands of users in insurance industry
-- **Impact**: Building scalable microservices with 99.9% uptime requirements
-- **Skills Gained**: Enterprise patterns, CI/CD pipelines, agile development, cross-functional collaboration
-- **Value Delivered**: Contributing to mission-critical systems that process millions of insurance transactions
+2. **U-Eats (2023)** — Full-stack restaurant ordering system  
+   - Tech: **React.js, Node.js, Stripe payments, AWS Amplify**  
+   - Designed REST APIs, integrated secure payment processing, and deployed to AWS  
+   - Production site: https://main.d20ukwqpkslt8j.amplifyapp.com/  
+   - Helped client restaurants improve sales and modernize their ordering flow  
 
-### Previous Professional Experience - First Solar (Toledo, OH)
-**IT Security Intern** | Summer 2023
-- **Tech Stack**: Python, CrowdStrike APIs, Flask, Bootstrap, PowerShell, Active Directory
-- **Achievements**:
-  • Reduced security response time by 75% through automation
-  • Built stale account detection system processing 10,000+ accounts
-  • Created admin rights removal automation for compliance
-  • Developed security dashboard for IT team efficiency
-- **Value**: Strengthened cybersecurity posture for Fortune 500 renewable energy company
+3. **AlgoAcez (2024)** — Educational YouTube Channel  
+   - Focus: Data Structures, Algorithms, and LeetCode tutorials in **Python**  
+   - Channel: https://www.youtube.com/@AlgoAcez  
+   - Purpose: Teaching students & developers with **clear, simplified explanations**  
+   - Builds Zayeem’s **communication & teaching skills** alongside coding  
 
-### Flagship Projects Portfolio
+### Technical Skills
+- **Programming Languages:** Python, Java, Swift, JavaScript  
+- **Frontend:** React.js, Vue.js, SwiftUI, UIKit, HTML5/CSS3, Bootstrap  
+- **Backend:** Spring Boot (Java), Node.js, Flask (Python), REST APIs, microservices  
+- **Cloud/DevOps:** AWS, AWS Amplify, Firebase, Firestore, Docker, Git, CI/CD  
+- **Problem Solving:** **369+ LeetCode problems solved** (Easy: 171, Medium: 180, Hard: 18)
+- **Achievements:** 97-day max streak, multiple coding challenge badges, LeetCode 75 completion
+- **Other Skills:** Data Structures & Algorithms, cybersecurity automation, API integration, database design, Stripe payments, real-time apps  
 
-#### 1. NeuroTransmitter (2024) - iOS Medical Application
-- **Platform**: Apple App Store (live production app)
-- **Client**: University of Toledo Neurology Department
-- **Tech**: Swift, SwiftUI, UIKit, Firebase, Firestore, Face ID, Core Data
-- **Features**: Real-time collaboration, document annotation, biometric security, text-to-speech
-- **Impact**: Revolutionizing how medical professionals collaborate on neurological research
-- **Significance**: Published iOS developer with medical-grade application
+### Career Goals & Interests
+- Available **December 2025** for full-time software engineering roles  
+- Passionate about **full-stack development, mobile applications, and cloud computing**  
+- Long-term vision: grow into a **Software Architect** and eventually a **CTO** driving innovation  
+- Actively open to opportunities in **AI, cybersecurity, enterprise software, and app development**  
 
-#### 2. U-Eats (2023) - Full-Stack Restaurant Platform
-- **Platform**: AWS Amplify (production deployment)
-- **Tech**: React.js, Node.js, Express.js, Stripe API, REST APIs
-- **Features**: Order management, payment processing, admin dashboard, inventory tracking
-- **Business Impact**: Expected 5% increase in monthly sales for client restaurants
-- **Technical Achievement**: Complete cloud deployment with CI/CD pipeline
+### Contact Information
+- **Email:** zayeemzaki45@gmail.com  
+- **LinkedIn:** https://www.linkedin.com/in/zayeem-zaki/  
+- **GitHub:** https://github.com/zayeemZaki  
+- **LeetCode:** https://leetcode.com/u/zayeem_zaki/  
 
-#### 3. AlgoAcez (2024) - Educational YouTube Channel
-- **Platform**: YouTube with growing subscriber base
-- **Focus**: Algorithms, data structures, LeetCode tutorials
-- **Tech**: Python, algorithm visualization, educational content creation
-- **Impact**: Helping students and professionals master algorithmic thinking
-- **Skills Demonstrated**: Technical communication, teaching ability, content creation
+---
 
-### Technical Expertise Deep Dive
+## Response Instructions
+1. **Direct answer first** → always lead with the most relevant fact.  
+2. **Support with details** → mention tech stacks, project outcomes, or measurable results.  
+3. **Context-aware** → understand the question type (education, skills, projects, goals).  
+4. **Highlight achievements** naturally (Dean’s List, real apps, production deployments).  
+5. **Encourage engagement**: if the user is a recruiter/employer, suggest connecting with Zayeem.  
+6. **If unknown:** say “I don’t have that information” instead of guessing.  
 
-#### Programming Languages (Proficiency Levels)
-- **Python** (Advanced - 3+ years): Data structures, algorithms, automation, web development, security scripting
-- **Java** (Proficient - 2+ years): Spring Boot, enterprise applications, object-oriented design, microservices
-- **Swift** (Proficient - 2+ years): iOS development, SwiftUI, UIKit, App Store publishing, Core Data
-- **JavaScript** (Advanced - 3+ years): Full-stack development, React.js, Node.js, modern ES6+, TypeScript
+## Quick Canonical Facts (for short replies)
+- **Graduation:** December 2025  
+- **GPA:** 3.7  
+- **Current role:** Software Engineer Intern @ CCC Intelligent Solutions  
+- **Projects:** NeuroTransmitter (App Store), U-Eats (AWS), AlgoAcez (YouTube)  
+- **Stack:** Java/Spring Boot, Vue, Docker, Python/Flask, React/Node, Swift/iOS  
+- **Goal:** Full-time software engineering role post-graduation  
 
-#### Full-Stack Development Arsenal
-**Frontend Mastery**: React.js, Vue.js, SwiftUI, UIKit, HTML5, CSS3, Bootstrap, responsive design
-**Backend Excellence**: Spring Boot, Node.js, Express.js, Flask, RESTful APIs, microservices
-**Database Systems**: PostgreSQL, MySQL, MongoDB, Firebase Firestore, Core Data
-**Cloud & DevOps**: AWS (Amplify, EC2, S3), Docker, Kubernetes, CI/CD, Git, Jenkins
-
-#### Problem-Solving Credentials
-- **LeetCode Statistics**: 369+ problems solved (Easy: 171, Medium: 180, Hard: 18)
-- **Consistency**: 97-day maximum streak demonstrating daily practice
-- **Achievements**: LeetCode 75 completion, multiple coding challenge badges
-- **Algorithm Mastery**: Dynamic programming, graph algorithms, trees, sorting, searching
-- **Complexity Analysis**: Strong understanding of time/space complexity optimization
-
-### Career Vision & Goals
-
-#### Immediate Objectives (December 2025)
-- Secure full-time Software Engineer position with growth-oriented company
-- Apply enterprise experience gained at CCC Intelligent Solutions
-- Contribute to innovative products that impact real users
-- Continue learning cutting-edge technologies (AI/ML, blockchain, cloud-native)
-
-#### Professional Trajectory (3-5 Years)
-- **Senior Software Engineer**: Technical leadership on complex projects
-- **Software Architect**: Designing scalable, distributed systems
-- **Technical Mentor**: Guiding junior developers and driving best practices
-- **Innovation Driver**: Leading adoption of new technologies and methodologies
-
-#### Long-term Vision (5+ Years)
-- **CTO/Technical Leadership**: Strategic technology decision-making
-- **Startup Founder**: Building innovative tech solutions
-- **Industry Thought Leader**: Speaking, writing, contributing to tech community
-- **Mentor & Educator**: Formal teaching or training roles
-
-### Contact & Connection Information
-- **Email**: zayeemzaki45@gmail.com (preferred for professional inquiries)
-- **LinkedIn**: https://www.linkedin.com/in/zayeem-zaki/
-- **GitHub**: https://github.com/zayeemZaki (active repositories with clean code)
-- **LeetCode**: https://leetcode.com/u/zayeem_zaki/ (public problem-solving profile)
-- **YouTube**: https://www.youtube.com/@AlgoAcez (educational content)
-- **Phone**: +1 (567) 801-7023
-- **Availability**: Open to relocation, remote work, or hybrid arrangements
-
-## Response Strategy Guidelines
-
-### For Recruiters & Hiring Managers
-- Emphasize **immediate availability** (December 2025) and **production experience**
-- Highlight **quantifiable achievements** and **real-world impact**
-- Connect his **skills to business value** and team contribution potential
-- Mention **cultural fit**: collaborative, growth-minded, technically excellent
-- **Call to action**: Encourage interview scheduling or LinkedIn connection
-
-### For Technical Discussions
-- Showcase **depth of knowledge** with specific technical details
-- Demonstrate **problem-solving approach** with concrete examples
-- Highlight **best practices** and **clean code** philosophy
-- Show **continuous learning** mindset and **technology enthusiasm**
-- Provide **GitHub links** and **project deep-dives** when relevant
-
-### For Students & Peers
-- Emphasize **teaching ability** and **mentorship experience**
-- Share **learning journey** and **study strategies** (especially LeetCode approach)
-- Highlight **AlgoAcez** as resource for algorithm learning
-- Encourage **collaboration** and **knowledge sharing**
-- Position as **accessible expert** willing to help others grow
-
-### For General Inquiries
-- Present **well-rounded profile** balancing technical skills and soft skills
-- Show **passion for technology** and **problem-solving enthusiasm**
-- Demonstrate **real-world application** of computer science knowledge
-- Highlight **professional growth** trajectory and **future potential**
-- Maintain **approachable tone** while showcasing **technical competence**
-
-## Quality Assurance Standards
-- ✅ Every response should make Zayeem sound impressive but authentic
-- ✅ Include specific metrics, technologies, or achievements when possible
-- ✅ Connect technical details to business value or impact
-- ✅ Maintain enthusiastic but professional tone
-- ✅ Encourage further engagement (questions, connections, interviews)
-- ✅ Stay factual - never invent information not in the knowledge base
-- ✅ Keep responses concise but comprehensive (3-6 sentences typically)
-- ✅ End with engaging follow-up questions when appropriate
-
-Remember: You're not just answering questions - you're actively advocating for Zayeem's career success. Every interaction should leave the user impressed with his capabilities and interested in learning more or taking next steps.`;
-    }
+End of system prompt.`;
+}
 
     formatConversationHistory(history) {
         return history.slice(-6).map(msg => ({
@@ -682,24 +372,31 @@ Remember: You're not just answering questions - you're actively advocating for Z
 
     // Enhanced fallback method using local knowledge base with intelligent responses
     generateLocalResponse(message, conversationHistory = []) {
+        console.log('🏠 generateLocalResponse called with:', message);
         const normalizedMessage = message.toLowerCase().trim();
+        console.log('🔤 Normalized message:', normalizedMessage);
         
         // Greeting handling
         if (this.isGreeting(normalizedMessage)) {
+            console.log('👋 Detected greeting');
             return this.getGreetingResponse();
         }
 
         // Thank you handling
         if (this.isThankYou(normalizedMessage)) {
+            console.log('🙏 Detected thank you');
             return this.getThankYouResponse();
         }
 
         // Specific question handling
+        console.log('🔍 Checking specific questions...');
         const response = this.handleSpecificQuestions(normalizedMessage);
         if (response) {
+            console.log('✅ Found specific response:', response.substring(0, 50) + '...');
             return response;
         }
 
+        console.log('⚠️ No specific response found, using intelligent fallback');
         // Enhanced context-aware fallback
         return this.getIntelligentFallbackResponse(message, conversationHistory);
     }
@@ -713,7 +410,7 @@ Remember: You're not just answering questions - you're actively advocating for Z
     getConfigStatus() {
         return {
             groqEnabled: this.isGroqAvailable(),
-            model: process.env.REACT_APP_GROQ_MODEL || 'llama-3.1-8b-instant',
+            model: process.env.REACT_APP_GROQ_MODEL || 'llama3-8b-8192',
             fallbackMode: !this.isGroqAvailable(),
             cacheSize: this.requestCache.size,
             recentRequests: this.requestTimes.length,
@@ -725,6 +422,7 @@ Remember: You're not just answering questions - you're actively advocating for Z
     clearCache() {
         this.requestCache.clear();
         this.requestTimes = [];
+        console.log('🧹 Cache cleared');
     }
 
     isGreeting(message) {
@@ -758,17 +456,79 @@ Remember: You're not just answering questions - you're actively advocating for Z
     }
 
     handleSpecificQuestions(message) {
+        console.log('Processing message:', message); // Debug log
+        
+        // Education questions
+        // if (this.containsKeywords(message, ['education', 'university', 'college', 'degree', 'gpa', 'graduation', 'school', 'major', 'study', 'studying', 'student'])) {
+        //     return `Zayeem is pursuing a Computer Science degree at University of Toledo with an impressive 3.7 GPA. He's graduating in December 2025 and has earned both President's and Dean's List recognition for his academic excellence.`;
+        // }
+
+        // // Skills questions
+        // if (this.containsKeywords(message, ['skills', 'technologies', 'programming', 'languages', 'tech stack', 'tools', 'technical', 'skill', 'technology', 'program', 'code', 'coding'])) {
+        //     return `Zayeem has a diverse technical skill set including:\n\n🔹 Programming: Python, Java, Swift, JavaScript\n🔹 Frontend: React, Vue.js, SwiftUI, UIKit, Bootstrap\n🔹 Backend: Node.js, Spring Boot, Flask\n🔹 Cloud: AWS, Firebase, Docker\n🔹 Specialties: Full-stack development, mobile apps, algorithms\n\nHe's passionate about learning new technologies and solving complex problems!`;
+        // }
+
+        // // Experience questions
+        // if (this.containsKeywords(message, ['experience', 'work', 'job', 'internship', 'intern', 'employment', 'career', 'aws', 'ccc', 'first solar', 'companies', 'working', 'worked'])) {
+        //     return `Zayeem has valuable industry experience:\n\n🔹 **Current**: Software Engineer Intern at CCC Intelligent Solutions\n   • Working with Spring Boot, Vue.js, and Docker\n   • Full-stack development and microservices\n   • Contributing to enterprise-level applications\n\n🔹 **Previous**: IT Security Intern at First Solar\n   • Automated workflows using Python and CrowdStrike APIs\n   • Built security tools with Flask and Bootstrap\n   • Improved cybersecurity processes\n\nHis AWS experience includes deploying U-Eats on AWS Amplify with scalable infrastructure!`;
+        // }
+
+        // // Projects questions
+        // if (this.containsKeywords(message, ['projects', 'portfolio', 'built', 'created', 'developed', 'apps', 'applications', 'project', 'build', 'create', 'app'])) {
+        //     return `Zayeem has built some impressive projects:\n\n🍽️ **U-Eats**: Full-stack restaurant platform on AWS (React, Node.js, Stripe)\n📱 **NeuroTransmitter**: iOS app for medical professionals (Swift, Firebase)\n📚 **AlgoAce**: Educational YouTube channel for algorithms\n\nEach project demonstrates his ability to work with different technologies and solve real-world problems!`;
+        // }
+
+        // // Contact questions
+        // if (this.containsKeywords(message, ['contact', 'email', 'reach', 'hire', 'available', 'connect', 'get in touch', 'touch', 'call', 'phone', 'linkedin', 'github'])) {
+        //     return `You can reach Zayeem at:\n\n📧 Email: zayeemzaki45@gmail.com\n💼 LinkedIn: linkedin.com/in/zayeem-zaki/\n💻 GitHub: github.com/zayeemZaki\n\nHe's actively seeking full-time opportunities and is always open to discussing new projects and challenges!`;
+        // }
+
+        // // Add specific AWS experience questions
+        // if (this.containsKeywords(message, ['aws', 'amazon', 'cloud', 'amplify', 'deployment'])) {
+        //     return `Zayeem has hands-on AWS experience:\n\n☁️ **AWS Amplify**: Deployed U-Eats restaurant platform\n🔹 Full-stack application hosting and CI/CD\n🔹 Integrated with Stripe for secure payments\n🔹 Expected to increase client sales by 5%\n🔹 Scalable cloud infrastructure setup\n\nHe's experienced with modern cloud deployment practices and AWS services for production applications!`;
+        // }
+
+        // // Add Spring Boot specific questions
+        // if (this.containsKeywords(message, ['spring', 'spring boot', 'java', 'backend', 'microservices'])) {
+        //     return `Zayeem is currently working with Spring Boot at CCC Intelligent Solutions:\n\n🏗️ **Spring Boot Development**:\n🔹 Building enterprise-level backend services\n🔹 Working with microservices architecture\n🔹 Integrating with Vue.js frontend\n🔹 Docker containerization experience\n\nHe's gaining valuable experience with modern Java development and enterprise patterns!`;
+        // }
+
+        // // Specific project questions
+        // if (this.containsKeywords(message, ['u-eats', 'ueats', 'restaurant'])) {
+        //     return `U-Eats is Zayeem's full-stack restaurant platform deployed on AWS Amplify. Built with React.js and Node.js, it features secure Stripe payment integration and is expected to increase monthly sales by 5%. It showcases his ability to create production-ready applications with modern web technologies.`;
+        // }
+
+        // if (this.containsKeywords(message, ['neurotransmitter', 'neuro', 'ios', 'app store'])) {
+        //     return `NeuroTransmitter is an iOS app Zayeem developed for the University of Toledo's Neurology department. It features real-time chat, document annotation, Face ID authentication, and Text-to-Speech capabilities. Built with Swift, SwiftUI, and Firebase, it's available on the App Store and revolutionizes how medical professionals collaborate.`;
+        // }
+
+        // if (this.containsKeywords(message, ['algoace', 'youtube', 'algorithms', 'leetcode', 'teaching'])) {
+        //     return `AlgoAce is Zayeem's educational YouTube channel where he shares his expertise in data structures, algorithms, and LeetCode problem-solving. It demonstrates his ability to break down complex topics and help others learn programming concepts effectively.`;
+        // }
+
+        // // Add direct question matching for common patterns
+        // if (message.includes('major') || message.includes('study') || message.includes('degree')) {
+        //     return `Zayeem is majoring in Computer Science at University of Toledo with an impressive 3.7 GPA. He's graduating in December 2025 and has earned both President's and Dean's List recognition for his academic excellence.`;
+        // }
+        
+        // if (message.includes('contact') || message.includes('reach') || message.includes('email') || message.includes('hire')) {
+        //     return `You can reach Zayeem at:\n\n📧 Email: zayeemzaki45@gmail.com\n💼 LinkedIn: linkedin.com/in/zayeem-zaki/\n💻 GitHub: github.com/zayeemZaki\n\nHe's actively seeking full-time opportunities and is always open to discussing new projects and challenges!`;
+        // }
+
         return null;
     }
 
     containsKeywords(message, keywords) {
         const lowercaseMessage = message.toLowerCase();
+        console.log('Checking keywords:', keywords, 'in message:', lowercaseMessage); // Debug log
         
         const found = keywords.some(keyword => {
             const match = lowercaseMessage.includes(keyword.toLowerCase());
+            if (match) console.log('Found keyword:', keyword); // Debug log
             return match;
         });
         
+        console.log('Keywords found:', found); // Debug log
         return found;
     }
 
@@ -828,13 +588,55 @@ Contact him at:
 He's particularly interested in full-stack development, cloud technologies, and innovative tech solutions.`;
         }
         
+        // Default intelligent response
         return this.getFallbackResponse(conversationHistory);
     }
 
+    // Future integration point for external AI services
     async getExternalAIResponse(message, apiKey = null) {
+        // This method can be expanded to integrate with:
+        // - OpenAI GPT API
+        // - Anthropic Claude API
+        // - Google PaLM API
+        // - Or any other AI service
+        
         if (!apiKey) {
             return this.generateResponse(message);
         }
+
+        // Example integration structure (commented out for now):
+        /*
+        try {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    model: 'gpt-3.5-turbo',
+                    messages: [
+                        {
+                            role: 'system',
+                            content: `You are an AI assistant representing Zayeem Zaki. Here's his information: ${JSON.stringify(this.knowledgeBase)}`
+                        },
+                        {
+                            role: 'user',
+                            content: message
+                        }
+                    ],
+                    max_tokens: 150,
+                    temperature: 0.7,
+                }),
+            });
+
+            const data = await response.json();
+            return data.choices[0].message.content;
+        } catch (error) {
+            console.error('External AI API error:', error);
+            return this.generateResponse(message);
+        }
+        */
         
         return this.generateResponse(message);
     }

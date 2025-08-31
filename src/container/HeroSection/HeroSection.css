@@ -780,6 +780,8 @@
     
     .scroll-indicator {
         bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .name-header {
@@ -888,11 +890,14 @@
     }
     
     .hero-visual {
-        display: none; /* Hide floating icons on very small screens */
+        flex: 0 0 auto;
+        order: 2;
     }
     
     .scroll-indicator {
         bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .name-header {
@@ -942,18 +947,25 @@
     }
     
     .floating-icons {
-        width: 150px;
-        height: 150px;
-        margin-top: 0.8rem;
+        width: 140px;
+        height: 140px;
+        margin: 0.8rem auto 0;
     }
     
     .icon-item {
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 0.4rem;
+        border-radius: 10px;
+    }
+    
+    .icon-item:hover {
+        transform: translateY(-3px) scale(1.03);
     }
     
     .scroll-indicator {
         bottom: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 0.8rem;
     }
     
