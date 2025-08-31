@@ -7,8 +7,8 @@ const AIChat = () => {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hi! I'm Zayeem's AI assistant powered by Groq Cloud. I can answer detailed questions about his background, technical skills, projects, work experience, and more. Try asking me anything - I understand natural language! 🤖\n\nI have comprehensive knowledge about:\n• His education at University of Toledo\n• Technical skills in JavaScript, React, Node.js, Python, and more\n• Projects like U-Eats, NeuroTransmitter, and AlgoAce\n• Work experience and internships\n• Contact information and career goals\n\nFeel free to ask specific questions or use the quick question buttons below!",
-            sender: 'ai',
+            text: "Hello! I'm here to help you learn about Zayeem's background, skills, and experience. Feel free to ask me anything about his education, projects, work experience, or how to get in touch! 💼\n\nYou can ask about:\n• His degree from the University of Toledo\n• Skills in JavaScript, React, Node.js, Python, and others\n• Projects like U-Eats, NeuroTransmitter, and AlgoAce\n• Professional experience and internships\n• How to contact him or his career goals\n\nType your question below or use the quick question buttons to get started.",
+            sender: 'bot',
             timestamp: new Date()
         }
     ]);
@@ -44,23 +44,20 @@ const AIChat = () => {
         setInputMessage('');
         setIsTyping(true);
 
-        // Use the enhanced AI service
         try {
-            // Simulate realistic AI response time
             await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 1200));
             
-            const aiResponseText = await aiService.generateResponse(inputMessage, messages);
+            const responseText = await aiService.generateResponse(inputMessage, messages);
             
-            const aiResponse = {
+            const response = {
                 id: Date.now() + 1,
-                text: aiResponseText,
-                sender: 'ai',
+                text: responseText,
+                sender: 'bot',
                 timestamp: new Date()
             };
             
-            setMessages(prev => [...prev, aiResponse]);
+            setMessages(prev => [...prev, response]);
         } catch (error) {
-            console.error('AI response error:', error);
             let errorMessage = "I'm experiencing high demand right now. ";
             
             if (error.message?.includes('multiple attempts')) {
@@ -72,7 +69,7 @@ const AIChat = () => {
             const errorResponse = {
                 id: Date.now() + 1,
                 text: errorMessage,
-                sender: 'ai',
+                sender: 'bot',
                 timestamp: new Date()
             };
             setMessages(prev => [...prev, errorResponse]);
@@ -117,11 +114,11 @@ const AIChat = () => {
                 ) : (
                     <div className="chat-button-content">
                         <i className="fas fa-robot"></i>
-                        <span className="ai-text">AI</span>
-                        <span className="assistant-text">Assistant</span>
+                        <span className="chat-text">Chat</span>
+                        <span className="help-text">Helper</span>
                     </div>
                 )}
-                {!isOpen && <span className="chat-tooltip">Ask AI about Zayeem</span>}
+                {!isOpen && <span className="chat-tooltip">Ask about Zayeem</span>}
             </div>
 
             {/* Chat Window */}
@@ -129,9 +126,9 @@ const AIChat = () => {
                 <div className="chat-header">
                     <div className="chat-header-info">
                         <div className="chat-title">
-                            <h4>Zayeem's AI Assistant</h4>
+                            <h4>Zayeem's Chat Helper</h4>
                             <span className="chat-status">
-                                {aiService.isGroqAvailable() ? '🧠 Groq Powered' : '⚡ Quick Response'} • Online
+                                {aiService.isGroqAvailable() ? '🧠 Smart Response' : '⚡ Quick Response'} • Online
                             </span>
                         </div>
                     </div>
@@ -153,7 +150,6 @@ const AIChat = () => {
                             </div>
                         ))}
                         
-                        {/* Quick Questions */}
                         {messages.length === 1 && (
                             <div className="quick-questions">
                                 <p>Quick questions you can ask:</p>
@@ -172,7 +168,7 @@ const AIChat = () => {
                         )}
                         
                         {isTyping && (
-                            <div className="message ai">
+                            <div className="message bot">
                                 <div className="message-content">
                                     <div className="typing-indicator">
                                         <span></span>

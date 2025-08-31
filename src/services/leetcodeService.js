@@ -104,18 +104,16 @@ export const fetchLeetCodeData = async (username = 'zayeem_zaki') => {
     const data = await response.json();
     
     if (data.errors) {
-      console.warn('GraphQL errors:', data.errors);
-      throw new Error('GraphQL errors: ' + JSON.stringify(data.errors));
+      return null;
     }
 
     return data.data;
   } catch (error) {
-    console.error('Error fetching LeetCode GraphQL data:', error);
     throw error;
   }
 };
 
-// Enhanced LeetCode Stats API with multiple endpoints
+// LeetCode Stats API with multiple endpoints
 export const fetchLeetCodeStatsAPI = async (username = 'zayeem_zaki') => {
   const endpoints = [
     `https://leetcode-stats-api.herokuapp.com/${username}`,
@@ -157,7 +155,6 @@ export const fetchLeetCodeStatsAPI = async (username = 'zayeem_zaki') => {
         };
       }
     } catch (error) {
-      console.warn(`Failed to fetch from ${endpoint}:`, error);
       continue;
     }
   }
@@ -173,7 +170,7 @@ export const fetchLeetCodeContest = async (username = 'zayeem_zaki') => {
       return await response.json();
     }
   } catch (error) {
-    console.warn('Failed to fetch contest data:', error);
+    // Handle error silently
   }
   return null;
 };

@@ -26,8 +26,6 @@ const Skills = () => {
         { name: 'Java', level: 90, icon: '☕' },
         { name: 'Python', level: 95, icon: '🐍' },
         { name: 'Swift', level: 85, icon: '🦅' },
-        { name: 'C++', level: 80, icon: '💻' },
-        { name: 'C#', level: 75, icon: '🔣' },
         { name: 'JavaScript', level: 88, icon: '🟨' },
         { name: 'HTML', level: 92, icon: '🌐' },
         { name: 'CSS', level: 90, icon: '🎨' }
@@ -37,17 +35,16 @@ const Skills = () => {
         { name: 'React', level: 90, icon: '⚛️' },
         { name: 'Node.js', level: 85, icon: '🟩' },
         { name: 'Flask', level: 80, icon: '🌿' },
-        { name: '.NET', level: 70, icon: '🔷' },
-        { name: 'Spring Boot', level: 85, icon: '🌱' },
+        { name: 'Spring Boot', level: 95, icon: '🌱' },
+        { name: 'Vue.js', level: 90, icon: '🖖' },
         { name: 'AWS', level: 75, icon: '☁️' },
         { name: 'Firebase', level: 88, icon: '🔥' },
         { name: 'Docker', level: 70, icon: '🐳' }
     ];
 
     const databaseSkills = [
-        { name: 'SQL', level: 85, icon: '�️' },
-        { name: 'NoSQL', level: 80, icon: '🔄' },
-        { name: 'MySQL', level: 88, icon: '🐬' },
+        { name: 'SQL', level: 85, icon: '🐬' },
+        { name: 'PostgreSQL', level: 90, icon: '🦙' },
         { name: 'Firestore', level: 85, icon: '🔥' }
     ];
 

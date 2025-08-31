@@ -226,6 +226,11 @@
     margin-bottom: 2rem;
     opacity: 0.9;
     line-height: 1.6;
+    color: #b2fefa; /* soft aqua gradient color */
+    background: linear-gradient(90deg, #b2fefa 0%, #f6d365 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-buttons {

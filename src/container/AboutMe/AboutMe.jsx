@@ -33,14 +33,14 @@ const AboutMe = () => {
                         <div className="about-text" data-aos="fade-right">
                             <p>
                                 Computer Science student at University of Toledo, graduating December 2025. 
-                                <b> 3.7 GPA</b> with <b>President's and Dean's List</b> recognition. 
+                                <b> 3.6 GPA</b> with <b>President's and Dean's List</b> recognition. 
                                 Passionate about <b>Software Development</b> and <b>Problem Solving</b>.
                             </p>
                             <p>
                                 Currently a <b>Software Engineer Intern at CCC Intelligent Solutions</b>, where I am working on <b>Spring Boot</b>, <b>Vue.js</b>, and <b>Docker</b>. 
                                 Previously interned at <b>First Solar</b> as IT Security Intern, where I automated workflows 
                                 using <b>Python</b> and <b>CrowdStrike APIs</b>, and built a <b>Flask website</b> with 
-                                <b>Bootstrap</b> frontend.
+                                <b> Bootstrap</b> frontend.
                             </p>
                             <p>
                                 Built <b>U-Eats</b> restaurant platform on <b>AWS Amplify</b> using <b>React.js</b> and <b>Node.js</b>. 
@@ -48,7 +48,7 @@ const AboutMe = () => {
                                 featuring real-time collaboration and document management.
                             </p>
                             <p>
-                                Skilled in <b>Python, Java, Swift, JavaScript, React, AWS, Firebase</b> and more. 
+                                Skilled in <b>Python, Java, Swift, JavaScript, Spring Boot, Vue.js, React, AWS, Firebase</b> and more. 
                                 Always excited to learn new technologies and solve challenging problems.
                             </p>
                         </div>

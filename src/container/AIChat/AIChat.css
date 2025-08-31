@@ -4,7 +4,7 @@
     bottom: 2rem;
     right: 2rem;
     width: 120px;
-    height: 60px;
+    height: 100px;
     background: linear-gradient(45deg, #4ecdc4, #44a08d);
     border-radius: 30px;
     display: flex;
@@ -39,7 +39,7 @@
     text-align: center;
 }
 
-.ai-text {
+.chat-text {
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -49,7 +49,7 @@
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.assistant-text {
+.help-text {
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.3px;
@@ -232,7 +232,7 @@
     justify-content: flex-end;
 }
 
-.message.ai {
+.message.bot {
     justify-content: flex-start;
 }
 
@@ -257,7 +257,7 @@
     margin-left: auto;
 }
 
-.message.ai .message-content {
+.message.bot .message-content {
     background: white;
     color: #333;
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -454,12 +454,12 @@
         font-size: 1.3rem;
     }
     
-    .ai-text {
+    .chat-text {
         font-size: 0.65rem;
         margin-top: 0.1rem;
     }
     
-    .assistant-text {
+    .help-text {
         font-size: 0.55rem;
         margin-top: -0.1rem;
     }
@@ -500,12 +500,12 @@
         font-size: 1.2rem;
     }
     
-    .ai-text {
+    .chat-text {
         font-size: 0.6rem;
         margin-top: 0.1rem;
     }
     
-    .assistant-text {
+    .help-text {
         font-size: 0.5rem;
         margin-top: -0.1rem;
     }

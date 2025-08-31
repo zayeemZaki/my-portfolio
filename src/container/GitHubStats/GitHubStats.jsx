@@ -9,6 +9,7 @@ const GitHubStats = () => {
         totalStars: 0
     });
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetchGitHubStats();
@@ -32,8 +33,9 @@ const GitHubStats = () => {
                 totalStars: totalStars
             });
             setLoading(false);
-        } catch (error) {
-            console.error('Error fetching GitHub stats:', error);
+                } catch (error) {
+            setError('Unable to load GitHub stats at the moment.');
+        } finally {
             setLoading(false);
         }
     };

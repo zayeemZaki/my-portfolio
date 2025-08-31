@@ -76,7 +76,7 @@ const HeroSection = () => {
                         {`${texts[index].substring(0, subIndex)}${blink ? "|" : " "}`}
                     </h1>
                     <p className="hero-subtitle">
-                        Software Engineer Intern at CCC Intelligent Solutions
+                        Software Engineer Intern at CCC Intelligent Solutions · Actively <b>seeking full-time roles.</b> 
                     </p>
                     
                     {/* Primary Action Buttons */}

@@ -63,11 +63,7 @@ const LeetCode = () => {
   }, [isModalOpen]);
 
   const loadLeetCodeData = useCallback(async () => {
-    // Disabled API calls to prevent CORS errors
-    // Using static real data instead
-    console.log('Using static LeetCode data to prevent CORS errors');
     
-    // Keep the default real data - no API calls needed
     setStats(prevStats => ({
       ...prevStats,
       loading: false,

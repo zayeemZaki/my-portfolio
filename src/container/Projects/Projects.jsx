@@ -6,7 +6,7 @@ import NeuroTransmitter3 from '../../constants/NeuroTransmitter3.png';
 import ueats1 from '../../constants/u-eats1.png';
 import ueats2 from '../../constants/u-eats2.png';
 import ueats3 from '../../constants/u-eats3.png';
-import AlgoAce1 from '../../constants/algo-ace2.png';
+import AlgoAce1 from '../../constants/algo-ace1.png';
 import AlgoAce2 from '../../constants/algo-ace2.png';
 import AlgoAce3 from '../../constants/algo-ace3.png';
 
@@ -106,7 +106,7 @@ const Projects = () => {
             subtitle: "iOS Research Application",
             description: "Developed an iOS app for the University of Toledo Neurology department, integrating SwiftUI and UIKit to revolutionize research paper management and enhance communication among doctors. The app, currently available on the App Store, features advanced security measures such as Firebase Authentication and Face ID for robust data protection. Key functionalities include real-time chat threads, document annotation with text highlighting, commenting, and writing directly on documents, as well as Text-to-Speech capabilities, fostering seamless collaboration and productivity among users.",
             technologies: ["Swift", "Firebase", "Firestore", "SwiftUI", "UIKit"],
-            images: [NeuroTransmitter1, NeuroTransmitter2, NeuroTransmitter3],
+            images: [NeuroTransmitter3, NeuroTransmitter2, NeuroTransmitter1],
             url: "https://apps.apple.com/us/app/neuro-transmitter/id6463495879",
             category: "Mobile Development",
             status: "Published",
@@ -117,7 +117,7 @@ const Projects = () => {
             subtitle: "Educational YouTube Channel",
             description: "AlgoAce is a YouTube channel I created to share my expertise in data structures, algorithms, and LeetCode problem-solving. Through this project, I develop and deliver clear, concise, and engaging tutorials aimed at helping students and professionals improve their coding skills and excel in technical interviews. This project showcases my ability to break down complex topics, create educational content, and engage with an audience in the tech community.",
             technologies: ["Python", "Data Structures", "Algorithms", "LeetCode", "Education"],
-            images: [AlgoAce1, AlgoAce2, AlgoAce3],
+            images: [AlgoAce2, AlgoAce1, AlgoAce3],
             url: "https://www.youtube.com/@AlgoAcez",
             category: "Content Creation",
             status: "Active",

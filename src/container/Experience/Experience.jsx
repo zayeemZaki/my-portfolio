@@ -13,6 +13,7 @@ const experienceData = [
     location: 'Chicago, IL (Hybrid)',
     status: 'current',
     tasks: [
+      'Building a Spring Boot FIR application that reduces a 2-week manual process to 2 seconds through automation and scalable backend services.',
       'Created a mini Node.js service for Puppeteer-based PDF generation and deployed it using Docker, improving form rendering accuracy by 90% in a Spring Boot + Vue.js app.',
       'Built 165 responsive HTML forms with inline styles, ensuring accurate data reflection and optimizing for dynamic PDF generation and internal use.',
       'Fixed UI issues and enhanced responsiveness using Vue 3, reducing layout bugs by 70%.',

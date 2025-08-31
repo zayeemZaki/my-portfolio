@@ -61,19 +61,25 @@
 
 .cert-image {
   position: relative;
-  height: 200px;
+  height: 250px;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cert-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .cert-card:hover .cert-image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .cert-overlay {
@@ -191,6 +197,8 @@
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
+  max-height: 70vh;
 }
 
 .modal-info {
@@ -223,7 +231,7 @@
   }
   
   .cert-image {
-    height: 180px;
+    height: 220px;
   }
   
   .modal-content {
@@ -237,7 +245,7 @@
   }
   
   .cert-image {
-    height: 160px;
+    height: 200px;
   }
   
   .cert-info {
