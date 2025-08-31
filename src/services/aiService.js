@@ -483,7 +483,7 @@ export class AIService {
         this.lastRequestTime = now;
         
         const completion = await this.groq.chat.completions.create({
-            model: process.env.REACT_APP_GROQ_MODEL || 'llama3-8b-8192',
+            model: process.env.REACT_APP_GROQ_MODEL || 'llama-3.1-8b-instant',
             messages: [
                 { role: 'system', content: systemPrompt },
                 ...conversationMessages,
@@ -713,7 +713,7 @@ Remember: You're not just answering questions - you're actively advocating for Z
     getConfigStatus() {
         return {
             groqEnabled: this.isGroqAvailable(),
-            model: process.env.REACT_APP_GROQ_MODEL || 'llama3-8b-8192',
+            model: process.env.REACT_APP_GROQ_MODEL || 'llama-3.1-8b-instant',
             fallbackMode: !this.isGroqAvailable(),
             cacheSize: this.requestCache.size,
             recentRequests: this.requestTimes.length,
