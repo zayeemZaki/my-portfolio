@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutMe, Skills, Experience, Projects, Certificates, ContactMe, HeroSection, GitHubStats, LeetCode } from './container/index.js';
+import { AboutMe, Skills, Experience, Projects, Certificates, ContactMe, HeroSection, GitHubStats, LeetCode, AIChat } from './container/index.js';
 
 function App() {
 
@@ -14,6 +14,7 @@ function App() {
       <LeetCode />
       <Certificates />
       <ContactMe /> 
+      <AIChat />
     </div>
   );
 }

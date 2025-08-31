@@ -8,6 +8,7 @@ import Certificates from './Certificates/Certificates';
 import HeroSection from './HeroSection/HeroSection';
 import GitHubStats from './GitHubStats/GitHubStats';
 import LeetCode from './LeetCode/LeetCode';
+import AIChat from './AIChat/AIChat';
 
 export {
     Navbar,
@@ -19,5 +20,6 @@ export {
     Certificates,
     HeroSection,
     GitHubStats,
-    LeetCode
+    LeetCode,
+    AIChat
 };

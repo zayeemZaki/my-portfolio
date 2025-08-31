@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { fetchLeetCodeData, fetchLeetCodeStatsAPI, extractKeyMetrics } from '../../services/leetcodeService';
 import './LeetCode.css';
 
 const LeetCode = () => {
@@ -16,7 +15,7 @@ const LeetCode = () => {
   const [selectedBadge, setSelectedBadge] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [badges, setBadges] = useState([
+  const [badges] = useState([
     { id: '6501397', name: '365 Days Badge', icon: 'https://assets.leetcode.com/static_assets/marketing/lg365.png', creationDate: '2025-03-11' },
     { id: '7743401', name: '100 Days Badge 2025', icon: 'https://assets.leetcode.com/static_assets/others/lg25100.png', creationDate: '2025-08-04' },
     { id: '6357115', name: '50 Days Badge 2025', icon: 'https://assets.leetcode.com/static_assets/others/lg2550.png', creationDate: '2025-03-01' },
@@ -64,64 +63,16 @@ const LeetCode = () => {
   }, [isModalOpen]);
 
   const loadLeetCodeData = useCallback(async () => {
-    try {
-      // Try multiple APIs in parallel for better accuracy
-      const [statsData, graphqlData] = await Promise.allSettled([
-        fetchLeetCodeStatsAPI('zayeem_zaki'),
-        fetchLeetCodeData('zayeem_zaki')
-      ]);
-      
-      let finalStats = null;
-      let userBadges = [];
-      let maxStreak = 0;
-      
-      // Use stats API data if available (more reliable for problem counts)
-      if (statsData.status === 'fulfilled' && statsData.value && statsData.value.status === 'success') {
-        finalStats = {
-          totalSolved: statsData.value.totalSolved || 0,
-          easy: statsData.value.easySolved || 0,
-          medium: statsData.value.mediumSolved || 0,
-          hard: statsData.value.hardSolved || 0,
-          loading: false,
-          error: false
-        };
-      }
-      
-      // Use GraphQL data for badges, streak, and additional info
-      if (graphqlData.status === 'fulfilled' && graphqlData.value && graphqlData.value.matchedUser) {
-        const graphData = graphqlData.value;
-        const keyMetrics = extractKeyMetrics(graphData);
-        
-        // If no stats data, use GraphQL data
-        if (!finalStats && keyMetrics.stats) {
-          finalStats = {
-            ...keyMetrics.stats,
-            loading: false,
-            error: false
-          };
-        }
-        
-        // Get badges and streak from extracted metrics
-        userBadges = keyMetrics.badges;
-        maxStreak = keyMetrics.maxStreak;
-        
-        // Only update if we got real data
-        if (finalStats) {
-          setStats({
-            ...finalStats,
-            maxStreak: maxStreak
-          });
-        }
-        
-        if (userBadges.length > 0) {
-          setBadges(userBadges);
-        }
-      }
-      
-    } catch (error) {
-      console.error('Failed to load LeetCode data:', error);
-      // Keep the default real data instead of fallback data
-    }
+    // Disabled API calls to prevent CORS errors
+    // Using static real data instead
+    console.log('Using static LeetCode data to prevent CORS errors');
+    
+    // Keep the default real data - no API calls needed
+    setStats(prevStats => ({
+      ...prevStats,
+      loading: false,
+      error: false
+    }));
   }, []);
 
   useEffect(() => {
