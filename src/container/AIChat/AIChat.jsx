@@ -7,7 +7,7 @@ const AIChat = () => {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hello! I'm here to help you learn about Zayeem's background, skills, and experience. Feel free to ask me anything about his education, projects, work experience, or how to get in touch! 💼\n\nYou can ask about:\n• His degree from the University of Toledo\n• Skills in JavaScript, React, Node.js, Python, and others\n• Projects like U-Eats, NeuroTransmitter, and AlgoAce\n• Professional experience and internships\n• How to contact him or his career goals\n\nType your question below or use the quick question buttons to get started.",
+            text: "Hey there! I'm Zayeem's AI assistant. Ask me anything about his skills, projects, experience, or how to connect with him!",
             sender: 'bot',
             timestamp: new Date()
         }
@@ -126,9 +126,9 @@ const AIChat = () => {
                 <div className="chat-header">
                     <div className="chat-header-info">
                         <div className="chat-title">
-                            <h4>Zayeem's Chat Helper</h4>
+                            <h4>AI chat</h4>
                             <span className="chat-status">
-                                {aiService.isGroqAvailable() ? '🧠 Smart Response' : '⚡ Quick Response'} • Online
+                                Online
                             </span>
                         </div>
                     </div>

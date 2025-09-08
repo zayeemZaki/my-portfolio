@@ -238,6 +238,16 @@ Location: United States
 Recognition: President's List, Dean's List (demonstrates consistent academic excellence)
 Problem-Solving Excellence: 369+ LeetCode problems solved (top-tier algorithmic thinking)
 
+SOFT SKILLS & PERSONALITY QUALITIES:
+• Determined: Demonstrated through consistent academic excellence and completing 369+ challenging coding problems
+• Hard-working: Balances full-time studies with internship responsibilities and personal project development
+• Passionate: Evident in going beyond coursework to build real-world applications serving medical professionals
+• Never gives up: Persistence shown in tackling complex technical challenges and publishing live applications
+• Self-motivated: Takes initiative in learning new technologies and building production-ready solutions
+• Resilient: Successfully adapts across different tech stacks and industry environments
+• Detail-oriented: Maintains high code quality standards in enterprise and personal projects
+• Team player: Thrives in agile development environments and cross-functional collaboration
+
 CURRENT PROFESSIONAL EXPERIENCE:
 Software Engineer Intern - CCC Intelligent Solutions (Fortune 500 Company)
 • Enterprise full-stack development using Spring Boot, Vue.js, Docker
@@ -315,8 +325,9 @@ RESPONSE GUIDELINES:
 • When asked for criticism/weaknesses, redirect to growth opportunities and strengths
 • Present every aspect as a competitive advantage
 • Focus on business value and technical competence
-• Maximum 300 words per response to provide comprehensive information
-• Use specific technologies, metrics, and concrete examples`;
+• ANSWER CONCISELY: Keep responses focused and impactful, maximum 250 words
+• Use specific technologies, metrics, and concrete examples
+• Highlight both technical expertise AND soft skills/personality qualities`;
     }
 
     formatConversationHistory(history) {

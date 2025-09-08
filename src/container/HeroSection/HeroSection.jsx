@@ -57,14 +57,10 @@ const HeroSection = () => {
         }
     };
 
-    const downloadResume = () => {
-        // Create a link element and trigger download
-        const link = document.createElement('a');
-        link.href = '/Zayeem_zaki_resume.pdf'; // Path to your resume in public folder
-        link.download = 'Zayeem_Zaki_Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    const openResume = () => {
+        // Try different approaches for opening the resume
+        const resumeUrl = `${window.location.origin}/Zayeem_zaki_resume.pdf`;
+        window.open(resumeUrl, '_blank', 'noopener,noreferrer');
     };
 
     return (
@@ -89,9 +85,9 @@ const HeroSection = () => {
                         </button>
                         <button 
                             className="btn-secondary" 
-                            onClick={() => scrollToSection('contact-me')}
+                            onClick={openResume}
                         >
-                            Get In Touch
+                            Resume
                         </button>
                     </div>
 
@@ -99,11 +95,11 @@ const HeroSection = () => {
                     <div className="nav-menu">
                         <button 
                             className="nav-btn" 
-                            onClick={downloadResume}
-                            title="Download Resume"
+                            onClick={() => scrollToSection('contact-me')}
+                            title="Get In Touch"
                         >
-                            <span className="nav-icon">📄</span>
-                            Resume
+                            <span className="nav-icon">👋</span>
+                            Get In Touch
                         </button>
                         <button 
                             className="nav-btn" 
