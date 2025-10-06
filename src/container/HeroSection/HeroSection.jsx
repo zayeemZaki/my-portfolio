@@ -59,7 +59,7 @@ const HeroSection = () => {
 
     const openResume = () => {
         // Try different approaches for opening the resume
-        const resumeUrl = `${window.location.origin}/Zayeem_zaki_resume.pdf`;
+        const resumeUrl = `${window.location.origin}/resume.pdf`;
         window.open(resumeUrl, '_blank', 'noopener,noreferrer');
     };
 

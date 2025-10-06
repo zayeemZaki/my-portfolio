@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import resumePDF from '../../constants/Zayeem_zaki_resume.pdf';
+import resumePDF from '../../constants/resume.pdf';
 import { Link } from 'react-scroll';
 
 const texts = ["Zayeem Zaki", "A Computer Science Student", "A Software Developer", "A Full Stack Developer"];
