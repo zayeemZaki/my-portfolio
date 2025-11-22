@@ -9,7 +9,7 @@ export const portfolioData: PortfolioData = {
     email: 'zayeemzaki45@gmail.com',
     location: 'United States',
     profileImage: './profile.jpeg', 
-    resumeUrl: '/resume.pdf',
+    resumeUrl: '/Zaki, Zayeem.pdf',
     bio: 'Passionate software engineer with 5+ years of experience building scalable systems and AI-powered applications. Specialized in full-stack development, machine learning, and cloud architecture. I thrive on solving complex problems and delivering high-impact solutions.',
     socialLinks: [
       {
@@ -26,222 +26,330 @@ export const portfolioData: PortfolioData = {
   },
 
   skills: [
-    // Languages
-    { name: 'Python', category: 'Languages' },
-    { name: 'TypeScript', category: 'Languages' },
-    { name: 'JavaScript', category: 'Languages' },
+    // Languages (Matches Resume + Portfolio Tech)
     { name: 'Java', category: 'Languages' },
+    { name: 'Python', category: 'Languages' },
+    { name: 'JavaScript', category: 'Languages' },
+    { name: 'TypeScript', category: 'Languages' },
     { name: 'SQL', category: 'Languages' },
-    { name: 'Go', category: 'Languages' },
+    { name: 'Swift', category: 'Languages' },
+
+    // Frameworks (Matches Resume)
+    { name: 'Spring Boot', category: 'Frameworks' }, 
+    { name: 'React', category: 'Frameworks' }, 
+    { name: 'Vue.js', category: 'Frameworks' }, 
+    { name: 'Next.js', category: 'Frameworks' }, 
+    { name: 'Node.js', category: 'Frameworks' }, 
+    { name: 'Flask', category: 'Frameworks' }, 
+    { name: 'SwiftUI', category: 'Frameworks' }, 
+
+    // AI & Data (Specific to your Projects)
+    { name: 'OpenAI API', category: 'AI/ML' }, 
+    { name: 'GraphRAG', category: 'AI/ML' }, 
+    { name: 'Neo4j', category: 'AI/ML' }, 
+    { name: 'Vector Search', category: 'AI/ML' }, 
     
-    // Frameworks
-    { name: 'React', category: 'Frameworks' },
-    { name: 'Node.js', category: 'Frameworks' },
-    { name: 'Next.js', category: 'Frameworks' },
-    { name: 'FastAPI', category: 'Frameworks' },
-    { name: 'Django', category: 'Frameworks' },
-    { name: 'Express', category: 'Frameworks' },
-    { name: 'Spring Boot', category: 'Frameworks' },
-    
-    // AI/ML
-    { name: 'TensorFlow', category: 'AI/ML' },
-    { name: 'PyTorch', category: 'AI/ML' },
-    { name: 'Scikit-learn', category: 'AI/ML' },
-    { name: 'OpenAI API', category: 'AI/ML' },
-    { name: 'LangChain', category: 'AI/ML' },
-    { name: 'Hugging Face', category: 'AI/ML' },
-    
-    // Tools
-    { name: 'Docker', category: 'Tools' },
-    { name: 'Kubernetes', category: 'Tools' },
-    { name: 'AWS', category: 'Tools' },
-    { name: 'Google Cloud', category: 'Tools' },
-    { name: 'PostgreSQL', category: 'Tools' },
-    { name: 'MongoDB', category: 'Tools' },
-    { name: 'Redis', category: 'Tools' },
-    { name: 'Git', category: 'Tools' },
-    { name: 'CI/CD', category: 'Tools' },
+    // Tools & Cloud (Matches Resume)
+    { name: 'AWS', category: 'Tools' }, 
+    { name: 'Docker', category: 'Tools' }, 
+    { name: 'Kubernetes', category: 'Tools' }, 
+    { name: 'Kafka', category: 'Tools' }, 
+    { name: 'Firebase', category: 'Tools' }, 
+    { name: 'Git', category: 'Tools' }, 
   ],
 
   experiences: [
-    {
-      id: 'exp-1',
-      role: 'Senior Software Engineer',
-      company: 'Tech Company',
-      companyUrl: 'https://techcompany.com',
-      location: 'San Francisco, CA',
-      startDate: '2022-01',
-      endDate: 'Present',
-      current: true,
-      bullets: [
-        {
-          text: 'Architected and deployed a microservices-based AI recommendation system serving 2M+ daily users, reducing latency by 45% and increasing user engagement by 30%',
-          impact: '45% latency reduction, 30% engagement increase'
-        },
-        {
-          text: 'Led a team of 5 engineers to rebuild the core platform using React, TypeScript, and Node.js, resulting in 60% faster page loads and 99.9% uptime',
-          impact: '60% performance improvement, 99.9% uptime'
-        },
-        {
-          text: 'Implemented automated CI/CD pipelines using GitHub Actions and Docker, cutting deployment time from 2 hours to 15 minutes',
-          impact: '87% deployment time reduction'
-        }
-      ],
-      technologies: ['React', 'TypeScript', 'Node.js', 'Python', 'AWS', 'Docker', 'PostgreSQL']
-    },
-    {
-      id: 'exp-2',
-      role: 'Full Stack Developer',
-      company: 'Startup Inc',
-      companyUrl: 'https://startup.com',
-      location: 'Remote',
-      startDate: '2020-03',
-      endDate: '2021-12',
-      current: false,
-      bullets: [
-        {
-          text: 'Built a real-time data analytics dashboard using React and D3.js, enabling clients to visualize KPIs and make data-driven decisions',
-        },
-        {
-          text: 'Developed RESTful APIs with Node.js and Express, handling 10K+ requests per minute with 99.95% reliability',
-        },
-        {
-          text: 'Integrated third-party payment systems (Stripe, PayPal) and implemented secure authentication with JWT and OAuth 2.0',
-        }
-      ],
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'D3.js', 'AWS']
-    },
-    {
-      id: 'exp-3',
-      role: 'Software Engineer Intern',
-      company: 'Big Tech Corp',
-      companyUrl: 'https://bigtech.com',
-      location: 'Seattle, WA',
-      startDate: '2019-06',
-      endDate: '2019-12',
-      current: false,
-      bullets: [
-        {
-          text: 'Developed an internal tool for automated code review using Python and ML models, improving code quality scores by 25%',
-        },
-        {
-          text: 'Collaborated with cross-functional teams to design and implement new features for a cloud-based platform',
-        }
-      ],
-      technologies: ['Python', 'TensorFlow', 'React', 'PostgreSQL']
-    }
-  ],
+      {
+        id: 'exp-1',
+        role: 'Software Engineering Intern',
+        company: 'CCC Intelligent Solutions',
+        companyUrl: 'https://cccis.com',
+        location: 'Chicago, IL',
+        startDate: '2025-05',
+        endDate: 'Present',
+        current: true,
+        bullets: [
+          {
+            text: 'Building a Spring Boot FIR application that reduces a 2-week manual process to 2 seconds through automation and scalable backend services.',
+          },
+          {
+            text: 'Created a Node.js microservice for Puppeteer-based PDF generation and deployed it using Docker, improving form-rendering accuracy by 90% in a Spring Boot + Vue.js app.',
+          },
+          {
+            text: 'Built 165+ responsive HTML/Vue.js forms with inline styles, reducing layout issues by 70% and optimizing for dynamic PDF generation.',
+          },
+          {
+            text: 'Refactored a complex Kafka consumer to make the logic cleaner and more modular, resulting in easier debugging and faster feature development.',
+          },
+          {
+            text: 'Developed reusable common-ui components for the flagship product, reducing front-end development effort by over 3x.',
+          }
+        ],
+        technologies: ['Java', 'Spring Boot', 'Vue.js', 'Node.js', 'Docker', 'Kafka', 'Puppeteer', 'HTML']
+      },
+      {
+        id: 'exp-2',
+        role: 'Technical Solutions Architect (Volunteer)',
+        company: 'Daffodil Studios',
+        companyUrl: 'https://daffodilstudios.org', 
+        location: 'Vienna, VA (Remote)',
+        startDate: '2025-09',
+        endDate: 'Present',
+        current: true,
+        bullets: [
+          {
+            text: 'Architected a full-stack donation platform using Firebase for backend logic and Stripe for payments, wrapping the frontend in Vue.js/Nuxt for a high-performance user experience.',
+          },
+          {
+            text: 'Modernizing nonprofit websites to improve performance and enable secure donation workflows while maintaining legacy Wix and Squarespace sites for accessibility.',
+          }
+        ],
+        technologies: ['Vue.js', 'Nuxt.js', 'Firebase', 'Stripe', 'JavaScript']
+      },
+      {
+        id: 'exp-3',
+        role: 'Peer Mentor',
+        company: 'University of Toledo',
+        companyUrl: 'https://www.utoledo.edu',
+        location: 'Toledo, OH',
+        startDate: '2025-01',
+        endDate: '2025-05',
+        current: false,
+        bullets: [
+          {
+            text: 'Mentored 30+ students in Python and Object-Oriented Programming (OOP), helping them debug complex code and successfully complete course assignments.',
+          },
+          {
+            text: 'Provided constructive feedback on projects and fostered problem-solving skills to support student success in foundational coding concepts.',
+          }
+        ],
+        technologies: ['Python', 'OOP', 'Mentorship']
+      },
+      {
+        id: 'exp-4',
+        role: 'IT Security Intern',
+        company: 'First Solar',
+        companyUrl: 'https://www.firstsolar.com',
+        location: 'Perrysburg, OH',
+        startDate: '2024-01',
+        endDate: '2024-12',
+        current: false,
+        bullets: [
+          {
+            text: 'Engineered a Flask-based automation service using Python to orchestrate CrowdStrike security workflows, reducing manual incident response time by 30%.',
+          },
+          {
+            text: 'Built Python scripts to detect stale accounts, automate admin rights removal, and streamline Falcon Containment for multiple hosts.',
+          },
+          {
+            text: 'Developed On-Demand Scan (ODS) automation scripts to proactively detect and remediate vulnerabilities across systems.',
+          },
+          {
+            text: 'Created targeted search scripts to locate entities using specific filters, aiding in precise security investigations and audits.',
+          }
+        ],
+        technologies: ['Python', 'Flask', 'CrowdStrike API', 'Automation', 'Excel', 'Security']
+      },
+      {
+        id: 'exp-5',
+        role: 'Information Technology Technician',
+        company: 'University of Toledo',
+        companyUrl: 'https://www.utoledo.edu',
+        location: 'Toledo, OH',
+        startDate: '2021-09',
+        endDate: 'Present',
+        current: true,
+        bullets: [
+          {
+            text: 'Resolved 100+ software and hardware issues with an average resolution time under 24 hours, including hardware replacements and malware removal.',
+          },
+          {
+            text: 'Diagnosed and debugged staff and lab desktops using PXE boot, archive directory management, and system re-imaging.',
+          },
+          {
+            text: 'Enhanced the efficiency and reliability of the university IT infrastructure, improving system performance and user satisfaction.',
+          }
+        ],
+        technologies: ['Hardware Troubleshooting', 'Networking', 'System Imaging', 'Technical Support']
+      }
+    ],
 
-  projects: [
+projects: [
     {
       id: 'project-1',
-      title: 'AI-Powered Code Review Assistant',
-      shortDescription: 'Automated code review system using LLMs',
-      fullDescription: 'An intelligent code review assistant that leverages large language models to analyze pull requests, detect potential bugs, suggest improvements, and ensure code quality standards. Built with a microservices architecture for scalability.',
-      thumbnail: '/projects/code-review.jpg',
-      techStack: ['Python', 'FastAPI', 'OpenAI API', 'React', 'TypeScript', 'Docker', 'PostgreSQL', 'Redis'],
+      title: 'AI Memory App',
+      shortDescription: 'GraphRAG engine with Neo4j & Vector Search',
+      fullDescription: 'A next-generation AI memory system that outperforms standard vector search by mapping entity relationships using GraphRAG. It features a multi-user sandbox with strict data isolation and a real-time "brain" visualization dashboard.',
+      thumbnail: '/projects/project1.png',
+      techStack: ['Neo4j', 'GraphRAG', 'React', 'D3.js', 'Python', 'Vector Search'],
       category: 'AI/ML',
       featured: true,
-      liveUrl: 'https://demo.yourproject.com',
-      repoUrl: 'https://github.com/yourusername/project',
-      date: '2024-03',
+      liveUrl: 'https://ai-memory-app.vercel.app/',
+      repoUrl: 'https://github.com/zayeemZaki/ai-memory-app',
+      date: '2025-11',
       keyFeatures: [
-        'Real-time code analysis using GPT-4',
-        'Custom rule engine for team-specific standards',
-        'Integration with GitHub and GitLab',
-        'Detailed reporting dashboard with metrics',
-        'Machine learning model for bug prediction'
+        'GraphRAG engine mapping entity relationships',
+        'Multi-user sandbox with strict data isolation',
+        'Real-time "brain" visualization using React + D3.js',
+        'Hybrid search (Vector + Graph) implementation'
       ],
       systemDesign: {
-        description: 'Microservices architecture with event-driven processing',
+        description: 'Graph-based architecture ensuring data privacy and context retention',
         components: [
-          'React Frontend (TypeScript)',
-          'API Gateway (Kong)',
-          'Analysis Service (Python/FastAPI)',
-          'LLM Processing Service (OpenAI API)',
-          'PostgreSQL Database',
-          'Redis Cache',
-          'Message Queue (RabbitMQ)',
-          'Docker/Kubernetes'
+          'Graph Database (Neo4j)',
+          'Vector Store',
+          'React Frontend (Visualization)',
+          'Python Backend (RAG Logic)',
+          'Custom Session Logic (Data Isolation)'
         ]
       },
       technicalChallenges: {
-        situation: 'Processing large pull requests (1000+ lines) was taking over 2 minutes, causing poor user experience and API timeouts.',
-        task: 'Reduce processing time to under 30 seconds while maintaining accuracy and keeping costs under control.',
-        action: 'Implemented a chunking strategy to break large files into smaller segments, added parallel processing with worker pools, and introduced Redis caching for repeated code patterns. Also optimized LLM prompts to reduce token usage by 40%.',
-        result: 'Reduced average processing time from 120s to 22s (82% improvement), cut API costs by 45%, and achieved 95% user satisfaction rating.'
+        situation: 'Standard vector search struggles to understand complex relationships between entities, leading to hallucinated or disconnected answers.',
+        task: 'Build a retrieval system that understands context and relationships while maintaining strict user privacy in a shared database.',
+        action: 'Implemented a GraphRAG engine using Neo4j to map relationships and engineered custom session logic to enforce strict data isolation for multiple users.',
+        result: 'Outperformed standard vector search by providing relationship-aware context and enabled a secure multi-user environment.'
       }
     },
     {
       id: 'project-2',
-      title: 'Real-Time Analytics Platform',
-      shortDescription: 'Scalable data visualization and analytics dashboard',
-      fullDescription: 'A comprehensive analytics platform that processes and visualizes real-time data streams from multiple sources. Features interactive dashboards, custom reporting, and predictive analytics powered by machine learning.',
-      thumbnail: '/projects/analytics.jpg',
-      techStack: ['React', 'Next.js', 'TypeScript', 'Python', 'Apache Kafka', 'TimescaleDB', 'D3.js', 'TailwindCSS'],
-      category: 'Full-Stack',
+      title: 'AI Resume Analyzer',
+      shortDescription: 'LLM-powered Parser & Ranker',
+      fullDescription: 'An intelligent tool using LLM-API integration to parse, score, and rank resumes against job descriptions. It utilizes advanced prompt chaining to extract key skills and generate actionable optimization feedback.',
+      thumbnail: '', 
+      techStack: ['Python', 'LLM API', 'Prompt Engineering', 'React'],
+      category: 'AI/ML',
       featured: true,
-      liveUrl: 'https://analytics.yourproject.com',
-      repoUrl: 'https://github.com/yourusername/analytics',
-      date: '2024-01',
+      repoUrl: 'https://github.com/zayeemZaki/AI-resume-analyzer',
+      date: '2025-04',
       keyFeatures: [
-        'Real-time data ingestion from Kafka streams',
-        'Interactive visualizations with D3.js',
-        'Custom dashboard builder with drag-and-drop',
-        'Predictive analytics using ML models',
-        'Export capabilities (PDF, CSV, Excel)',
-        'Role-based access control'
+        `Automatic parsing, scoring, and ranking of resumes against job descriptions`,
+        'Multi-step prompt chains for deep analysis',
+        'Gap analysis and skill extraction',
+        'Generation of actionable optimization feedback'
       ],
       systemDesign: {
-        description: 'Event-driven architecture with real-time data processing',
+        description: 'Pipeline-based LLM processing architecture',
         components: [
-          'Next.js Frontend',
-          'REST API (Node.js)',
-          'Apache Kafka (Data Streaming)',
-          'Python Analytics Engine',
-          'TimescaleDB (Time-series data)',
-          'Redis (Caching)',
-          'AWS S3 (Storage)',
-          'Docker/ECS'
+          'Input Parser (PDF/Text)',
+          'Prompt Chain Orchestrator',
+          'LLM Inference Engine',
+          'Scoring Algorithm',
+          'Feedback Generator'
         ]
       },
       technicalChallenges: {
-        situation: 'Dashboard performance degraded significantly when visualizing datasets with over 100K data points, causing browser freezes.',
-        task: 'Enable smooth visualization of large datasets without compromising interactivity or requiring page refreshes.',
-        action: 'Implemented data aggregation on the backend, virtual scrolling for tables, canvas-based rendering for large charts, and Web Workers for heavy computations. Added intelligent data sampling that maintains statistical accuracy.',
-        result: 'Achieved smooth 60fps rendering with datasets up to 1M points, reduced initial load time by 70%, and enabled real-time updates without performance impact.'
+        situation: 'Generic LLM prompts often produced vague advice or hallucinated skills that were not present in the resume.',
+        task: 'Create a system that provides concrete, evidence-based feedback and accurate scoring.',
+        action: 'Engineered a multi-step prompt-chain to guide the model specifically in extracting key skills and identifying experience gaps against the job description.',
+        result: 'Achieved consistent, actionable, and in-depth optimization feedback for users.'
       }
     },
     {
       id: 'project-3',
-      title: 'E-Commerce Recommendation Engine',
-      shortDescription: 'ML-powered product recommendation system',
-      fullDescription: 'A sophisticated recommendation engine that uses collaborative filtering, content-based filtering, and deep learning to provide personalized product suggestions.',
-      thumbnail: '/projects/ecommerce.jpg',
-      techStack: ['Python', 'TensorFlow', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'],
-      category: 'AI/ML',
+      title: 'Food-Sharing Logistics Platform',
+      shortDescription: 'Centralized donation workflow using React Context',
+      fullDescription: 'A role-based logistics platform connecting volunteers and shelters. It eliminates manual coordination by centralizing the donation workflow.',
+      thumbnail: '',
+      techStack: ['React', 'Context API', 'JavaScript', 'CSS'],
+      category: 'Full-Stack',
       featured: false,
-      repoUrl: 'https://github.com/yourusername/recommendations',
-      date: '2023-09',
+      repoUrl: 'https://github.com/zayeemZaki/ShareBite',
+      date: '2025-11',
       keyFeatures: [
-        'Hybrid recommendation algorithm',
-        'Real-time personalization',
-        'A/B testing framework',
-        'Performance metrics dashboard',
-        'Cold-start problem handling'
+        'Role-based logistics management',
+        'Centralized donation workflow',
+        'Real-time coordination elimination'
       ],
       systemDesign: {
-        description: 'ML pipeline with real-time inference',
+        description: 'Frontend-focused state management architecture',
         components: [
-          'Data Collection Service',
-          'Feature Engineering Pipeline',
-          'TensorFlow Model Training',
-          'FastAPI Inference API',
-          'PostgreSQL (User/Product data)',
-          'Redis (Model cache)',
-          'Airflow (Workflow orchestration)'
+          'React Frontend',
+          'Context API (State Management)',
+          'Role-Based Access Control (RBAC)',
+          'Logistics Scheduler'
+        ]
+      }
+    },
+    {
+      id: 'project-4',
+      title: 'Neuro-Transmitter',
+      shortDescription: 'Secure Zero-Trust iOS App',
+      fullDescription: 'A responsive native interface built with SwiftUI featuring a zero-trust authentication environment where new accounts require explicit admin verification.',
+      thumbnail: '/projects/project4.jpeg', // Placeholder
+      techStack: ['SwiftUI', 'Firebase Auth', 'Firestore', 'Cloud Messaging'],
+      liveUrl: 'https://apps.apple.com/us/app/neuro-transmitter/id6463495879',
+      category: 'Mobile',
+      featured: false,
+      repoUrl: 'https://github.com/zayeemZaki/NeuroTransmitter',
+      date: '2023-08',
+      keyFeatures: [
+        'Zero-trust authentication environment',
+        'Explicit administrator verification logic',
+        'Real-time push alerts via Cloud Messaging',
+        'Automatic system-wide dark-mode adaptation'
+      ],
+      systemDesign: {
+        description: 'Serverless mobile architecture',
+        components: [
+          'SwiftUI Native Client',
+          'Firebase Authentication',
+          'Firestore Security Rules',
+          'Firebase Cloud Messaging'
+        ]
+      }
+    },
+    {
+      id: 'project-5',
+      title: 'Production Restaurant Website',
+      shortDescription: 'High-availability web app with automated payments',
+      fullDescription: 'A production-grade restaurant application hosted on AWS Amplify with 99% uptime. Features a fully automated checkout flow using Stripe and Node.js.',
+      thumbnail: '/projects/project5.jpg', 
+      liveUrl: 'https://main.d20ukwqpkslt8j.amplifyapp.com/',
+      techStack: ['AWS Amplify', 'Node.js', 'Stripe', 'React'],
+      category: 'Full-Stack',
+      featured: false,
+      repoUrl: 'https://github.com/zayeemZaki/U-Eats',
+      date: '2023-12',
+      keyFeatures: [
+        '99% uptime during active business hours',
+        'Custom payment pipeline integration (Stripe)',
+        'Automated checkout flow',
+        'AWS Amplify deployment'
+      ],
+      systemDesign: {
+        description: 'Cloud-native serverless deployment',
+        components: [
+          'AWS Amplify (Hosting/CI/CD)',
+          'Node.js Backend',
+          'Stripe Payment Gateway',
+          'React Frontend'
+        ]
+      }
+    },
+    {
+      id: 'project-6',
+      title: 'ArtisanVale',
+      shortDescription: 'E-commerce Survey Platform',
+      fullDescription: 'An  e-commerce survey platform for artisan products.',
+      thumbnail: '/projects/artisan.jpg',
+      techStack: ['Vue'], // Assumed stack based on common Java projects, update if specific
+      category: 'Frontend',
+      featured: false,
+      liveUrl: 'https://artisanvale.in/',
+      repoUrl: 'https://github.com/zayeemZaki/ArtisanVale',
+      date: '2023', // Approximate
+      keyFeatures: [
+        'User authentication and profile management',
+        'Product catalog and shopping cart',
+        'Order management system'
+      ],
+      systemDesign: {
+        description: 'Monolithic architecture with REST APIs',
+        components: [
+          'Frontend Client',
+          'REST API Backend'
         ]
       }
     }
-  ]
+  ],
 };
