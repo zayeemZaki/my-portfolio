@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Building2, MapPin, Calendar, ArrowUpRight, Briefcase } from 'lucide-react';
+import { MapPin, Calendar, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../../store/data';
 import { Link } from 'react-router-dom';
 

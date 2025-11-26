@@ -194,7 +194,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                       {hasArchitectureDiagram && (
                         <div 
                           className="mb-4 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 group cursor-zoom-in relative"
-                          onClick={() => setSelectedImage(project.systemDesign!.imageUrl)}
+                          onClick={() => setSelectedImage(project.systemDesign?.imageUrl || null)}
                         >
                           <img
                             src={project.systemDesign.imageUrl}

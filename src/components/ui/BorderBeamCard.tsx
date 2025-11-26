@@ -25,7 +25,7 @@ const BorderBeamCard = ({ children, className = '' }: BorderBeamCardProps) => {
       </div>
       
       {/* Keyframe animation styles */}
-      <style jsx>{`
+      <style>{`
         @keyframes borderBeam {
           0% {
             transform: translateX(-100%) translateY(-100%) rotate(0deg);

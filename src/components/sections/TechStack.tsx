@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { 
-  Code2, Database, Globe, Cpu, Server, Cloud, Terminal, 
-  Layers, Box, Workflow, Braces, Command, Hash, Layout 
+  Code2, Database, Cpu, Server, Cloud, Terminal, 
+  Command, Layout 
 } from 'lucide-react';
 import { portfolioData } from '../../store/data';
 

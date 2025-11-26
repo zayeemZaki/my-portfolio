@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, X } from 'lucide-react';
 import { portfolioData } from '../store/data';
 import { useState } from 'react';
-import { Project } from '../types';
 import BorderBeamCard from '../components/ui/BorderBeamCard';
 
 const Projects = () => {
@@ -135,7 +134,7 @@ const Projects = () => {
                               {metric.value}
                             </span>
                           </div>
-                          {idx < project.metrics.length - 1 && (
+                          {idx < (project.metrics?.length ?? 0) - 1 && (
                             <div className="w-px h-4 bg-zinc-300 dark:bg-zinc-700" />
                           )}
                         </div>
