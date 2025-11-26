@@ -98,9 +98,9 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative"
           >
-            <div className="relative aspect-square max-w-lg mx-auto">
+            <div className="relative aspect-square max-w-[280px] sm:max-w-[320px] lg:max-w-lg mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-indigo-400/20 rounded-[2rem] rotate-6 blur-xl" />
               <div className="absolute inset-0 bg-zinc-50 dark:bg-zinc-900 rounded-[2rem] border border-zinc-200 dark:border-zinc-800 shadow-2xl overflow-hidden">
                  <img
