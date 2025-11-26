@@ -201,7 +201,7 @@ export const portfolioData: PortfolioData = {
       date: '2024-11',
       metrics: [
         { label: 'Latency', value: '<200ms' },
-        { label: 'Users', value: '500+' },
+        { label: 'Users', value: '10+' },
         { label: 'Accuracy', value: '94%' }
       ],
       keyFeatures: [
@@ -246,7 +246,7 @@ export const portfolioData: PortfolioData = {
       repoUrl: 'https://github.com/zayeemZaki/ai-memory-app',
       date: '2025-11',
       metrics: [
-        { label: 'Nodes', value: '50k+' },
+        { label: 'Nodes', value: '100+' },
         { label: 'Query Time', value: '<18ms' },
         { label: 'Accuracy', value: '98%' }
       ],
