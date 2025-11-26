@@ -39,21 +39,21 @@ const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-24 text-center"
+          className="mb-16 sm:mb-20 lg:mb-24 text-center px-4"
         >
           <p className="text-xs font-mono text-text-secondary uppercase tracking-widest mb-3">
             /projects
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-5">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4 sm:mb-5">
             Featured Work
           </h1>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
             Explore {projects.length} projects spanning AI systems, full-stack applications, and mobile experiences
           </p>
         </motion.header>
 
         {/* Projects - Alternating Layout */}
-        <div className="space-y-32 lg:space-y-40">
+        <div className="space-y-20 sm:space-y-28 lg:space-y-40">
           {sortedProjects.map((project, index) => {
             const isEven = index % 2 === 0;
             const isMobile = project.type === 'mobile';
@@ -72,34 +72,34 @@ const Projects = () => {
                 key={project.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
+                viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center ${
                   isEven ? '' : 'lg:flex-row-reverse'
                 }`}
               >
                 {/* Text Content */}
-                <div className={`space-y-8 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className={`space-y-6 sm:space-y-8 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                   {/* Header */}
                   <div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary leading-tight">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary leading-tight">
                         {project.title}
                       </h2>
                       {project.featured && (
-                        <span className="px-2.5 py-1 bg-accent-primary/10 text-accent-primary rounded-md text-xs font-semibold uppercase tracking-wider">
+                        <span className="px-2.5 py-1 bg-accent-primary/10 text-accent-primary rounded-md text-xs font-semibold uppercase tracking-wider w-fit">
                           Featured
                         </span>
                       )}
                     </div>
-                    <p className="text-sm font-mono text-text-secondary/70 uppercase tracking-wider">
+                    <p className="text-xs sm:text-sm font-mono text-text-secondary/70 uppercase tracking-wider">
                       {project.category} • {new Date(project.date).getFullYear()}
                     </p>
                   </div>
 
                   {/* Description */}
                   <div>
-                    <p className="text-lg text-text-secondary leading-relaxed">
+                    <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
                       {project.fullDescription}
                     </p>
                   </div>
@@ -123,9 +123,9 @@ const Projects = () => {
 
                   {/* Impact Metrics */}
                   {project.metrics && project.metrics.length > 0 && (
-                    <div className="flex items-center gap-4 py-4 px-5 bg-zinc-50 dark:bg-zinc-900/50 rounded-xl border border-zinc-200 dark:border-zinc-800">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 py-3 sm:py-4 px-4 sm:px-5 bg-zinc-50 dark:bg-zinc-900/50 rounded-xl border border-zinc-200 dark:border-zinc-800">
                       {project.metrics.map((metric, idx) => (
-                        <div key={idx} className="flex items-center gap-4">
+                        <div key={idx} className="flex items-center gap-3 sm:gap-4">
                           <div className="flex items-baseline gap-1.5">
                             <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400">
                               {metric.label}:
@@ -160,13 +160,13 @@ const Projects = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex items-center gap-3 pt-2">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-accent-primary hover:bg-accent-primary/90 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-accent-primary/25"
+                        className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 bg-accent-primary hover:bg-accent-primary/90 text-white text-sm font-semibold rounded-lg transition-colors shadow-lg shadow-accent-primary/25"
                       >
                         <ExternalLink size={16} />
                         <span>Live Demo</span>
@@ -177,7 +177,7 @@ const Projects = () => {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent-primary/50 hover:bg-bg-secondary/50 text-text-primary text-sm font-semibold rounded-lg transition-all"
+                        className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 border border-border hover:border-accent-primary/50 hover:bg-bg-secondary/50 text-text-primary text-sm font-semibold rounded-lg transition-all"
                       >
                         <Github size={16} />
                         <span>Source Code</span>
@@ -202,7 +202,7 @@ const Projects = () => {
                       {isMobile ? (
                         // Mobile Phone Mockup with 3D Tilt
                         <div
-                          className="relative mx-auto w-[320px] transition-transform duration-500 group-hover:scale-[1.02] cursor-zoom-in"
+                          className="relative mx-auto w-[280px] sm:w-[320px] transition-transform duration-500 group-hover:scale-[1.02] cursor-zoom-in"
                           style={{
                             transform: isEven 
                               ? 'rotateY(-8deg) rotateX(2deg)' 
@@ -289,7 +289,7 @@ const Projects = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="mt-6 space-y-4"
+                        className="mt-4 sm:mt-6 space-y-4"
                       >
                         {images.slice(1).map((img, idx) => (
                           <div

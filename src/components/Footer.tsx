@@ -14,11 +14,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-zinc-50 dark:bg-zinc-900/50 border-t border-zinc-100 dark:border-zinc-800 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6">
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 dark:from-indigo-400 dark:to-indigo-300 bg-clip-text text-transparent">
+          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
+            <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 dark:from-indigo-400 dark:to-indigo-300 bg-clip-text text-transparent">
               {personalInfo.name}
             </h3>
             <p className="text-zinc-600 dark:text-zinc-400 text-sm">
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
             <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50 uppercase tracking-wider">
               Quick Links
             </h4>
@@ -59,11 +59,11 @@ const Footer = () => {
           </div>
 
           {/* Social Links */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
             <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50 uppercase tracking-wider">
               Connect
             </h4>
-            <div className="flex space-x-4">
+            <div className="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
               {personalInfo.socialLinks.map((social) => {
                 const Icon = iconMap[social.icon.toLowerCase()] || Mail;
                 return (
@@ -82,7 +82,7 @@ const Footer = () => {
             </div>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm transition-colors block"
+              className="text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 text-sm transition-colors block break-all"
             >
               {personalInfo.email}
             </a>
@@ -90,9 +90,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-zinc-500 dark:text-zinc-500 text-sm flex items-center">
+        <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-zinc-200 dark:border-zinc-800">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+            <p className="text-zinc-500 dark:text-zinc-500 text-xs sm:text-sm text-center md:text-left">
               © {currentYear} {personalInfo.name}. Built with Tailwind CSS and React
             </p>
           </div>

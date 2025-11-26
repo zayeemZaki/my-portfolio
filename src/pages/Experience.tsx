@@ -25,7 +25,7 @@ const Experience = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
@@ -33,7 +33,7 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -41,7 +41,7 @@ const Experience = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 sm:mb-6">
               Professional Experience
             </h1>
           </motion.div>
@@ -50,7 +50,7 @@ const Experience = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-8"
+            className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-6 sm:mb-8"
           >
             A comprehensive overview of my career journey and key achievements
           </motion.p>
@@ -115,12 +115,12 @@ const Experience = () => {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 + 0.2, duration: 0.6 }}
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                    className="ml-8 md:ml-0 bg-zinc-50 dark:bg-zinc-900/50 backdrop-blur-sm rounded-xl p-6 border border-zinc-200 dark:border-zinc-800 hover:border-indigo-600/50 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-md"
+                    className="ml-6 sm:ml-8 md:ml-0 bg-zinc-50 dark:bg-zinc-900/50 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-zinc-200 dark:border-zinc-800 hover:border-indigo-600/50 dark:hover:border-indigo-500/50 transition-all duration-300 shadow-sm hover:shadow-md"
                   >
                     {/* Header */}
-                    <div className="mb-4">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+                    <div className="mb-3 sm:mb-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                        <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50">
                           {exp.role}
                         </h3>
                         {exp.current && (
@@ -237,17 +237,17 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="mt-20 text-center"
+          className="mt-16 sm:mt-20 text-center"
         >
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
-            className="bg-gradient-to-r from-indigo-50 to-indigo-100/50 dark:from-indigo-950/50 dark:to-indigo-900/30 rounded-2xl p-8 border border-indigo-200 dark:border-indigo-800"
+            className="bg-gradient-to-r from-indigo-50 to-indigo-100/50 dark:from-indigo-950/50 dark:to-indigo-900/30 rounded-2xl p-6 sm:p-8 border border-indigo-200 dark:border-indigo-800"
           >
-            <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-3 sm:mb-4">
               Interested in working together?
             </h3>
-            <p className="text-zinc-600 dark:text-zinc-400 mb-6">
+            <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 mb-5 sm:mb-6">
               Let's discuss how I can help bring your project to life
             </p>
             <motion.a

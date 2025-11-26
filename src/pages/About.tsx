@@ -208,14 +208,14 @@ const About = () => {
   }, [streakLoading, streakError]);
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-24 pb-20">
+    <div className="min-h-screen bg-bg-primary pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-6">
       <Section width="md">
         {/* Header */}
-        <div className="text-center mb-16">
-          <Heading level={1} align="center" animate className="mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <Heading level={1} align="center" animate className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl">
             About Me
           </Heading>
-          <Text variant="lead" align="center" color="muted">
+          <Text variant="lead" align="center" color="muted" className="text-base sm:text-lg">
             Software Engineer | Generative AI Specialist | Backend Architect
           </Text>
         </div>
@@ -225,12 +225,12 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
           <Card variant="elevated" padding="lg">
-            <div className="flex items-center space-x-3 mb-6">
-              <Terminal className="text-accent-primary" size={32} />
-              <Heading level={3}>Engineering Journey</Heading>
+            <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+              <Terminal className="text-accent-primary" size={24} />
+              <Heading level={3} className="text-lg sm:text-xl">Engineering Journey</Heading>
             </div>
             
             <div className="space-y-6">
@@ -275,11 +275,11 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
-          <div className="flex items-center space-x-3 mb-8">
-            <Award className="text-accent-secondary" size={32} />
-            <Heading level={2}>Credentials & Certifications</Heading>
+          <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+            <Award className="text-accent-secondary" size={24} />
+            <Heading level={2} className="text-xl sm:text-2xl md:text-3xl">Credentials & Certifications</Heading>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -353,11 +353,11 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
-          <div className="flex items-center space-x-3 mb-8">
-            <Github className="text-accent-primary" size={32} />
-            <Heading level={2}>GitHub Activity</Heading>
+          <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+            <Github className="text-accent-primary" size={24} />
+            <Heading level={2} className="text-xl sm:text-2xl md:text-3xl">GitHub Activity</Heading>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -378,21 +378,21 @@ const About = () => {
                    <a href="https://github.com/zayeemZaki" target="_blank" rel="noreferrer" className="text-accent-primary hover:underline text-sm">View GitHub</a>
                  </div>
               ) : (
-                <div className="space-y-6">
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div className="flex flex-col items-center p-3 bg-bg-primary/50 rounded-lg border border-border">
-                      <Star className="text-yellow-400 mb-2" size={20} />
-                      <span className="text-xl font-bold text-text-primary">{githubStats.stars}</span>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                    <div className="flex flex-col items-center p-2 sm:p-3 bg-bg-primary/50 rounded-lg border border-border">
+                      <Star className="text-yellow-400 mb-1 sm:mb-2" size={16} />
+                      <span className="text-lg sm:text-xl font-bold text-text-primary">{githubStats.stars}</span>
                       <span className="text-xs text-text-secondary">Stars</span>
                     </div>
-                    <div className="flex flex-col items-center p-3 bg-bg-primary/50 rounded-lg border border-border">
-                      <GitFork className="text-blue-400 mb-2" size={20} />
-                      <span className="text-xl font-bold text-text-primary">{githubStats.repos}</span>
+                    <div className="flex flex-col items-center p-2 sm:p-3 bg-bg-primary/50 rounded-lg border border-border">
+                      <GitFork className="text-blue-400 mb-1 sm:mb-2" size={16} />
+                      <span className="text-lg sm:text-xl font-bold text-text-primary">{githubStats.repos}</span>
                       <span className="text-xs text-text-secondary">Repos</span>
                     </div>
-                    <div className="flex flex-col items-center p-3 bg-bg-primary/50 rounded-lg border border-border">
-                      <Users className="text-emerald-400 mb-2" size={20} />
-                      <span className="text-xl font-bold text-text-primary">{githubStats.followers}</span>
+                    <div className="flex flex-col items-center p-2 sm:p-3 bg-bg-primary/50 rounded-lg border border-border">
+                      <Users className="text-emerald-400 mb-1 sm:mb-2" size={16} />
+                      <span className="text-lg sm:text-xl font-bold text-text-primary">{githubStats.followers}</span>
                       <span className="text-xs text-text-secondary">Followers</span>
                     </div>
                   </div>
@@ -428,7 +428,7 @@ const About = () => {
               )}
               {!streakError && !streakLoading && (
                 <img
-                  src={`https://streak-stats.demolab.com/?user=zayeemZaki&theme=dark&background=0f172a&border=334155&stroke=334155&ring=3b82f6&fire=10b981&currStreakLabel=e2e8f0&sideLabels=e2e8f0&currStreakNum=e2e8f0&dates=94a3b8&sideNums=10b981`}
+                  src={`https://github-readme-streak-stats-two-pied.vercel.app/demo/`}
                   alt="GitHub Streak"
                   className="w-full dark:block hidden"
                   loading="lazy"
@@ -488,19 +488,19 @@ const About = () => {
           id="contact"
         >
           <Card variant="elevated" padding="xl" className="bg-gradient-to-br from-accent-primary/10 to-accent-secondary/10 border-accent-primary/20">
-            <div className="text-center mb-8">
-              <Mail className="text-accent-primary mx-auto mb-4" size={48} />
-              <Heading level={3} align="center" className="mb-4">Let's Connect</Heading>
-              <Text variant="lead" align="center" color="muted">
+            <div className="text-center mb-6 sm:mb-8">
+              <Mail className="text-accent-primary mx-auto mb-3 sm:mb-4" size={40} />
+              <Heading level={3} align="center" className="mb-3 sm:mb-4 text-xl sm:text-2xl">Let's Connect</Heading>
+              <Text variant="lead" align="center" color="muted" className="text-base sm:text-lg">
                 I'm always open to discussing new opportunities, high-impact projects, or AI engineering collaborations.
               </Text>
             </div>
 
-            <Card variant="default" padding="md" className="max-w-2xl mx-auto mb-8">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <Card variant="default" padding="md" className="max-w-2xl mx-auto mb-6 sm:mb-8">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="text-accent-primary hover:text-accent-primary/80 text-lg font-semibold transition-colors"
+                  className="text-accent-primary hover:text-accent-primary/80 text-base sm:text-lg font-semibold transition-colors break-all"
                 >
                   {personalInfo.email}
                 </a>
@@ -510,13 +510,14 @@ const About = () => {
                   icon={emailCopied ? Check : Copy}
                   iconPosition="left"
                   onClick={handleCopyEmail}
+                  className="w-full sm:w-auto"
                 >
                   {emailCopied ? 'Copied!' : 'Copy Email'}
                 </Button>
               </div>
             </Card>
 
-            <div className="flex justify-center space-x-6">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
               {personalInfo.socialLinks
                 .filter(social => social.platform === 'LinkedIn' || social.platform === 'GitHub')
                 .map((social) => (
@@ -525,14 +526,14 @@ const About = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex flex-col items-center space-y-2 p-6 bg-bg-primary/50 hover:bg-accent-primary/10 rounded-xl border border-border hover:border-accent-primary/50 transition-all duration-200 group"
+                    className="flex flex-col items-center space-y-2 p-5 sm:p-6 bg-bg-primary/50 hover:bg-accent-primary/10 rounded-xl border border-border hover:border-accent-primary/50 transition-all duration-200 group"
                   >
                     {social.platform === 'LinkedIn' ? (
-                      <Linkedin className="text-text-secondary group-hover:text-accent-primary transition-colors" size={32} />
+                      <Linkedin className="text-text-secondary group-hover:text-accent-primary transition-colors" size={28} />
                     ) : (
-                      <Github className="text-text-secondary group-hover:text-accent-primary transition-colors" size={32} />
+                      <Github className="text-text-secondary group-hover:text-accent-primary transition-colors" size={28} />
                     )}
                     <span className="text-sm text-text-secondary group-hover:text-accent-primary font-medium transition-colors">
                       {social.platform}

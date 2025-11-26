@@ -19,29 +19,29 @@ const Hero = () => {
   const sentence = personalInfo.headline.split("");
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 bg-white dark:bg-zinc-950 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-12 sm:pb-16 lg:pb-20 bg-white dark:bg-zinc-950 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[20%] -right-[10%] w-[70vh] h-[70vh] bg-indigo-500/5 rounded-full blur-3xl" />
-        <div className="absolute top-[20%] -left-[10%] w-[50vh] h-[50vh] bg-indigo-400/5 rounded-full blur-3xl" />
+        <div className="absolute -top-[20%] -right-[10%] w-[50vh] sm:w-[70vh] h-[50vh] sm:h-[70vh] bg-indigo-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-[20%] -left-[10%] w-[40vh] sm:w-[50vh] h-[40vh] sm:h-[50vh] bg-indigo-400/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           <motion.div
             initial="hidden"
             animate="visible"
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8 text-center lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-block py-1 px-3 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-6">
+              <span className="inline-block py-1 px-3 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-4 sm:mb-6">
                 Available for hire
               </span>
-              <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight leading-tight mb-4 sm:mb-6">
                 {sentence.map((char, index) => (
                   <motion.span
                     key={`${char}-${index}`}
@@ -56,7 +56,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed"
+                className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               >
                 {personalInfo.subheadline}
               </motion.p>
@@ -66,7 +66,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.5 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start"
             >
               <Button
                 onClick={() => scrollToSection('projects')}

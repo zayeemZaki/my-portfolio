@@ -63,11 +63,11 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               className="relative w-full max-w-5xl max-h-[90vh] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl flex flex-col border border-zinc-200 dark:border-zinc-800"
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-6 md:px-8 py-5 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex-shrink-0">
-                <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-zinc-50 pr-4">
+              <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 sm:py-5 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex-shrink-0">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-900 dark:text-zinc-50 pr-2 sm:pr-4 line-clamp-2">
                   {project.title}
                 </h2>
-                <div className="flex items-center gap-2 flex-shrink-0">
+                <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
@@ -107,7 +107,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 <div className={`${isMobile ? 'bg-zinc-50 dark:bg-zinc-950' : 'bg-zinc-100 dark:bg-zinc-950'}`}>
                   {isMobile ? (
                     // Mobile Screenshot - Centered with phone styling
-                    <div className="flex items-center justify-center py-12 px-6">
+                    <div className="flex items-center justify-center py-8 sm:py-12 px-4 sm:px-6">
                       <div
                         className="relative group cursor-zoom-in"
                         onClick={() => setSelectedImage(project.thumbnail)}
@@ -155,7 +155,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 </div>
 
                 {/* Body - Description & Features */}
-                <div className="px-6 md:px-8 py-6 space-y-6">
+                <div className="px-4 sm:px-6 md:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6">
                   {/* Full Description */}
                   <div>
                     <p className="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
@@ -231,8 +231,8 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               </div>
 
               {/* Footer - Tech Stack */}
-              <div className="px-6 md:px-8 py-5 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 flex-shrink-0">
-                <h3 className="text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider mb-3">
+              <div className="px-4 sm:px-6 md:px-8 py-4 sm:py-5 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 flex-shrink-0">
+                <h3 className="text-xs font-semibold text-zinc-600 dark:text-zinc-400 uppercase tracking-wider mb-2 sm:mb-3">
                   Tech Stack
                 </h3>
                 <div className="flex flex-wrap gap-2">
