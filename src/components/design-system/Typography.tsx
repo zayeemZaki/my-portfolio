@@ -52,8 +52,8 @@ export const Heading = ({
   };
 
   const gradientClass = gradient 
-    ? 'bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent'
-    : 'text-white';
+    ? 'bg-gradient-to-r from-accent-primary to-accent-secondary bg-clip-text text-transparent'
+    : 'text-text-primary';
 
   const combinedClassName = `${styles[level]} ${alignments[align]} ${gradientClass} ${className}`;
 
@@ -97,9 +97,9 @@ export const Text = ({
   };
 
   const colors = {
-    primary: 'text-white',
-    secondary: 'text-slate-300',
-    muted: 'text-slate-400',
+    primary: 'text-text-primary',
+    secondary: 'text-text-secondary',
+    muted: 'text-text-secondary/70',
   };
 
   const alignments = {
@@ -138,14 +138,14 @@ interface LabelProps {
 export const Label = ({ 
   children, 
   className = '', 
-  color = 'secondary',
+  color = 'secondary', 
   size = 'sm'
 }: LabelProps) => {
   const colors = {
-    primary: 'text-blue-400',
-    secondary: 'text-slate-400',
-    success: 'text-emerald-400',
-    warning: 'text-yellow-400',
+    primary: 'text-accent-primary',
+    secondary: 'text-text-secondary',
+    success: 'text-accent-secondary',
+    warning: 'text-yellow-500',
   };
 
   const sizes = {

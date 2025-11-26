@@ -1,156 +1,113 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Building2, MapPin, Calendar, ExternalLink, ChevronRight } from 'lucide-react';
+import { Building2, MapPin, Calendar, ArrowUpRight, Briefcase } from 'lucide-react';
 import { portfolioData } from '../../store/data';
+import { Link } from 'react-router-dom';
 
 const FeaturedExperience = () => {
   const { experiences } = portfolioData;
-  const currentExperience = experiences[0]; // Most recent
-  const previousExperiences = experiences.slice(1, 3); // Next 2 roles
+  // Display up to 3 experiences on home
+  const displayExperiences = experiences.slice(0, 3);
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
-      <div className="max-w-7xl mx-auto">
+    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 bg-zinc-50 dark:bg-zinc-900/50">
+      <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Work Experience
-          </h2>
-          <p className="text-slate-400 text-lg">
-            Building impactful solutions at scale
-          </p>
+          <div>
+            <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Work Experience</h2>
+            <p className="text-zinc-600 dark:text-zinc-400 text-lg">
+              My professional journey in software engineering.
+            </p>
+          </div>
+          <Link
+            to="/experience"
+            className="inline-flex items-center gap-2 text-zinc-900 dark:text-zinc-50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium group"
+          >
+            View Full Resume <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </Link>
         </motion.div>
 
-        {/* Current Role - Expanded */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-8 border border-blue-500/20 shadow-xl mb-8"
-        >
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-            <div className="flex-1">
-              <div className="flex items-center space-x-2 mb-2">
-                <h3 className="text-2xl font-bold text-white">
-                  {currentExperience.role}
-                </h3>
-                {currentExperience.current && (
-                  <span className="px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-semibold">
-                    Current
-                  </span>
-                )}
-              </div>
-              
-              <div className="flex flex-wrap items-center gap-4 text-slate-400 mb-4">
-                <a
-                  href={currentExperience.companyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2 hover:text-blue-400 transition-colors group"
-                >
-                  <Building2 size={18} />
-                  <span className="font-semibold">{currentExperience.company}</span>
-                  <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                
-                <div className="flex items-center space-x-2">
-                  <MapPin size={18} />
-                  <span>{currentExperience.location}</span>
-                </div>
-                
-                <div className="flex items-center space-x-2">
-                  <Calendar size={18} />
-                  <span>
-                    {new Date(currentExperience.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                    {' - '}
-                    {currentExperience.current ? 'Present' : new Date(currentExperience.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="space-y-12 relative">
+          {/* Timeline Line */}
+          <div className="absolute left-0 top-2 bottom-2 w-px bg-zinc-200 dark:bg-zinc-800 md:left-8 hidden md:block" />
 
-          {/* Key Achievements */}
-          <div className="space-y-4 mb-6">
-            {currentExperience.bullets.map((bullet, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-start space-x-3"
-              >
-                <ChevronRight className="text-blue-500 mt-1 flex-shrink-0" size={20} />
-                <p className="text-slate-300 leading-relaxed">{bullet.text}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Technologies */}
-          <div className="flex flex-wrap gap-2">
-            {currentExperience.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-lg text-sm font-medium"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Previous Roles - Compact */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {previousExperiences.map((exp, index) => (
+          {displayExperiences.map((exp, index) => (
             <motion.div
               key={exp.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-blue-500/30 transition-all duration-300"
+              className="relative pl-0 md:pl-24"
             >
-              <h3 className="text-xl font-bold text-white mb-2">
-                {exp.role}
-              </h3>
-              <div className="flex items-center space-x-2 text-slate-400 mb-3">
-                <Building2 size={16} />
-                <span className="font-semibold">{exp.company}</span>
-              </div>
-              <div className="flex items-center space-x-2 text-slate-500 text-sm">
-                <Calendar size={14} />
-                <span>
-                  {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                  {' - '}
-                  {new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                </span>
+              {/* Timeline Dot */}
+              <div className="absolute left-8 top-2 w-3 h-3 -translate-x-[6px] rounded-full border-2 border-indigo-600 dark:border-indigo-500 bg-zinc-50 dark:bg-zinc-900/50 z-10 hidden md:block" />
+
+              <div className="group relative p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl hover:border-indigo-600/30 dark:hover:border-indigo-500/30 transition-all duration-300 shadow-sm hover:shadow-md">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 flex items-center gap-3">
+                      {exp.role}
+                      {exp.current && (
+                        <span className="px-2 py-0.5 bg-green-50 dark:bg-green-950 text-green-600 dark:text-green-400 text-xs rounded-full font-medium border border-green-200 dark:border-green-800">
+                          Current
+                        </span>
+                      )}
+                    </h3>
+                    <a 
+                      href={exp.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-600 dark:text-zinc-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors inline-flex items-center gap-1 mt-1"
+                    >
+                      {exp.company} <ArrowUpRight size={14} />
+                    </a>
+                  </div>
+                  
+                  <div className="text-sm text-zinc-600 dark:text-zinc-400 flex flex-col md:items-end gap-1">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar size={14} />
+                      <span>
+                        {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                        {' - '}
+                        {exp.current ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <MapPin size={14} />
+                      <span>{exp.location}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Only show first 2 bullets for preview */}
+                <ul className="space-y-3 mb-6">
+                  {exp.bullets.slice(0, 2).map((bullet, i) => (
+                    <li key={i} className="flex items-start gap-3 text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-indigo-600/50 dark:bg-indigo-500/50 flex-shrink-0" />
+                      {bullet.text}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-2">
+                  {exp.technologies.slice(0, 5).map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 text-xs font-medium rounded-md border border-zinc-200 dark:border-zinc-700"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* View Full Resume Link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Link
-            to="/experience"
-            className="inline-flex items-center space-x-2 text-blue-500 hover:text-blue-400 font-semibold transition-colors group"
-          >
-            <span>View Full Resume</span>
-            <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

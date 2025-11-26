@@ -50,24 +50,24 @@ const Button = ({
   // Variant styles - CONSISTENT ACROSS APP
   const variants = {
     primary: `
-      bg-blue-500 hover:bg-blue-600 
+      bg-accent-primary hover:bg-accent-primary/90 
       text-white 
-      shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40
+      shadow-lg shadow-accent-primary/20 hover:shadow-accent-primary/40
     `,
     secondary: `
-      bg-emerald-500 hover:bg-emerald-600 
+      bg-accent-secondary hover:bg-accent-secondary/90 
       text-white 
-      shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40
+      shadow-lg shadow-accent-secondary/20 hover:shadow-accent-secondary/40
     `,
     outline: `
-      border-2 border-blue-500 
-      text-blue-500 
-      hover:bg-blue-500/10
+      border-2 border-accent-primary 
+      text-accent-primary 
+      hover:bg-accent-primary/10
     `,
     ghost: `
-      border-2 border-slate-700 
-      hover:border-blue-500 
-      text-slate-300 hover:text-white
+      border-2 border-border 
+      hover:border-accent-primary 
+      text-text-secondary hover:text-text-primary
     `,
   };
 

@@ -22,8 +22,8 @@ const SectionWrapper = ({
 }: SectionWrapperProps) => {
   // Background styles
   const backgrounds = {
-    default: 'bg-slate-950',
-    gradient: 'bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950',
+    default: 'bg-bg-primary',
+    gradient: 'bg-gradient-to-b from-bg-primary via-bg-primary to-bg-secondary',
     transparent: 'bg-transparent',
   };
 

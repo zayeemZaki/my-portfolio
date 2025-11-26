@@ -43,6 +43,11 @@ export interface SystemDesignDiagram {
   imageUrl?: string;
 }
 
+export interface ProjectMetric {
+  label: string;
+  value: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -52,12 +57,14 @@ export interface Project {
   techStack: string[];
   category: string;
   featured: boolean;
+  type: 'web' | 'mobile'; // Determines image display style
   liveUrl?: string;
   repoUrl?: string;
   date: string;
   systemDesign?: SystemDesignDiagram;
   technicalChallenges?: TechnicalChallenge;
   keyFeatures: string[];
+  metrics?: ProjectMetric[]; // Performance/impact metrics
 }
 
 export interface PersonalInfo {

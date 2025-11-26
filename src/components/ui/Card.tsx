@@ -27,17 +27,17 @@ const Card = ({
 }: CardProps) => {
   // Variant styles
   const variants = {
-    default: 'bg-slate-900/50 border border-slate-800',
-    bordered: 'bg-slate-900 border-2 border-slate-700',
-    elevated: 'bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700 shadow-xl',
-    glass: 'bg-slate-900/50 backdrop-blur-sm border border-slate-800',
+    default: 'bg-bg-secondary border border-border',
+    bordered: 'bg-bg-primary border-2 border-border',
+    elevated: 'bg-gradient-to-br from-bg-secondary to-bg-primary border border-border shadow-xl',
+    glass: 'bg-bg-secondary/50 backdrop-blur-sm border border-border',
   };
 
   // Hover effect styles
   const hoverEffects = {
     lift: 'hover:scale-[1.02] hover:shadow-2xl',
-    glow: 'hover:shadow-blue-500/20 hover:shadow-2xl',
-    border: 'hover:border-blue-500/50',
+    glow: 'hover:shadow-accent-primary/20 hover:shadow-2xl',
+    border: 'hover:border-accent-primary/50',
     none: '',
   };
 
@@ -62,7 +62,7 @@ const Card = ({
     ${hoverEffects[hoverEffect]} 
     ${paddings[padding]} 
     ${className}
-  `;
+  `.replace(/\s+/g, ' ').trim();
 
   if (animate) {
     return (

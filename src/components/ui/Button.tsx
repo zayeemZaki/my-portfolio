@@ -38,30 +38,62 @@ const Button = ({
   type = 'button',
   fullWidth = false,
 }: ButtonProps) => {
-  // Variant styles
+  // Variant styles - Updated with Zinc/Indigo system
   const variants = {
-    primary: 'bg-blue-500 hover:bg-blue-600 text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40',
-    secondary: 'bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40',
-    outline: 'border-2 border-blue-500 text-blue-500 hover:bg-blue-500/10',
-    ghost: 'border-2 border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white',
+    // Primary: Indigo background, white text
+    primary: `
+      bg-indigo-600 hover:bg-indigo-700 
+      dark:bg-indigo-500 dark:hover:bg-indigo-400 
+      text-white 
+      shadow-lg shadow-indigo-500/25 
+      hover:shadow-xl hover:shadow-indigo-500/40
+      border border-transparent
+    `,
+    
+    // Secondary: Zinc background, darker text
+    secondary: `
+      bg-zinc-100 hover:bg-zinc-200 
+      dark:bg-zinc-800 dark:hover:bg-zinc-700 
+      text-zinc-900 dark:text-zinc-50 
+      shadow-sm
+      border border-zinc-200 dark:border-zinc-700
+    `,
+    
+    // Outline: Transparent with border
+    outline: `
+      bg-transparent 
+      border-2 border-zinc-200 dark:border-zinc-800 
+      text-zinc-900 dark:text-zinc-100 
+      hover:bg-zinc-50 dark:hover:bg-zinc-900
+      hover:border-indigo-600 dark:hover:border-indigo-500
+      hover:text-indigo-600 dark:hover:text-indigo-400
+    `,
+    
+    // Ghost: Minimal styling
+    ghost: `
+      bg-transparent 
+      text-zinc-600 dark:text-zinc-400 
+      hover:bg-zinc-100 dark:hover:bg-zinc-800 
+      hover:text-zinc-900 dark:hover:text-zinc-50
+    `,
   };
 
   // Size styles
   const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
+    sm: 'px-3 py-1.5 text-sm',
+    md: 'px-6 py-2.5 text-base',
+    lg: 'px-8 py-3.5 text-lg',
   };
 
   const baseStyles = `
-    inline-flex items-center justify-center space-x-2 
-    font-semibold rounded-lg 
+    inline-flex items-center justify-center gap-2
+    font-medium rounded-lg 
     transition-all duration-200 
     ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
     ${fullWidth ? 'w-full' : ''}
   `;
 
-  const combinedClassName = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+  const combinedClassName = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`.replace(/\s+/g, ' ').trim();
 
   const content = (
     <>

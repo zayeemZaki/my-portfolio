@@ -1,20 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* ============================================
+       INTELLIGENCE & ENGINEERING COLOR SYSTEM
+       Using Tailwind Zinc (neutrals) + Indigo (brand)
+       ============================================ */
+    
+    /* Light Mode - Surfaces */
+    --bg-primary: 255 255 255;           /* white - Main background */
+    --bg-secondary: 250 250 250;         /* zinc-50 - Cards/Secondary surfaces */
+    --bg-tertiary: 244 244 245;          /* zinc-100 - Hover states */
+    
+    /* Light Mode - Typography */
+    --text-primary: 24 24 27;            /* zinc-900 - Headings */
+    --text-secondary: 82 82 91;          /* zinc-600 - Body text */
+    --text-tertiary: 113 113 122;        /* zinc-500 - Muted text */
+    
+    /* Light Mode - Borders */
+    --border-primary: 228 228 231;       /* zinc-200 - Default borders */
+    --border-secondary: 244 244 245;     /* zinc-100 - Subtle borders */
+    
+    /* Light Mode - Brand/Primary */
+    --accent-primary: 79 70 229;         /* indigo-600 - Primary actions */
+    --accent-hover: 67 56 202;           /* indigo-700 - Primary hover */
+    --accent-light: 238 242 255;         /* indigo-50 - Accent backgrounds */
+    
+    /* Light Mode - States */
+    --success: 22 163 74;                /* green-600 */
+    --warning: 234 179 8;                /* yellow-500 */
+    --error: 220 38 38;                  /* red-600 */
+  }
+
+  .dark {
+    /* Dark Mode - Surfaces */
+    --bg-primary: 9 9 11;                /* zinc-950 - Main background (NOT pure black) */
+    --bg-secondary: 24 24 27;            /* zinc-900 - Cards/Secondary surfaces */
+    --bg-tertiary: 39 39 42;             /* zinc-800 - Hover states */
+    
+    /* Dark Mode - Typography */
+    --text-primary: 250 250 250;         /* zinc-50 - Headings */
+    --text-secondary: 161 161 170;       /* zinc-400 - Body text */
+    --text-tertiary: 113 113 122;        /* zinc-500 - Muted text */
+    
+    /* Dark Mode - Borders */
+    --border-primary: 39 39 42;          /* zinc-800 - Default borders */
+    --border-secondary: 24 24 27;        /* zinc-900 - Subtle borders */
+    
+    /* Dark Mode - Brand/Primary */
+    --accent-primary: 99 102 241;        /* indigo-500 - Primary actions */
+    --accent-hover: 129 140 248;         /* indigo-400 - Primary hover */
+    --accent-light: 30 27 75;            /* indigo-950 - Accent backgrounds */
+    
+    /* Dark Mode - States */
+    --success: 34 197 94;                /* green-500 */
+    --warning: 250 204 21;               /* yellow-400 */
+    --error: 239 68 68;                  /* red-500 */
+  }
+
   * {
     box-sizing: border-box;
   }
   
   body {
-    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    @apply bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50;
+    @apply font-sans antialiased transition-colors duration-300;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Selection Color */
+  ::selection {
+    background-color: rgba(99, 102, 241, 0.3); /* indigo-500 with 30% opacity */
+    color: rgb(30 27 75); /* indigo-950 */
+  }
+
+  .dark ::selection {
+    background-color: rgba(99, 102, 241, 0.4);
+    color: rgb(238 242 255); /* indigo-50 */
   }
 }
 
@@ -22,22 +91,81 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Custom utility classes using CSS variables */
+  .bg-primary {
+    background-color: rgb(var(--bg-primary));
+  }
+  
+  .bg-secondary {
+    background-color: rgb(var(--bg-secondary));
+  }
+  
+  .bg-tertiary {
+    background-color: rgb(var(--bg-tertiary));
+  }
+  
+  .text-primary {
+    color: rgb(var(--text-primary));
+  }
+  
+  .text-secondary {
+    color: rgb(var(--text-secondary));
+  }
+  
+  .text-tertiary {
+    color: rgb(var(--text-tertiary));
+  }
+  
+  .border-primary {
+    border-color: rgb(var(--border-primary));
+  }
+  
+  .border-secondary {
+    border-color: rgb(var(--border-secondary));
+  }
+  
+  /* Glassmorphic Background Utility */
+  .glass {
+    @apply bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md;
+  }
+  
+  /* Subtle dot pattern for backgrounds */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, rgb(var(--border-primary) / 0.4) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+  
+  /* Card shadows - Light mode only, Dark mode uses borders */
+  .card-shadow {
+    @apply shadow-lg shadow-zinc-200/50 dark:shadow-none;
+  }
 }
 
-/* Custom scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  @apply bg-white dark:bg-zinc-950;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 5px;
+  @apply bg-zinc-300 dark:bg-zinc-700 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  @apply bg-zinc-400 dark:bg-zinc-600;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(212 212 216) rgb(255 255 255);
+}
+
+.dark * {
+  scrollbar-color: rgb(63 63 70) rgb(9 9 11);
 }

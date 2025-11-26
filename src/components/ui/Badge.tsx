@@ -23,11 +23,11 @@ const Badge = ({
 }: BadgeProps) => {
   // Variant styles
   const variants = {
-    primary: 'bg-blue-500/90 text-white',
-    secondary: 'bg-emerald-500/90 text-white',
+    primary: 'bg-accent-primary/90 text-white',
+    secondary: 'bg-accent-secondary/90 text-white',
     success: 'bg-green-500/90 text-white',
     warning: 'bg-yellow-500/90 text-gray-900',
-    default: 'bg-slate-800/50 text-slate-300',
+    default: 'bg-bg-secondary text-text-secondary border border-border',
   };
 
   // Size styles
@@ -39,7 +39,7 @@ const Badge = ({
 
   // Hover styles
   const hoverStyles = hoverable
-    ? 'hover:bg-blue-500/10 hover:text-blue-400 transition-all duration-200 cursor-default'
+    ? 'hover:bg-accent-primary/10 hover:text-accent-primary transition-all duration-200 cursor-default'
     : '';
 
   const baseStyles = `

@@ -174,19 +174,82 @@ export const portfolioData: PortfolioData = {
       }
     ],
 
-projects: [
+  projects: [
     {
-      id: 'project-1',
+      id: 'project-8',
+      title: 'Stock Read',
+      shortDescription: 'AI-Powered Social Investment Intelligence Platform',
+      fullDescription: 'A next-generation social trading platform that combines real-time market data, institutional-grade AI analysis, and community-driven investment insights. Built for retail investors who demand professional-quality analysis without the institutional price tag. Features an AI-powered Global Analyst that provides objective market reality checks using real-time data from Wall Street\'s institutional sources.',
+      thumbnail: '/projects/stock-read.png',
+      techStack: [
+        'Next.js 16',
+        'TypeScript',
+        'Tailwind CSS',
+        'Python',
+        'FastAPI',
+        'Google Gemini',
+        'Supabase',
+        'Redis',
+        'yfinance',
+        'Recharts'
+      ],
+      category: 'Full-Stack',
+      featured: true,
+      type: 'web',
+      liveUrl: 'https://stock-read.vercel.app/',
+      repoUrl: 'https://github.com/zayeemZaki/StockRead',
+      date: '2024-11',
+      metrics: [
+        { label: 'Latency', value: '<200ms' },
+        { label: 'Users', value: '500+' },
+        { label: 'Accuracy', value: '94%' }
+      ],
+      keyFeatures: [
+        'Social investment platform with real-time feed and infinite scroll',
+        'AI Market Analyst with sentiment scoring (0-100) and risk classification',
+        'Live market dashboard with WebSocket price updates and technical indicators',
+        'Advanced stock analysis with interactive candlestick charts and fundamental metrics',
+        'Global search with smart command palette (Cmd+K)',
+        'User profiles with follower/following system and dark/light theme support'
+      ],
+      systemDesign: {
+        description: 'Hybrid architecture combining server-side rendering (SSR) with client-side interactivity and background AI services. Features 5 autonomous background services for market analysis, real-time updates, and data maintenance.',
+        imageUrl: '/projects/stock-read_architecture.jpeg',
+        components: [
+          'Next.js Frontend (App Router with React Server Components)',
+          'Supabase (PostgreSQL + Auth + Realtime + Storage)',
+          'FastAPI Backend Services (Python)',
+          'Global Analyst Service (AI Batch Processing)',
+          'Market Maker Service (Real-time Price Updates)',
+          'Redis Cache Layer',
+          'External APIs (yfinance, Google News, Google Gemini)'
+        ]
+      },
+      technicalChallenges: {
+        situation: 'Building a social trading platform requires real-time market data, complex AI analysis, and seamless user experience while maintaining performance and scalability. The challenge was integrating multiple data sources, processing AI analysis at scale, and providing instant feedback to users.',
+        task: 'Create a platform that provides institutional-grade analysis to retail investors, combining social features with real-time market data and AI-powered insights, all while maintaining low latency and high availability.',
+        action: 'Architected a hybrid system with Next.js SSR for performance, Supabase Realtime for live updates, and Python background services for AI processing. Implemented Redis caching for market data (60s TTL) and technical analysis (5min TTL). Built 5 autonomous background services that run independently, with the Global Analyst processing user-tracked stocks 3x daily during market hours.',
+        result: 'Delivered a production-ready platform with real-time market updates, AI-powered analysis, and a seamless social experience. The system handles high traffic with optimized caching and background processing, providing users with professional-quality investment insights.'
+      }
+    },
+    {
+      id: 'project-2',
       title: 'AI Memory App',
       shortDescription: 'GraphRAG engine with Neo4j & Vector Search',
       fullDescription: 'A next-generation AI memory system that outperforms standard vector search by mapping entity relationships using GraphRAG. It features a multi-user sandbox with strict data isolation and a real-time "brain" visualization dashboard.',
-      thumbnail: '/projects/project1.png',
+      thumbnail: '/projects/ai-memory.png',
       techStack: ['Neo4j', 'GraphRAG', 'React', 'D3.js', 'Python', 'Vector Search'],
       category: 'AI/ML',
       featured: true,
+      type: 'web',
       liveUrl: 'https://ai-memory-app.vercel.app/',
       repoUrl: 'https://github.com/zayeemZaki/ai-memory-app',
       date: '2025-11',
+      metrics: [
+        { label: 'Nodes', value: '50k+' },
+        { label: 'Query Time', value: '<18ms' },
+        { label: 'Accuracy', value: '98%' }
+      ],
       keyFeatures: [
         'GraphRAG engine mapping entity relationships',
         'Multi-user sandbox with strict data isolation',
@@ -195,6 +258,7 @@ projects: [
       ],
       systemDesign: {
         description: 'Graph-based architecture ensuring data privacy and context retention',
+        imageUrl: '/projects/ai-memory-architecture.png',
         components: [
           'Graph Database (Neo4j)',
           'Vector Store',
@@ -211,75 +275,34 @@ projects: [
       }
     },
     {
-      id: 'project-2',
-      title: 'AI Resume Analyzer',
-      shortDescription: 'LLM-powered Parser & Ranker',
-      fullDescription: 'An intelligent tool using LLM-API integration to parse, score, and rank resumes against job descriptions. It utilizes advanced prompt chaining to extract key skills and generate actionable optimization feedback.',
-      thumbnail: '', 
-      techStack: ['Python', 'LLM API', 'Prompt Engineering', 'React'],
-      category: 'AI/ML',
-      featured: true,
-      repoUrl: 'https://github.com/zayeemZaki/AI-resume-analyzer',
-      date: '2025-04',
-      keyFeatures: [
-        `Automatic parsing, scoring, and ranking of resumes against job descriptions`,
-        'Multi-step prompt chains for deep analysis',
-        'Gap analysis and skill extraction',
-        'Generation of actionable optimization feedback'
-      ],
-      systemDesign: {
-        description: 'Pipeline-based LLM processing architecture',
-        components: [
-          'Input Parser (PDF/Text)',
-          'Prompt Chain Orchestrator',
-          'LLM Inference Engine',
-          'Scoring Algorithm',
-          'Feedback Generator'
-        ]
-      },
-      technicalChallenges: {
-        situation: 'Generic LLM prompts often produced vague advice or hallucinated skills that were not present in the resume.',
-        task: 'Create a system that provides concrete, evidence-based feedback and accurate scoring.',
-        action: 'Engineered a multi-step prompt-chain to guide the model specifically in extracting key skills and identifying experience gaps against the job description.',
-        result: 'Achieved consistent, actionable, and in-depth optimization feedback for users.'
-      }
-    },
-    {
-      id: 'project-3',
+      id: 'project-4',
       title: 'Food-Sharing Logistics Platform',
       shortDescription: 'Centralized donation workflow using React Context',
       fullDescription: 'A role-based logistics platform connecting volunteers and shelters. It eliminates manual coordination by centralizing the donation workflow.',
-      thumbnail: '',
+      thumbnail: '/projects/sharebite.jpeg',
       techStack: ['React', 'Context API', 'JavaScript', 'CSS'],
       category: 'Full-Stack',
       featured: false,
+      type: 'mobile',
       repoUrl: 'https://github.com/zayeemZaki/ShareBite',
       date: '2025-11',
       keyFeatures: [
         'Role-based logistics management',
         'Centralized donation workflow',
         'Real-time coordination elimination'
-      ],
-      systemDesign: {
-        description: 'Frontend-focused state management architecture',
-        components: [
-          'React Frontend',
-          'Context API (State Management)',
-          'Role-Based Access Control (RBAC)',
-          'Logistics Scheduler'
-        ]
-      }
+      ]
     },
     {
-      id: 'project-4',
+      id: 'project-5',
       title: 'Neuro-Transmitter',
       shortDescription: 'Secure Zero-Trust iOS App',
       fullDescription: 'A responsive native interface built with SwiftUI featuring a zero-trust authentication environment where new accounts require explicit admin verification.',
-      thumbnail: '/projects/project4.jpeg', // Placeholder
+      thumbnail: '/projects/neurotransmitter.png', 
       techStack: ['SwiftUI', 'Firebase Auth', 'Firestore', 'Cloud Messaging'],
       liveUrl: 'https://apps.apple.com/us/app/neuro-transmitter/id6463495879',
       category: 'Mobile',
       featured: false,
+      type: 'mobile',
       repoUrl: 'https://github.com/zayeemZaki/NeuroTransmitter',
       date: '2023-08',
       keyFeatures: [
@@ -287,27 +310,19 @@ projects: [
         'Explicit administrator verification logic',
         'Real-time push alerts via Cloud Messaging',
         'Automatic system-wide dark-mode adaptation'
-      ],
-      systemDesign: {
-        description: 'Serverless mobile architecture',
-        components: [
-          'SwiftUI Native Client',
-          'Firebase Authentication',
-          'Firestore Security Rules',
-          'Firebase Cloud Messaging'
-        ]
-      }
+      ]
     },
     {
-      id: 'project-5',
+      id: 'project-6',
       title: 'Production Restaurant Website',
       shortDescription: 'High-availability web app with automated payments',
       fullDescription: 'A production-grade restaurant application hosted on AWS Amplify with 99% uptime. Features a fully automated checkout flow using Stripe and Node.js.',
-      thumbnail: '/projects/project5.jpg', 
+      thumbnail: '/projects/project5.png', 
       liveUrl: 'https://main.d20ukwqpkslt8j.amplifyapp.com/',
       techStack: ['AWS Amplify', 'Node.js', 'Stripe', 'React'],
       category: 'Full-Stack',
       featured: false,
+      type: 'web',
       repoUrl: 'https://github.com/zayeemZaki/U-Eats',
       date: '2023-12',
       keyFeatures: [
@@ -315,41 +330,26 @@ projects: [
         'Custom payment pipeline integration (Stripe)',
         'Automated checkout flow',
         'AWS Amplify deployment'
-      ],
-      systemDesign: {
-        description: 'Cloud-native serverless deployment',
-        components: [
-          'AWS Amplify (Hosting/CI/CD)',
-          'Node.js Backend',
-          'Stripe Payment Gateway',
-          'React Frontend'
-        ]
-      }
+      ]
     },
     {
-      id: 'project-6',
+      id: 'project-7',
       title: 'ArtisanVale',
       shortDescription: 'E-commerce Survey Platform',
       fullDescription: 'An  e-commerce survey platform for artisan products.',
       thumbnail: '/projects/artisan.jpg',
-      techStack: ['Vue'], // Assumed stack based on common Java projects, update if specific
+      techStack: ['Vue'], 
       category: 'Frontend',
       featured: false,
+      type: 'mobile',
       liveUrl: 'https://artisanvale.in/',
       repoUrl: 'https://github.com/zayeemZaki/ArtisanVale',
-      date: '2023', // Approximate
+      date: '2023', 
       keyFeatures: [
         'User authentication and profile management',
         'Product catalog and shopping cart',
         'Order management system'
-      ],
-      systemDesign: {
-        description: 'Monolithic architecture with REST APIs',
-        components: [
-          'Frontend Client',
-          'REST API Backend'
-        ]
-      }
+      ]
     }
   ],
 };

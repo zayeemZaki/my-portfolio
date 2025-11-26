@@ -33,9 +33,9 @@ const Section = ({
 }: SectionProps) => {
   // Background colors - STANDARDIZED
   const backgrounds = {
-    primary: 'bg-slate-950',        // Main dark background
-    secondary: 'bg-slate-900',      // Alternate dark background
-    gradient: 'bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950', // Gradient
+    primary: 'bg-bg-primary',        // Main background
+    secondary: 'bg-bg-secondary',      // Alternate background
+    gradient: 'bg-gradient-to-b from-bg-primary via-bg-primary to-bg-secondary', // Gradient
     transparent: 'bg-transparent',   // No background
   };
 

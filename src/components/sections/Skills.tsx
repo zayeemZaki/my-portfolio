@@ -39,7 +39,7 @@ const Skills = () => {
   };
 
   return (
-    <SectionWrapper id="skills">
+    <SectionWrapper id="skills" background="default">
       <SectionHeader
         title="Technical Skills"
         subtitle="A comprehensive toolkit for building scalable, modern applications"
@@ -58,17 +58,17 @@ const Skills = () => {
             <motion.div key={category.name} variants={itemVariants}>
               <Card variant="glass" hoverEffect="border">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="p-2 bg-blue-500/10 rounded-lg">
-                    <Icon className="text-blue-500" size={24} />
+                  <div className="p-2 bg-accent-primary/10 rounded-lg">
+                    <Icon className="text-accent-primary" size={24} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-text-primary">
                     {category.name}
                   </h3>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
-                    <Badge key={skill.name} hoverable>
+                    <Badge key={skill.name} hoverable variant="default">
                       {skill.name}
                     </Badge>
                   ))}

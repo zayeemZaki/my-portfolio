@@ -5,7 +5,7 @@ import { Button } from '../components/ui';
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -14,7 +14,7 @@ const NotFound = () => {
         >
           {/* 404 Number */}
           <motion.h1
-            className="text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent mb-4"
+            className="text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 dark:from-indigo-400 dark:to-indigo-300 bg-clip-text text-transparent mb-4"
             initial={{ y: -50 }}
             animate={{ y: 0 }}
             transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
@@ -24,7 +24,7 @@ const NotFound = () => {
 
           {/* Error Message */}
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -33,7 +33,7 @@ const NotFound = () => {
           </motion.h2>
 
           <motion.p
-            className="text-slate-400 text-lg mb-8 max-w-md mx-auto"
+            className="text-zinc-600 dark:text-zinc-400 text-lg mb-8 max-w-md mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -64,7 +64,7 @@ const NotFound = () => {
 
           {/* Decorative Element */}
           <motion.div
-            className="mt-12 text-slate-600"
+            className="mt-12 text-zinc-500 dark:text-zinc-500/60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}

@@ -29,11 +29,11 @@ const SectionHeader = ({
 
   const content = (
     <div className={`flex flex-col ${containerAlignments[align]} mb-12 md:mb-16 ${className}`}>
-      <h2 className={`text-4xl md:text-5xl font-bold text-white mb-4 ${alignments[align]}`}>
+      <h2 className={`text-4xl md:text-5xl font-bold text-text-primary mb-4 ${alignments[align]}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-slate-400 text-lg max-w-2xl ${alignments[align]}`}>
+        <p className={`text-text-secondary text-lg max-w-2xl ${alignments[align]}`}>
           {subtitle}
         </p>
       )}
