@@ -94,9 +94,8 @@ const Experience = () => {
               <motion.div
                 key={exp.id}
                 variants={itemVariants}
-                className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 ${
-                  index % 2 === 0 ? '' : 'md:grid-flow-dense'
-                }`}
+                className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 ${index % 2 === 0 ? '' : 'md:grid-flow-dense'
+                  }`}
               >
                 {/* Timeline Dot */}
                 <motion.div
@@ -156,9 +155,9 @@ const Experience = () => {
                           <div className="flex items-center space-x-2">
                             <Calendar size={16} />
                             <span>
-                              {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                              {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC'  })}
                               {' - '}
-                              {exp.current ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                              {exp.current ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC'  })}
                             </span>
                           </div>
                         </div>
@@ -219,10 +218,10 @@ const Experience = () => {
                     className={`inline-block px-4 py-2 bg-indigo-50 dark:bg-indigo-950 border border-indigo-200 dark:border-indigo-800 rounded-lg ${index % 2 === 0 ? 'mr-8' : 'ml-8'}`}
                   >
                     <p className="text-indigo-600 dark:text-indigo-400 font-semibold text-sm">
-                      {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                      {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC'  })}
                     </p>
                     <p className="text-zinc-600 dark:text-zinc-400 text-xs">
-                      {exp.current ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                      {exp.current ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC'  })}
                     </p>
                   </motion.div>
                 </div>

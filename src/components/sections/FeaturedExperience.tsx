@@ -72,9 +72,9 @@ const FeaturedExperience = () => {
                     <div className="flex items-center gap-1.5">
                       <Calendar size={14} />
                       <span>
-                        {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                        {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}
                         {' - '}
-                        {exp.current ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                        {exp.current ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}
                       </span>
                     </div>
                     <div className="flex items-center gap-1.5">
