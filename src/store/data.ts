@@ -198,7 +198,7 @@ export const portfolioData: PortfolioData = {
       type: 'web',
       liveUrl: 'https://stock-read.vercel.app/',
       repoUrl: 'https://github.com/zayeemZaki/StockRead',
-      date: '2024-11',
+      date: '2025-11',
       metrics: [
         { label: 'Latency', value: '<200ms' },
         { label: 'Users', value: '10+' },
@@ -285,7 +285,7 @@ export const portfolioData: PortfolioData = {
       featured: false,
       type: 'mobile',
       repoUrl: 'https://github.com/zayeemZaki/ShareBite',
-      date: '2025-11',
+      date: '2025-7',
       keyFeatures: [
         'Role-based logistics management',
         'Centralized donation workflow',
@@ -344,7 +344,7 @@ export const portfolioData: PortfolioData = {
       type: 'mobile',
       liveUrl: 'https://artisanvale.in/',
       repoUrl: 'https://github.com/zayeemZaki/ArtisanVale',
-      date: '2023', 
+      date: '2024', 
       keyFeatures: [
         'User authentication and profile management',
         'Product catalog and shopping cart',
