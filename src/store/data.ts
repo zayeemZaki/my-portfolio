@@ -66,7 +66,7 @@ export const portfolioData: PortfolioData = {
         companyUrl: 'https://cccis.com',
         location: 'Chicago, IL',
         startDate: '2025-05',
-        endDate: 'Present',
+        endDate: '2025-12',
         current: true,
         bullets: [
           {
@@ -157,7 +157,7 @@ export const portfolioData: PortfolioData = {
         companyUrl: 'https://www.utoledo.edu',
         location: 'Toledo, OH',
         startDate: '2021-09',
-        endDate: 'Present',
+        endDate: '2025-12',
         current: true,
         bullets: [
           {
@@ -299,7 +299,6 @@ export const portfolioData: PortfolioData = {
       fullDescription: 'A responsive native interface built with SwiftUI featuring a zero-trust authentication environment where new accounts require explicit admin verification.',
       thumbnail: '/projects/neurotransmitter.png', 
       techStack: ['SwiftUI', 'Firebase Auth', 'Firestore', 'Cloud Messaging'],
-      liveUrl: 'https://apps.apple.com/us/app/neuro-transmitter/id6463495879',
       category: 'Mobile',
       featured: false,
       type: 'mobile',
@@ -346,9 +345,8 @@ export const portfolioData: PortfolioData = {
       repoUrl: 'https://github.com/zayeemZaki/ArtisanVale',
       date: '2024', 
       keyFeatures: [
-        'User authentication and profile management',
-        'Product catalog and shopping cart',
-        'Order management system'
+        'Smooth, responsive UI with Vue.js',
+        'Survey forms for user feedback',
       ]
     }
   ],
