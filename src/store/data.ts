@@ -45,6 +45,7 @@ export const portfolioData: PortfolioData = {
 
     // AI & Data (Specific to your Projects)
     { name: 'OpenAI API', category: 'AI/ML' }, 
+    { name: 'Groq', category: 'AI/ML' },
     { name: 'GraphRAG', category: 'AI/ML' }, 
     { name: 'Neo4j', category: 'AI/ML' }, 
     { name: 'Vector Search', category: 'AI/ML' }, 
@@ -230,6 +231,87 @@ export const portfolioData: PortfolioData = {
         task: 'Create a platform that provides institutional-grade analysis to retail investors, combining social features with real-time market data and AI-powered insights, all while maintaining low latency and high availability.',
         action: 'Architected a hybrid system with Next.js SSR for performance, Supabase Realtime for live updates, and Python background services for AI processing. Implemented Redis caching for market data (60s TTL) and technical analysis (5min TTL). Built 5 autonomous background services that run independently, with the Global Analyst processing user-tracked stocks 3x daily during market hours.',
         result: 'Delivered a production-ready platform with real-time market updates, AI-powered analysis, and a seamless social experience. The system handles high traffic with optimized caching and background processing, providing users with professional-quality investment insights.'
+      }
+    },
+    {
+      id: 'project-10',
+      title: 'Voice AI Interviewer',
+      shortDescription: 'Real-time Voice-Based Technical Interview Prep',
+      fullDescription: 'A real-time voice-interactive mock interview platform designed to simulate actual technical interviews. It uses ultra-low latency speech processing to conduct natural, conversational interviews, providing instant feedback on answers, tone, and technical accuracy.',
+      thumbnail: '/projects/voice-ai.png',
+      techStack: [
+        'Next.js',
+        'FastAPI',
+        'Groq LPU',
+        'WebSockets',
+        'React',
+        'Speech-to-Text API'
+      ],
+      category: 'AI/ML',
+      featured: true,
+      type: 'web',
+      liveUrl: 'https://bot-interviewer.vercel.app/', 
+      repoUrl: 'https://github.com/zayeemZaki/Bot-interviewer',
+      date: '2025-12',
+      metrics: [
+        { label: 'Latency', value: '<500ms' },
+        { label: 'Interviews', value: 'Beta' }
+      ],
+      keyFeatures: [
+        'Real-time conversational AI using Groq for ultra-low latency',
+        'Voice-to-Voice interaction (Speech-to-Text & Text-to-Speech)',
+        'Instant feedback on technical accuracy and communication style',
+        'Customizable interview topics (System Design, DSA, Behavioral)'
+      ],
+      systemDesign: {
+        description: 'Event-driven architecture optimized for voice latency using WebSockets.',
+        imageUrl: '/projects/voice-ai_architecture.jpeg',
+        components: [
+          'Next.js Frontend (Audio Capture)',
+          'FastAPI WebSocket Server',
+          'Groq LPU (Inference)',
+          'TTS/STT Services'
+        ]
+      }
+    },
+    {
+      id: 'project-9',
+      title: 'Prompt Improver',
+      shortDescription: 'Automated CI/CD for LLM Prompts',
+      fullDescription: 'An automated prompt engineering system designed to act as a "CI/CD for prompts." It iteratively tests, evaluates, and refines LLM prompts to ensure consistent output quality and performance before deployment, effectively solving the "blank page" problem for prompt engineering.',
+      thumbnail: '/projects/prompt-improver.png',
+      techStack: [
+        'Next.js',
+        'TypeScript',
+        'Python',
+        'OpenAI API',
+        'Tailwind CSS'
+      ], 
+      category: 'AI/ML',
+      featured: false,
+      type: 'web',
+      liveUrl: 'https://huggingface.co/spaces/zayeem11511/prompt-improver',
+      repoUrl: 'https://github.com/zayeemZaki/prompt-improver',
+      date: '2025-12',
+      metrics: [
+        { label: 'Optimization', value: 'Auto' },
+        { label: 'Iterations', value: '<5s' }
+      ],
+      keyFeatures: [
+        'Automated prompt testing and scoring against defined criteria',
+        'Version control for prompt iterations (CI/CD workflow)',
+        'Comparative analysis of LLM outputs for quality assurance',
+        'Iterative refinement engine to maximize prompt efficacy'
+      ],
+      systemDesign: {
+        description: 'A feedback-loop architecture that separates prompt generation from evaluation, ensuring unbiased optimization.',
+        imageUrl: '/projects/prompt-improver_architecture.jpeg',
+        components: [
+          'Next.js Frontend',
+          'Python Evaluation Service',
+          'LLM Integration (OpenAI/Groq)',
+          'Prompt Versioning DB'
+        ]
       }
     },
     {

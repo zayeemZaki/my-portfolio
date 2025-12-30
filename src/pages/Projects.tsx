@@ -59,7 +59,7 @@ const Projects = () => {
             const isMobile = project.type === 'mobile';
             const themeGradient = getProjectTheme(project.category);
 
-            const showSystemArchitecture = ['project-8', 'project-2'].includes(project.id);
+            const showSystemArchitecture = ['project-8', 'project-2', 'project-9', 'project-10'].includes(project.id);
             const images = [
               { src: project.thumbnail, label: 'Project Screenshot' },
               ...(showSystemArchitecture && project.systemDesign?.imageUrl && project.systemDesign.imageUrl !== project.thumbnail 
