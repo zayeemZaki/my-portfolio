@@ -68,7 +68,7 @@ export const portfolioData: PortfolioData = {
         location: 'Chicago, IL',
         startDate: '2025-05',
         endDate: '2025-12',
-        current: true,
+        current: false,
         bullets: [
           {
             text: 'Building a Spring Boot FIR application that reduces a 2-week manual process to 2 seconds through automation and scalable backend services.',
@@ -159,7 +159,7 @@ export const portfolioData: PortfolioData = {
         location: 'Toledo, OH',
         startDate: '2021-09',
         endDate: '2025-12',
-        current: true,
+        current: false,
         bullets: [
           {
             text: 'Resolved 100+ software and hardware issues with an average resolution time under 24 hours, including hardware replacements and malware removal.',
