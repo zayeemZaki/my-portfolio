@@ -21,6 +21,11 @@ export const portfolioData: PortfolioData = {
         platform: 'LinkedIn',
         url: 'https://www.linkedin.com/in/zayeem-zaki/',
         icon: 'linkedin'
+      },
+      {
+        platform: 'Phone',
+        url: 'tel:+15678017023',
+        icon: '+1 567-801-7023'
       }
     ]
   },

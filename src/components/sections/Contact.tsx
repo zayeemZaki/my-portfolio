@@ -40,7 +40,8 @@ const Contact = () => {
             
             <div className="flex gap-4">
               {personalInfo.socialLinks.map((social) => {
-                const Icon = iconMap[social.platform.toLowerCase()] || ArrowUpRight;
+                const Icon = iconMap[social.icon.toLowerCase()];
+                
                 return (
                   <Button
                     key={social.platform}
@@ -48,10 +49,10 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3"
+                    className={Icon ? "p-3" : "px-4 py-2"}
                     aria-label={social.platform}
                   >
-                    <Icon size={24} />
+                    {Icon ? <Icon size={24} /> : <span className="text-sm font-medium">{social.icon}</span>}
                   </Button>
                 );
               })}
