@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
 import { portfolioData } from '../../store/data';
 import { Button } from '../ui';
 
