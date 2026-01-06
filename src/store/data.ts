@@ -6,7 +6,7 @@ export const portfolioData: PortfolioData = {
     title: 'Software Engineer & AI Enthusiast',
     headline: 'Building Scalable AI Solutions & Robust Systems',
     subheadline: 'Software Engineer specialized in Full-Stack Development & Machine Learning | Transforming complex data into actionable insights',
-    email: 'zayeemzaki45@gmail.com',
+    email: 'contact@zayeemzaki.com',
     location: 'United States',
     profileImage: './profile.jpeg', 
     resumeUrl: '/Zaki, Zayeem.pdf',
@@ -42,25 +42,19 @@ export const portfolioData: PortfolioData = {
     // Frameworks (Matches Resume)
     { name: 'Spring Boot', category: 'Frameworks' }, 
     { name: 'React', category: 'Frameworks' }, 
-    { name: 'Vue.js', category: 'Frameworks' }, 
     { name: 'Next.js', category: 'Frameworks' }, 
     { name: 'Node.js', category: 'Frameworks' }, 
-    { name: 'Flask', category: 'Frameworks' }, 
-    { name: 'SwiftUI', category: 'Frameworks' }, 
+    { name: 'FAST API', category: 'Frameworks' }, 
 
     // AI & Data (Specific to your Projects)
     { name: 'OpenAI API', category: 'AI/ML' }, 
     { name: 'Groq', category: 'AI/ML' },
     { name: 'GraphRAG', category: 'AI/ML' }, 
     { name: 'Neo4j', category: 'AI/ML' }, 
-    { name: 'Vector Search', category: 'AI/ML' }, 
     
     // Tools & Cloud (Matches Resume)
-    { name: 'AWS', category: 'Tools' }, 
     { name: 'Docker', category: 'Tools' }, 
-    { name: 'Kubernetes', category: 'Tools' }, 
     { name: 'Kafka', category: 'Tools' }, 
-    { name: 'Firebase', category: 'Tools' }, 
     { name: 'Git', category: 'Tools' }, 
   ],
 
