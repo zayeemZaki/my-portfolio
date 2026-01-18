@@ -61,7 +61,7 @@ export const portfolioData: PortfolioData = {
   experiences: [
       {
         id: 'exp-1',
-        role: 'Software Engineering Intern',
+        role: 'Full-Stack Software Engineering Intern',
         company: 'CCC Intelligent Solutions',
         companyUrl: 'https://cccis.com',
         location: 'Chicago, IL',
@@ -89,7 +89,7 @@ export const portfolioData: PortfolioData = {
       },
       {
         id: 'exp-2',
-        role: 'Technical Solutions Architect (Volunteer)',
+        role: 'Front-End Software Engineer',
         company: 'Daffodil Studios',
         companyUrl: 'https://daffodilstudios.org', 
         location: 'Vienna, VA (Remote)',
@@ -108,7 +108,7 @@ export const portfolioData: PortfolioData = {
       },
       {
         id: 'exp-3',
-        role: 'Peer Mentor',
+        role: 'Teaching Assistant - Object-Oriented Programming',
         company: 'University of Toledo',
         companyUrl: 'https://www.utoledo.edu',
         location: 'Toledo, OH',
@@ -127,7 +127,7 @@ export const portfolioData: PortfolioData = {
       },
       {
         id: 'exp-4',
-        role: 'IT Security Intern',
+        role: 'Security Automation Intern',
         company: 'First Solar',
         companyUrl: 'https://www.firstsolar.com',
         location: 'Perrysburg, OH',
