@@ -31,12 +31,16 @@ const Navbar = () => {
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
     };
   }, [isMobileMenuOpen]);
 
@@ -106,7 +110,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Controls */}
-            <div className="flex items-center gap-3 md:hidden z-50">
+            <div className="flex items-center gap-2 md:hidden z-50 -mr-2">
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleTheme}
