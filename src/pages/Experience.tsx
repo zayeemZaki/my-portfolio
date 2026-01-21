@@ -250,7 +250,7 @@ const Experience = () => {
               Let's discuss how I can help bring your project to life
             </p>
             <motion.a
-              href="/#contact"
+              href="/about#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center space-x-2 px-8 py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white font-semibold rounded-lg shadow-lg shadow-indigo-500/25 transition-all duration-200"

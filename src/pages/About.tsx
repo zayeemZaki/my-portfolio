@@ -2,10 +2,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, MapPin, Award, Mail, Copy, Linkedin, Github, Check, Terminal, Cpu, Globe, X, Star, GitFork, Users, Code } from 'lucide-react';
 import { portfolioData } from '../store/data';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Heading, Text, Section, Card, Button } from '../components/design-system';
 
 const About = () => {
   const { personalInfo } = portfolioData;
+  const location = useLocation();
   const [emailCopied, setEmailCopied] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
   
@@ -207,6 +209,19 @@ const About = () => {
     };
   }, [streakLoading, streakError]);
 
+  // Handle hash scrolling
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-bg-primary pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-6">
       <Section width="md">
@@ -276,6 +291,7 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           className="mb-12 sm:mb-16"
+          id="certificates"
         >
           <div className="flex items-center space-x-3 mb-6 sm:mb-8">
             <Award className="text-accent-secondary" size={24} />
@@ -418,49 +434,49 @@ const About = () => {
               {streakLoading && !streakError && (
                 <div className="text-center py-8">
                   {/* Skeleton loader */}
-                  <div className="animate-pulse space-y-3">
-                    <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-3/4 mx-auto"></div>
-                    <div className="h-8 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2 mx-auto"></div>
-                    <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-2/3 mx-auto"></div>
-                  </div>
-                  <Text color="muted" variant="small" className="mt-4">Loading streak...</Text>
+                    <div className="animate-pulse space-y-3">
+                      <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-3/4 mx-auto"></div>
+                      <div className="h-8 bg-zinc-200 dark:bg-zinc-700 rounded w-1/2 mx-auto"></div>
+                      <div className="h-4 bg-zinc-200 dark:bg-zinc-700 rounded w-2/3 mx-auto"></div>
+                    </div>
+                    <Text color="muted" variant="small" className="mt-4">Loading streak...</Text>
                 </div>
               )}
               {!streakError && !streakLoading && (
-                <img
+                  <img
                   src={`https://github-readme-streak-stats-two-pied.vercel.app/demo/`}
-                  alt="GitHub Streak"
+                    alt="GitHub Streak"
                   className="w-full dark:block hidden"
                   loading="lazy"
-                  onError={() => {
-                    setStreakError(true);
-                    setStreakLoading(false);
-                  }}
+                    onError={() => {
+                      setStreakError(true);
+                      setStreakLoading(false);
+                    }}
                   onLoad={(e) => {
                     const target = e.target as HTMLImageElement;
                     if (target.complete && target.naturalWidth > 0) {
                       setStreakLoading(false);
                     }
-                  }}
-                />
+                    }}
+                  />
               )}
               {!streakError && !streakLoading && (
-                 <img
+                  <img
                   src={`https://streak-stats.demolab.com/?user=zayeemZaki&theme=light&background=ffffff&border=e2e8f0&stroke=e2e8f0&ring=3b82f6&fire=10b981&currStreakLabel=0f172a&sideLabels=0f172a&currStreakNum=0f172a&dates=0f172a&sideNums=10b981`}
-                  alt="GitHub Streak"
+                    alt="GitHub Streak"
                   className="w-full dark:hidden block"
                   loading="lazy"
-                   onError={() => {
-                    setStreakError(true);
-                    setStreakLoading(false);
-                  }}
+                    onError={() => {
+                      setStreakError(true);
+                      setStreakLoading(false);
+                    }}
                   onLoad={(e) => {
                     const target = e.target as HTMLImageElement;
                     if (target.complete && target.naturalWidth > 0) {
                       setStreakLoading(false);
                     }
-                  }}
-                />
+                    }}
+                  />
               )}
               {streakError && (
                 <div className="text-center py-4">

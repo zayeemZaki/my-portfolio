@@ -70,7 +70,7 @@ export const portfolioData: PortfolioData = {
         current: false,
         bullets: [
           {
-            text: 'Building a Spring Boot FIR application that reduces a 2-week manual process to 2 seconds through automation and scalable backend services.',
+            text: 'Engineered a robust Spring Boot application that automated complex manual tasks, reducing a 2-week cycle to mere hours.',
           },
           {
             text: 'Created a Node.js microservice for Puppeteer-based PDF generation and deployed it using Docker, improving form-rendering accuracy by 90% in a Spring Boot + Vue.js app.',
