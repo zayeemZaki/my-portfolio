@@ -25,26 +25,21 @@ const Experience = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 pt-28 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-16 sm:mb-20 lg:mb-24 text-center px-4"
         >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 sm:mb-6">
-              Professional Experience
-            </h1>
-          </motion.div>
+          <p className="text-xs font-mono text-text-secondary uppercase tracking-widest mb-3">
+            /experience
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4 sm:mb-5">
+            Professional Experience
+          </h1>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -68,7 +63,7 @@ const Experience = () => {
             <Download size={20} />
             <span>Download Full Resume</span>
           </motion.a>
-        </motion.div>
+        </motion.header>
 
         {/* Timeline */}
         <div className="relative">

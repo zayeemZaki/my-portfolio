@@ -8,6 +8,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import ProjectDetails from './pages/ProjectDetails';
+import Mentorship from './pages/Mentorship';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/experience" element={<Experience />} />
+            <Route path="/mentorship" element={<Mentorship />} />
             <Route path="/project/:id" element={<ProjectDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -223,17 +223,25 @@ const About = () => {
   }, [location.hash]);
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-6">
-      <Section width="md">
+    <div className="min-h-screen bg-bg-primary pt-28 pb-20">
+      <Section width="md" paddingY="none">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <Heading level={1} align="center" animate className="mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl">
+        <motion.header
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-6 sm:mb-8 text-center px-4"
+        >
+          <p className="text-xs font-mono text-text-secondary uppercase tracking-widest mb-3">
+            /about
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4 sm:mb-5">
             About Me
-          </Heading>
-          <Text variant="lead" align="center" color="muted" className="text-base sm:text-lg">
+          </h1>
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto">
             Software Engineer | Generative AI Specialist | Backend Architect
-          </Text>
-        </div>
+          </p>
+        </motion.header>
 
         {/* Bio Section */}
         <motion.section
