@@ -1,6 +1,7 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { portfolioData } from '../store/data';
+import { Button } from './ui';
 
 const Footer = () => {
   const { personalInfo } = portfolioData;
@@ -61,6 +62,17 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+            <div className="pt-2">
+              <Button
+                variant="outline"
+                size="sm"
+                href={personalInfo.resumeUrl}
+                download
+                icon={Download}
+              >
+                Resume
+              </Button>
+            </div>
           </div>
 
           {/* Social Links */}

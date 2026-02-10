@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../store/data';
 import { useTheme } from '../context/ThemeContext';
+import { Button } from './ui';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -97,6 +98,17 @@ const Navbar = () => {
                   {link.name}
                 </button>
               ))}
+
+              <Button
+                variant="outline"
+                size="sm"
+                href={portfolioData.personalInfo.resumeUrl}
+                download
+                icon={Download}
+                className="!px-4"
+              >
+                Resume
+              </Button>
               
               {/* Theme Toggle */}
               <motion.button
@@ -188,6 +200,17 @@ const Navbar = () => {
                     </motion.button>
                   ))}
                 </nav>
+
+                <div className="pt-4">
+                  <Button
+                    href={portfolioData.personalInfo.resumeUrl}
+                    download
+                    icon={Download}
+                    fullWidth
+                  >
+                    Resume
+                  </Button>
+                </div>
 
                 {/* Footer */}
                 <motion.div
