@@ -60,6 +60,30 @@ export const portfolioData: PortfolioData = {
 
   experiences: [
       {
+        id: 'exp-6',
+        role: 'Founding AI Software Engineer & Founder',
+        company: 'Stealth HealthTech Startup',
+        location: 'Remote',
+        startDate: '2026-01',
+        endDate: 'Present',
+        current: true,
+        bullets: [
+          {
+            text: 'Mapped end-to-end adjudication workflows with 3 partner clinics to identify 3 key denial patterns for the automation engine.',
+          },
+          {
+            text: 'Architecting a scalable HIPAA-compliant RAG engine to generate appeals in 30 seconds, reducing manual entry by 95%.',
+          },
+          {
+            text: 'Building specialized AI agents targeting a 15% denial rate to recover an estimated 40% of recurring lost revenue for private clinics.',
+          },
+          {
+            text: 'Leading 0-to-1 full-stack MVP development (FastAPI / Next.js) to automate 90% of Level 1 appeals for the pilot phase.',
+          }
+        ],
+        technologies: ['FastAPI', 'Next.js', 'RAG', 'AI Agents', 'Healthcare Automation']
+      },
+      {
         id: 'exp-1',
         role: 'Full-Stack Software Engineering Intern',
         company: 'CCC Intelligent Solutions',
