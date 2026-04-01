@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, NotebookText, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { portfolioData } from '../store/data';
 import { Button } from './ui';
@@ -28,6 +28,15 @@ const Footer = () => {
             <p className="text-zinc-500 dark:text-zinc-500 text-xs">
               {personalInfo.location}
             </p>
+            <a
+              href="https://devlog.zayeemzaki.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 dark:border-indigo-800 bg-indigo-50/80 dark:bg-indigo-950/40 px-3 py-1.5 text-sm font-semibold text-indigo-700 dark:text-indigo-300 shadow-sm transition-all duration-200 hover:border-indigo-300 dark:hover:border-indigo-700 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 hover:shadow-md"
+            >
+              Notes
+              <NotebookText size={14} />
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -112,6 +121,15 @@ const Footer = () => {
             <p className="text-zinc-500 dark:text-zinc-500 text-xs sm:text-sm text-center md:text-left">
               © {currentYear} {personalInfo.name}. Built with Tailwind CSS and React
             </p>
+            <a
+              href="https://devlog.zayeemzaki.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 dark:border-indigo-800 bg-indigo-50/80 dark:bg-indigo-950/40 px-3 py-1.5 text-xs sm:text-sm font-semibold text-indigo-700 dark:text-indigo-300 shadow-sm transition-all duration-200 hover:border-indigo-300 dark:hover:border-indigo-700 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 hover:shadow-md"
+            >
+              Read the notes
+              <ArrowUpRight size={14} />
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Sun, Moon, Download } from 'lucide-react';
+import { Sun, Moon, Download, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../store/data';
 import { useTheme } from '../context/ThemeContext';
@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Mentorship', path: '/mentorship' },
     { name: 'Contact', path: '/about#contact' },
+    { name: 'Notes', href: 'https://devlog.zayeemzaki.com/', external: true },
   ];
 
   useEffect(() => {
@@ -89,15 +90,28 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => handleNavClick(link.path)}
-                  className="text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
-                >
-                  {link.name}
-                </button>
-              ))}
+              {navLinks.map((link) =>
+                'href' in link ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 rounded-full border border-indigo-200/80 dark:border-indigo-800 bg-indigo-50/80 dark:bg-indigo-950/40 px-3 py-1.5 text-sm font-semibold text-indigo-700 dark:text-indigo-300 shadow-sm transition-all duration-200 hover:border-indigo-300 dark:hover:border-indigo-700 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 hover:shadow-md"
+                  >
+                    {link.name}
+                    <ExternalLink size={14} />
+                  </a>
+                ) : (
+                  <button
+                    key={link.name}
+                    onClick={() => handleNavClick(link.path)}
+                    className="text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </button>
+                )
+              )}
 
               <Button
                 variant="outline"
@@ -187,18 +201,35 @@ const Navbar = () => {
               <div className="flex flex-col h-full pt-20 pb-8 px-6">
                 {/* Navigation Links */}
                 <nav className="flex-1 space-y-2">
-                  {navLinks.map((link, index) => (
-                    <motion.button
-                      key={link.name}
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1, duration: 0.3 }}
-                      onClick={() => handleNavClick(link.path)}
-                      className="block w-full text-left px-5 py-4 rounded-xl text-base font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 border border-transparent hover:border-indigo-200 dark:hover:border-indigo-800"
-                    >
-                      {link.name}
-                    </motion.button>
-                  ))}
+                  {navLinks.map((link, index) =>
+                    'href' in link ? (
+                      <motion.a
+                        key={link.name}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.3 }}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex w-full items-center justify-between px-5 py-4 rounded-xl text-base font-semibold text-indigo-700 dark:text-indigo-300 bg-indigo-50/70 dark:bg-indigo-950/35 hover:bg-indigo-100 dark:hover:bg-indigo-900/55 transition-all duration-200 border border-indigo-200/80 dark:border-indigo-800 shadow-sm hover:shadow-md"
+                      >
+                        <span>{link.name}</span>
+                        <ExternalLink size={16} />
+                      </motion.a>
+                    ) : (
+                      <motion.button
+                        key={link.name}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1, duration: 0.3 }}
+                        onClick={() => handleNavClick(link.path)}
+                        className="block w-full text-left px-5 py-4 rounded-xl text-base font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 border border-transparent hover:border-indigo-200 dark:hover:border-indigo-800"
+                      >
+                        {link.name}
+                      </motion.button>
+                    )
+                  )}
                 </nav>
 
                 <div className="pt-4">

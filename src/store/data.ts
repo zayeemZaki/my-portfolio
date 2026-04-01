@@ -61,8 +61,9 @@ export const portfolioData: PortfolioData = {
   experiences: [
       {
         id: 'exp-6',
-        role: 'Founding AI Software Engineer & Founder',
-        company: 'Stealth HealthTech Startup',
+        role: 'Founding AI Software Engineer, Founder & CEO',
+        company: 'KlaimIQ Startup',
+        companyUrl: 'https://klaimiq.com',
         location: 'Remote',
         startDate: '2026-01',
         endDate: 'Present',
