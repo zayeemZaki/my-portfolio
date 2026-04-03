@@ -10,7 +10,7 @@ export const portfolioData: PortfolioData = {
     location: 'United States',
     profileImage: './profile.jpeg', 
     resumeUrl: '/Zaki, Zayeem.pdf',
-    bio: 'Passionate software engineer with 5+ years of experience building scalable systems and AI-powered applications. Specialized in full-stack development, machine learning, and cloud architecture. I thrive on solving complex problems and delivering high-impact solutions.',
+    bio: "Software engineer and founder of Klaimiq. I build AI tools and secure systems using Java and Python, and I'm currently expanding into TypeScript. I care about writing reliable code and documenting my problem-solving process in public.",
     socialLinks: [
       {
         platform: 'GitHub',
