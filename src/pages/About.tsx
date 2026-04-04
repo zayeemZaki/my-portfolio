@@ -27,9 +27,9 @@ const About = () => {
 
   // Updated Bio to position as professional Software Engineer and recent graduate
   const bio = {
-    intro: "I am a Software Engineer and recent Computer Science graduate (Dec 2025), specializing in scalable backend systems and applied Artificial Intelligence.",
-    journey: "My technical foundation is built on solving real-world friction. From engineering Spring Boot automations that reduced manual workflows from 2 weeks to 2 seconds at CCC Intelligent Solutions, to developing GraphRAG architectures for AI memory, I focus on delivering high-impact, measurable results.",
-    future: "I am seeking full-time Software Engineering roles where I can deploy my expertise in Java (Spring Boot), Python (FastAPI), and Generative AI."
+      intro: "I'm a Software Engineer and Founder of KlaimIQ. I recently graduated with a B.S. in Computer Science in December 2025 , and I specialize in building scalable web applications and integrating AI models into production.",
+      journey: "My technical foundation is built on solving actual problems. At CCC, I engineered Spring Boot automations that reduced a two-week cycle to mere hours. Currently, as the Founder of KlaimIQ, I am building an AI-powered claims engine that generates medical appeal drafts in under 30 seconds. I have also focused heavily on the AI space, developing a GraphRAG engine using Neo4j that improved context retrieval accuracy by 40% over standard vector search.",
+      future: "I am seeking full-time Software Engineering roles where I can bring my experience building 0-to-1 products to a fast-paced team. My core stack includes TypeScript, React, and Next.js for the frontend, alongside Java (Spring Boot) and Python (FastAPI) for robust backend and Generative AI integrations."
   };
 
   // Certifications sorted by technical impact (AI & Backend first)
