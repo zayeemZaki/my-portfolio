@@ -16,7 +16,7 @@ const About = () => {
     stars: 25, 
     repos: 45, 
     followers: 15, 
-    languages: ['Python', 'TypeScript', 'Java', 'Swift'] 
+    languages: ['Python', 'TypeScript', 'JavaScript'] 
     });
   const [statsLoading, setStatsLoading] = useState(true);
   const [statsError, setStatsError] = useState(false);
@@ -286,8 +286,8 @@ const About = () => {
                   <Cpu className="text-purple-500" size={20} />
                   <Heading level={4}>Core Stack</Heading>
                 </div>
-                <Text variant="small" color="muted">Spring Boot & React</Text>
-                <Text variant="caption" color="muted">AI/ML & Cloud</Text>
+                <Text variant="small" color="muted">TypeScript, Python & Java</Text>
+                <Text variant="caption" color="muted">React, Fast API</Text>
               </Card>
             </div>
           </Card>
