@@ -5,12 +5,12 @@ export const portfolioData: PortfolioData = {
     name: 'Zayeem Zaki',
     title: 'Software Engineer & AI Enthusiast',
     headline: 'Building Scalable AI Solutions & Robust Systems',
-    subheadline: 'Software Engineer specialized in Full-Stack Development & Machine Learning | Transforming complex data into actionable insights',
+    subheadline: 'Software Engineer & Founder. I build modern web applications and integrate LLMs into real-world products using TypeScript and Python.',
     email: 'contact@zayeemzaki.com',
     location: 'United States',
     profileImage: './profile.jpeg', 
     resumeUrl: '/Zaki, Zayeem.pdf',
-    bio: "Software engineer and founder of Klaimiq. I build AI tools and secure systems using Java and Python, and I'm currently expanding into TypeScript. I care about writing reliable code and documenting my problem-solving process in public.",
+    bio: "I'm a software engineer and the founder of Klaimiq. I've completed 5 engineering internships, starting out in Java and Spring Boot, but these days I build mostly with TypeScript, Python, React, and Next.js. Right now, my main focus is writing solid SQL and figuring out how to actually make AI models work inside real apps using FastAPI. At the end of the day, I just care about shipping code that doesn't break and keeping a public log of how I build things.",
     socialLinks: [
       {
         platform: 'GitHub',
@@ -37,7 +37,6 @@ export const portfolioData: PortfolioData = {
     { name: 'JavaScript', category: 'Languages' },
     { name: 'TypeScript', category: 'Languages' },
     { name: 'SQL', category: 'Languages' },
-    { name: 'Swift', category: 'Languages' },
 
     // Frameworks (Matches Resume)
     { name: 'Spring Boot', category: 'Frameworks' }, 
@@ -54,8 +53,8 @@ export const portfolioData: PortfolioData = {
     
     // Tools & Cloud (Matches Resume)
     { name: 'Docker', category: 'Tools' }, 
-    { name: 'Kafka', category: 'Tools' }, 
     { name: 'Git', category: 'Tools' }, 
+    { name: 'AWS', category: 'Tools' }, 
   ],
 
   experiences: [
@@ -70,19 +69,19 @@ export const portfolioData: PortfolioData = {
         current: true,
         bullets: [
           {
-            text: 'Mapped end-to-end adjudication workflows with 3 partner clinics to identify 3 key denial patterns for the automation engine.',
+            text: 'Mapped end-to-end adjudication workflows with partner clinic to identify top denial patterns driving their 30% rejection rate.',
           },
           {
-            text: 'Architecting a scalable HIPAA-compliant RAG engine to generate appeals in 30 seconds, reducing manual entry by 95%.',
+            text: 'Architected a HIPAA-compliant claims engine with CARC lookup + Claude AI to generate appeal drafts in under 30 seconds',
           },
           {
-            text: 'Building specialized AI agents targeting a 15% denial rate to recover an estimated 40% of recurring lost revenue for private clinics.',
+            text: 'Building AI-powered denial recovery, claim scrubbing, and eligibility verification to reduce clinic rejection rates by 80%.',
           },
           {
-            text: 'Leading 0-to-1 full-stack MVP development (FastAPI / Next.js) to automate 90% of Level 1 appeals for the pilot phase.',
+            text: 'Leading 0-to-1 full-stack development (Next.js/AWS Lambda/DynamoDB) with ModuleMD FHIR and Availity API integrations.',
           }
         ],
-        technologies: ['FastAPI', 'Next.js', 'RAG', 'AI Agents', 'Healthcare Automation']
+        technologies: ['TypeScript', 'Next.js', 'AWS', 'AI Agents', 'Healthcare Automation']
       },
       {
         id: 'exp-1',
