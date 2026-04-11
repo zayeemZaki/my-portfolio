@@ -200,185 +200,203 @@ export const portfolioData: PortfolioData = {
 
   projects: [
     {
-      id: 'project-8',
-      title: 'Stock Read',
-      shortDescription: 'AI-Powered Social Investment Intelligence Platform',
-      fullDescription: 'A next-generation social trading platform that combines real-time market data, institutional-grade AI analysis, and community-driven investment insights. Built for retail investors who demand professional-quality analysis without the institutional price tag. Features an AI-powered Global Analyst that provides objective market reality checks using real-time data from Wall Street\'s institutional sources.',
-      thumbnail: '/projects/stock-read.png',
-      techStack: [
-        'Next.js 16',
-        'TypeScript',
-        'Tailwind CSS',
-        'Python',
-        'FastAPI',
-        'Google Gemini',
-        'Supabase',
-        'Redis',
-        'yfinance',
-        'Recharts'
-      ],
-      category: 'Full-Stack',
-      featured: true,
-      type: 'web',
-      liveUrl: 'https://stock-read.vercel.app/',
-      repoUrl: 'https://github.com/zayeemZaki/StockRead',
-      date: '2025-11',
-      metrics: [
-        { label: 'Latency', value: '<200ms' },
-        { label: 'Users', value: '10+' },
-        { label: 'Accuracy', value: '94%' }
-      ],
-      keyFeatures: [
-        'Social investment platform with real-time feed and infinite scroll',
-        'AI Market Analyst with sentiment scoring (0-100) and risk classification',
-        'Live market dashboard with WebSocket price updates and technical indicators',
-        'Advanced stock analysis with interactive candlestick charts and fundamental metrics',
-        'Global search with smart command palette (Cmd+K)',
-        'User profiles with follower/following system and dark/light theme support'
-      ],
-      systemDesign: {
-        description: 'Hybrid architecture combining server-side rendering (SSR) with client-side interactivity and background AI services. Features 5 autonomous background services for market analysis, real-time updates, and data maintenance.',
-        imageUrl: '/projects/stock-read_architecture.jpeg',
-        components: [
-          'Next.js Frontend (App Router with React Server Components)',
-          'Supabase (PostgreSQL + Auth + Realtime + Storage)',
-          'FastAPI Backend Services (Python)',
-          'Global Analyst Service (AI Batch Processing)',
-          'Market Maker Service (Real-time Price Updates)',
-          'Redis Cache Layer',
-          'External APIs (yfinance, Google News, Google Gemini)'
-        ]
-      },
-      technicalChallenges: {
-        situation: 'Building a social trading platform requires real-time market data, complex AI analysis, and seamless user experience while maintaining performance and scalability. The challenge was integrating multiple data sources, processing AI analysis at scale, and providing instant feedback to users.',
-        task: 'Create a platform that provides institutional-grade analysis to retail investors, combining social features with real-time market data and AI-powered insights, all while maintaining low latency and high availability.',
-        action: 'Architected a hybrid system with Next.js SSR for performance, Supabase Realtime for live updates, and Python background services for AI processing. Implemented Redis caching for market data (60s TTL) and technical analysis (5min TTL). Built 5 autonomous background services that run independently, with the Global Analyst processing user-tracked stocks 3x daily during market hours.',
-        result: 'Delivered a production-ready platform with real-time market updates, AI-powered analysis, and a seamless social experience. The system handles high traffic with optimized caching and background processing, providing users with professional-quality investment insights.'
-      }
-    },
-    {
-      id: 'project-10',
-      title: 'Voice AI Interviewer',
-      shortDescription: 'Real-time Voice-Based Technical Interview Prep',
-      fullDescription: 'A real-time voice-interactive mock interview platform designed to simulate actual technical interviews. It uses ultra-low latency speech processing to conduct natural, conversational interviews, providing instant feedback on answers, tone, and technical accuracy.',
-      thumbnail: '/projects/voice-ai.png',
-      techStack: [
-        'Next.js',
-        'FastAPI',
-        'Groq LPU',
-        'WebSockets',
-        'React',
-        'Speech-to-Text API'
-      ],
-      category: 'AI/ML',
-      featured: true,
-      type: 'web',
-      liveUrl: 'https://bot-interviewer.vercel.app/', 
-      repoUrl: 'https://github.com/zayeemZaki/Bot-interviewer',
-      date: '2025-12',
-      metrics: [
-        { label: 'Latency', value: '<500ms' },
-        { label: 'Interviews', value: 'Beta' }
-      ],
-      keyFeatures: [
-        'Real-time conversational AI using Groq for ultra-low latency',
-        'Voice-to-Voice interaction (Speech-to-Text & Text-to-Speech)',
-        'Instant feedback on technical accuracy and communication style',
-        'Customizable interview topics (System Design, DSA, Behavioral)'
-      ],
-      systemDesign: {
-        description: 'Event-driven architecture optimized for voice latency using WebSockets.',
-        imageUrl: '/projects/voice-ai_architecture.jpeg',
-        components: [
-          'Next.js Frontend (Audio Capture)',
-          'FastAPI WebSocket Server',
-          'Groq LPU (Inference)',
-          'TTS/STT Services'
-        ]
-      }
-    },
-    {
-      id: 'project-9',
-      title: 'Prompt Improver',
-      shortDescription: 'Automated CI/CD for LLM Prompts',
-      fullDescription: 'An automated prompt engineering system designed to act as a "CI/CD for prompts." It iteratively tests, evaluates, and refines LLM prompts to ensure consistent output quality and performance before deployment, effectively solving the "blank page" problem for prompt engineering.',
-      thumbnail: '/projects/prompt-improver.png',
-      techStack: [
-        'Next.js',
-        'TypeScript',
-        'Python',
-        'OpenAI API',
-        'Tailwind CSS'
-      ], 
-      category: 'AI/ML',
-      featured: false,
-      type: 'web',
-      liveUrl: 'https://huggingface.co/spaces/zayeem11511/prompt-improver',
-      repoUrl: 'https://github.com/zayeemZaki/prompt-improver',
-      date: '2025-12',
-      metrics: [
-        { label: 'Optimization', value: 'Auto' },
-        { label: 'Iterations', value: '<5s' }
-      ],
-      keyFeatures: [
-        'Automated prompt testing and scoring against defined criteria',
-        'Version control for prompt iterations (CI/CD workflow)',
-        'Comparative analysis of LLM outputs for quality assurance',
-        'Iterative refinement engine to maximize prompt efficacy'
-      ],
-      systemDesign: {
-        description: 'A feedback-loop architecture that separates prompt generation from evaluation, ensuring unbiased optimization.',
-        imageUrl: '/projects/prompt-improver_architecture.jpeg',
-        components: [
-          'Next.js Frontend',
-          'Python Evaluation Service',
-          'LLM Integration (OpenAI/Groq)',
-          'Prompt Versioning DB'
-        ]
-      }
-    },
-    {
-      id: 'project-2',
-      title: 'AI Memory App',
-      shortDescription: 'GraphRAG engine with Neo4j & Vector Search',
-      fullDescription: 'A next-generation AI memory system that outperforms standard vector search by mapping entity relationships using GraphRAG. It features a multi-user sandbox with strict data isolation and a real-time "brain" visualization dashboard.',
-      thumbnail: '/projects/ai-memory.png',
-      techStack: ['Neo4j', 'GraphRAG', 'React', 'D3.js', 'Python', 'Vector Search'],
-      category: 'AI/ML',
-      featured: true,
-      type: 'web',
-      liveUrl: 'https://ai-memory-app.vercel.app/',
-      repoUrl: 'https://github.com/zayeemZaki/ai-memory-app',
-      date: '2025-11',
-      metrics: [
-        { label: 'Nodes', value: '100+' },
-        { label: 'Query Time', value: '<18ms' },
-        { label: 'Accuracy', value: '98%' }
-      ],
-      keyFeatures: [
-        'GraphRAG engine mapping entity relationships',
-        'Multi-user sandbox with strict data isolation',
-        'Real-time "brain" visualization using React + D3.js',
-        'Hybrid search (Vector + Graph) implementation'
-      ],
-      systemDesign: {
-        description: 'Graph-based architecture ensuring data privacy and context retention',
-        imageUrl: '/projects/ai-memory-architecture.png',
-        components: [
-          'Graph Database (Neo4j)',
-          'Vector Store',
-          'React Frontend (Visualization)',
-          'Python Backend (RAG Logic)',
-          'Custom Session Logic (Data Isolation)'
-        ]
-      },
-      technicalChallenges: {
-        situation: 'Standard vector search struggles to understand complex relationships between entities, leading to hallucinated or disconnected answers.',
-        task: 'Build a retrieval system that understands context and relationships while maintaining strict user privacy in a shared database.',
-        action: 'Implemented a GraphRAG engine using Neo4j to map relationships and engineered custom session logic to enforce strict data isolation for multiple users.',
-        result: 'Outperformed standard vector search by providing relationship-aware context and enabled a secure multi-user environment.'
-      }
-    },
+  id: 'project-8',
+  title: 'Stock Read',
+  shortDescription: 'AI-Powered Social Investment Intelligence Platform',
+  fullDescription: 'A social trading platform that combines real-time market data, AI-driven stock analysis, and community-driven investment insights. Built for retail investors who want actionable analysis without institutional overhead. Features a Global Analyst powered by Google Gemini 2.5 Flash that scores stocks across 20+ fundamental, technical, and institutional metrics, running autonomously 3x daily during market hours.',
+  thumbnail: '/projects/stock-read.png',
+  techStack: [
+    'Next.js 16',
+    'React 19',
+    'TypeScript',
+    'Tailwind CSS',
+    'Python',
+    'FastAPI',
+    'Google Gemini 2.5 Flash',
+    'Supabase',
+    'Redis',
+    'yahoo-finance2',
+    'Recharts',
+    'Radix UI'
+  ],
+  category: 'Full-Stack',
+  featured: true,
+  type: 'web',
+  liveUrl: 'https://stock-read.vercel.app/',
+  repoUrl: 'https://github.com/zayeemZaki/StockRead',
+  date: '2025-11',
+  metrics: [
+    { label: 'Background Services', value: '5' },
+    { label: 'Analysis Metrics', value: '20+' },
+    { label: 'Cache TTL', value: '5 min' }
+  ],
+  keyFeatures: [
+    'Social investment feed with infinite scroll and real-time Supabase Realtime subscriptions',
+    'AI Market Analyst scoring stocks 0–100 across fundamentals, technicals, news, and institutional consensus',
+    'Live markets dashboard with WebSocket price updates and S&P 500 tracking',
+    'Interactive candlestick charts with RSI, MACD, Bollinger Bands, and SMA overlays',
+    'Global search with Cmd+K command palette across tickers and users',
+    'User profiles with follower/following system, avatar uploads, and dark/light theme'
+  ],
+  systemDesign: {
+    description: 'Hybrid architecture combining Next.js App Router (SSR + React Server Components) with client-side Supabase Realtime subscriptions and 5 autonomous Python background services. Services run as daemon threads managed by a central ServiceManager, handling AI analysis, market data, news aggregation, engagement, and database maintenance independently.',
+    imageUrl: '/projects/stock-read_architecture.jpeg',
+    components: [
+      'Next.js Frontend (App Router + React Server Components)',
+      'Supabase (PostgreSQL + Auth + Realtime + Storage)',
+      'FastAPI Backend (Python daemon services)',
+      'GlobalAnalyst Service (Gemini 2.5 Flash, 3× daily at 10 AM / 12 PM / 2:30 PM ET)',
+      'MarketMaker Service (continuous S&P 500 price updates)',
+      'NewsService (GoogleNews aggregation, hourly)',
+      'MaintenanceService (DB cleanup) + ResponseBotService (auto-engagement)',
+      'Redis (job queue + optional caching with 5-min TTL for prices, 1-hr for news)',
+      'External APIs (yfinance, yahoo-finance2, GoogleNews, Google Gemini)'
+    ]
+  },
+  technicalChallenges: {
+    situation: 'Building a social trading platform requires coordinating real-time market data, multi-factor AI analysis, and live social interactions — all at low latency. The core challenge was integrating yfinance, GoogleNews, and Gemini 2.5 Flash into a coherent analysis pipeline while keeping the frontend responsive and the database consistent under concurrent writes.',
+    task: 'Design a system where AI-generated stock analysis (scoring 20+ metrics across fundamentals, technicals, news sentiment, and institutional data) runs autonomously in the background without blocking user interactions or degrading feed performance.',
+    action: 'Architected 5 autonomous Python services managed by a central ServiceManager running as daemon threads. The GlobalAnalyst uses a weighted scoring model (Institutional 40%, Technicals 25%, News 20%, Fundamentals 15%) and processes user-tracked stocks 3× daily during market hours. Redis provides a job queue and optional cache layer (5-min TTL for prices, 1-hr for news) with graceful degradation — post creation succeeds even if Redis is unavailable. Supabase Realtime drives live price subscriptions on the frontend.',
+    result: 'A production-deployed platform on Vercel with real-time market updates, autonomous AI analysis running on schedule, and a responsive social feed. The system degrades gracefully under partial failures and separates background processing concerns cleanly from the user-facing Next.js app.'
+  }
+},
+
+{
+  id: 'project-10',
+  title: 'Voice AI Interviewer',
+  shortDescription: 'Real-time Voice-Based Technical Interview Prep',
+  fullDescription: 'An AI-powered interview preparation platform that simulates real technical and behavioral interviews through voice conversation. Candidates speak naturally with an AI interviewer that adapts questions based on difficulty level and interview phase, then delivers detailed performance feedback at the end of each session.',
+  thumbnail: '/projects/voice-ai.png',
+  techStack: [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'FastAPI',
+    'Groq (Llama 3.1)',
+    'Deepgram STT/TTS',
+    'Tailwind CSS',
+    'Framer Motion'
+  ],
+  category: 'AI/ML',
+  featured: true,
+  type: 'web',
+  liveUrl: 'https://bot-interviewer.vercel.app/',
+  repoUrl: 'https://github.com/zayeemZaki/Bot-interviewer',
+  date: '2025-12',
+  metrics: [
+    { label: 'Latency', value: '<500ms' },
+    { label: 'Interviews', value: 'Beta' }
+  ],
+  keyFeatures: [
+    'Voice-to-voice interviews using Deepgram STT (Nova-2) and TTS (Aura-Asteria)',
+    'AI interviewer powered by Groq + Llama 3.1 for ultra-low latency responses',
+    'Phase-based interview flow: Introduction → Technical → Behavioral → Wrap-up',
+    'Adaptive difficulty levels: Easy, Medium, and Hard',
+    'PDF resume parsing to personalize interview context',
+    'AI-generated performance feedback with score, strengths, and improvement areas'
+  ],
+  systemDesign: {
+    description: 'REST API architecture with a Next.js frontend and FastAPI backend. Audio is captured via the MediaRecorder API, base64-encoded, and sent to FastAPI endpoints that orchestrate Groq for inference and Deepgram for speech processing.',
+    imageUrl: '/projects/voice-ai_architecture.jpeg',
+    components: [
+      'Next.js 15 + React 19 Frontend (Audio Capture & Playback)',
+      'FastAPI Backend (REST Endpoints)',
+      'Groq LPU + Llama 3.1 (AI Inference)',
+      'Deepgram Nova-2 (Speech-to-Text)',
+      'Deepgram Aura-Asteria (Text-to-Speech)',
+      'PyPDF (Resume Parsing)'
+    ]
+  }
+},
+
+{
+  id: 'project-9',
+  title: 'Prompt Improver',
+  shortDescription: 'AI-Powered Iterative Prompt Optimization',
+  fullDescription: 'An intelligent system that automatically improves AI prompts through a data-driven feedback loop. It generates synthetic test cases, evaluates prompt performance against them, and uses Google Gemini to iteratively refine prompts, effectively acting as a CI/CD pipeline for prompt engineering. Tracks full version history with scores and diffs.',
+  thumbnail: '/projects/prompt-improver.png',
+  techStack: [
+    'Python',
+    'FastAPI',
+    'Streamlit',
+    'Google Gemini API',
+    'SQLite',
+    'Docker'
+  ],
+  category: 'AI/ML',
+  featured: false,
+  type: 'web',
+  liveUrl: 'https://huggingface.co/spaces/zayeem11511/prompt-improver',
+  repoUrl: 'https://github.com/zayeemZaki/prompt-improver',
+  date: '2025-12',
+  metrics: [
+    { label: 'Optimization', value: 'Auto' },
+    { label: 'Max Iterations', value: '10' }
+  ],
+  keyFeatures: [
+    'AI-powered prompt optimization using Google Gemini',
+    'Synthetic test case generation for automated evaluation',
+    'Version history with scoring and prompt diff comparisons',
+    'REST API (FastAPI) + Streamlit UI for full-stack usage',
+    'Templated variable support for dynamic prompt inputs',
+    'Persistent SQLite storage for all projects and results'
+  ],
+  systemDesign: {
+    description: 'A feedback-loop architecture where a FastAPI backend orchestrates test generation, evaluation, and Gemini-powered optimization, while a Streamlit frontend provides real-time progress and diff visualization.',
+    imageUrl: '/projects/prompt-improver_architecture.jpeg',
+    components: [
+      'Streamlit Frontend',
+      'FastAPI Backend',
+      'Google Gemini AI (optimizer & generator)',
+      'SQLite Database (SQLAlchemy ORM)'
+    ]
+  }
+},
+
+{
+  id: 'project-2',
+  title: 'AI Second Brain',
+  shortDescription: 'GraphRAG memory system powered by Neo4j & Google Gemini',
+  fullDescription: 'A full-stack AI memory system that gives LLMs persistent, structured long-term memory using a Knowledge Graph. Unlike standard vector RAG, it maps typed entity relationships in Neo4j for relationship-aware retrieval. Features a multi-user sandbox with strict session-based data isolation and an interactive force-directed knowledge graph visualization.',
+  thumbnail: '/projects/ai-memory.png',
+  techStack: ['Neo4j', 'FastAPI', 'React', 'react-force-graph-2d', 'Python', 'Google Gemini'],
+  category: 'AI/ML',
+  featured: true,
+  type: 'web',
+  liveUrl: 'https://ai-memory-app.vercel.app/',
+  repoUrl: 'https://github.com/zayeemZaki/ai-memory-app',
+  date: '2025-11',
+  metrics: [
+    { label: 'LLM Calls Saved', value: '~40%' },
+    { label: 'Graph Hops', value: '1–2' },
+    { label: 'DB Indexes', value: '4' }
+  ],
+  keyFeatures: [
+    'GraphRAG engine with typed entity relationships in Neo4j',
+    'Session-based multi-user sandboxing with strict data isolation',
+    'Interactive force-directed knowledge graph visualization',
+    '2-stage intent classifier (regex fast-path + Gemini reasoning)',
+    'Single-call query rewrite + keyword extraction (~40% latency reduction)',
+    'Global vs. session node layers for verified vs. user-specific facts'
+  ],
+  systemDesign: {
+    description: 'Layered graph architecture separating verified global facts from session-scoped user data, with deterministic Cypher query building for security',
+    imageUrl: '/projects/ai-memory-architecture.png',
+    components: [
+      'Neo4j AuraDB (Knowledge Graph)',
+      'FastAPI Backend (RAG Logic + Intent Classification)',
+      'Google Gemini 2.5 Flash (LLM)',
+      'React + react-force-graph-2d (Visualization)',
+      'Session UUID Layer (Data Isolation)'
+    ]
+  },
+  technicalChallenges: {
+    situation: 'Standard vector RAG uses fuzzy semantic matching, which loses structured relationships between entities and leads to hallucinated or disconnected answers across sessions.',
+    task: 'Build a retrieval system that understands typed entity relationships and maintains context across sessions, while preventing data leakage between users in a shared database.',
+    action: 'Implemented a GraphRAG engine using Neo4j with normalized entity IDs and SCREAMING_SNAKE_CASE relationship types. Engineered UUID-based session isolation with parameterized Cypher queries built deterministically in Python (never by the LLM) to prevent injection. Optimized latency by combining query rewriting and keyword extraction into a single Gemini call.',
+    result: 'Delivered relationship-aware retrieval with a secure multi-user environment, ~40% reduction in LLM call overhead, and a live interactive graph visualization that updates in real time as users add facts.'
+  }
+},
     {
       id: 'project-4',
       title: 'Food-Sharing Logistics Platform',
@@ -453,6 +471,55 @@ export const portfolioData: PortfolioData = {
         'Smooth, responsive UI with Vue.js',
         'Survey forms for user feedback',
       ]
-    }
+    },
+    {
+  id: 'project-9',
+  title: 'Pinkaura',
+  shortDescription: 'Modern Pink Aura E-Commerce Platform',
+  fullDescription: 'A full-stack e-commerce platform built around a "Pink Aura" aesthetic featuring glassmorphism, smooth animations, and a clean architecture. Supports product browsing with advanced filtering, a persistent shopping cart, checkout flow, and an admin panel. Built with atomic component design, business logic isolated in custom hooks, and a centralized design token system for zero hardcoding.',
+  thumbnail: '/projects/pinkaura.png',
+  techStack: [
+    'React 18',
+    'Vite',
+    'Tailwind CSS',
+    'Framer Motion',
+    'Zustand',
+    'Express',
+    'Supabase',
+    'Cloudinary'
+  ],
+  category: 'Full Stack',
+  featured: false,
+  type: 'web',
+  liveUrl: 'https://pinkaura.vercel.app/',
+  repoUrl: 'https://github.com/Pinkaurabym/Pinkaura',
+  date: '2025-12',
+  metrics: [
+    { label: 'Architecture', value: 'Atomic' },
+    { label: 'Responsive', value: 'Mobile-First' }
+  ],
+  keyFeatures: [
+    'Clean atomic component hierarchy: Atoms → Molecules → Organisms → Pages',
+    'Business logic fully extracted into custom hooks (useCart, useProducts, useFilters)',
+    'Centralized design token system — no hardcoded colors or spacing',
+    'Persistent cart synced to localStorage via Zustand',
+    'Advanced product filtering: category, search, sort, and price range',
+    'Admin panel for product and inventory management',
+    'Image uploads via Cloudinary with Express backend',
+    'Supabase for database and authentication'
+  ],
+  systemDesign: {
+    description: 'A React SPA served by Vite with a clean atomic component architecture. An Express backend handles image uploads through Cloudinary and interacts with Supabase for persistent data. Zustand manages global cart state on the frontend.',
+    components: [
+      'React 18 Frontend (Vite)',
+      'Express Backend (Node.js)',
+      'Supabase (Database & Auth)',
+      'Cloudinary (Image Storage)',
+      'Zustand (Client State)',
+      'Framer Motion (Animations)'
+    ]
+  }
+}
+
   ],
 };
