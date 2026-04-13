@@ -122,10 +122,13 @@ export const portfolioData: PortfolioData = {
       current: true,
       bullets: [
         {
-          text: 'Architected a full-stack donation platform using Firebase for backend logic and Stripe for payments, wrapping the frontend in Vue.js/Nuxt for a high-performance user experience.',
+          text: 'Developed a high-performance production website using React, utilizing Server-Side Rendering to reduce load times by 30%.',
         },
         {
-          text: 'Modernizing nonprofit websites to improve performance and enable secure donation workflows while maintaining legacy Wix and Squarespace sites for accessibility.',
+          text: 'Integrated custom Stripe API to enable secure ticketing, successfully processing 1,000+ real-time donations and bookings.',
+        },
+        {
+          text: 'Connected a headless CMS pipeline to decouple dynamic content from code, reducing developer maintenance requests by 80%.',
         }
       ],
       technologies: ['Vue.js', 'Nuxt.js', 'Firebase', 'Stripe', 'JavaScript']
@@ -141,11 +144,15 @@ export const portfolioData: PortfolioData = {
       current: false,
       bullets: [
         {
-          text: 'Mentored 30+ students in Python and Object-Oriented Programming (OOP), helping them debug complex code and successfully complete course assignments.',
+          text: 'Mentored 30+ students using detailed weekly code reviews, resulting in strengthened Object-Oriented Programming concepts.',
         },
         {
-          text: 'Provided constructive feedback on projects and fostered problem-solving skills to support student success in foundational coding concepts.',
+          text: 'Evaluated 100+ complex coding projects, providing actionable feedback on algorithms to improve code quality and efficiency.',
+        },
+        {
+          text: 'Guided students using intensive hands-on troubleshooting, resulting in significantly higher project success rates for the semester.',
         }
+
       ],
       technologies: ['Python', 'OOP', 'Mentorship']
     },
@@ -160,10 +167,16 @@ export const portfolioData: PortfolioData = {
       current: false,
       bullets: [
         {
-          text: 'Engineered a Flask-based automation service using Python to orchestrate CrowdStrike security workflows, reducing manual incident response time by 30%.',
+          text: 'Engineered a Flask automation service to orchestrate critical CrowdStrike workflows, reducing incident response time by 30%.',
         },
         {
           text: 'Built Python scripts to detect stale accounts, automate admin rights removal, and streamline Falcon Containment for multiple hosts.',
+        },
+        {
+          text: 'Integrated remote Real-Time Response APIs to automate privilege revocation, cutting manual security operations by 30%.',
+        },
+        {
+          text: 'Implemented automated script-based vulnerability scanning that flagged critical compliance gaps 4x faster than manual audits.',
         },
         {
           text: 'Developed On-Demand Scan (ODS) automation scripts to proactively detect and remediate vulnerabilities across systems.',
@@ -171,6 +184,7 @@ export const portfolioData: PortfolioData = {
         {
           text: 'Created targeted search scripts to locate entities using specific filters, aiding in precise security investigations and audits.',
         }
+
       ],
       technologies: ['Python', 'Flask', 'CrowdStrike API', 'Automation', 'Excel', 'Security']
     },
@@ -185,13 +199,22 @@ export const portfolioData: PortfolioData = {
       current: false,
       bullets: [
         {
-          text: 'Resolved 100+ software and hardware issues with an average resolution time under 24 hours, including hardware replacements and malware removal.',
+          text: 'Resolved 100+ software and hardware issues with an average resolution time under 24 hours.',
         },
         {
           text: 'Diagnosed and debugged staff and lab desktops using PXE boot, archive directory management, and system re-imaging.',
         },
         {
-          text: 'Enhanced the efficiency and reliability of the university IT infrastructure, improving system performance and user satisfaction.',
+          text: 'Enhanced the efficiency and reliability of the university’s IT infrastructure, improving system performance and user satisfaction.',
+        },
+        {
+          text: 'DiagnTroubleshot and fixed user issues with Google Workspace apps like Gmail, Drive, and Meet for remote and on-site staff.',
+        },
+        {
+          text: 'Helped staff and students set up and manage their Google G-Suite accounts and tools to ensure quick, secure access.',
+        },
+        {
+          text: 'Wrote and updated simple IT help guides so users could fix common problems themselves instead of submitting a ticket.',
         }
       ],
       technologies: ['Hardware Troubleshooting', 'Networking', 'System Imaging', 'Technical Support']
