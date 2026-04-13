@@ -9,7 +9,7 @@ export const portfolioData: PortfolioData = {
     email: 'contact@zayeemzaki.com',
     location: 'United States',
     profileImage: './profile.jpeg',
-    resumeUrl: 'public/Zaki, Zayeem.pdf',
+    resumeUrl: '/Zaki, Zayeem.pdf',
     bio: "I'm a software engineer and the founder of Klaimiq. I've completed 5 engineering internships, starting out in Java and Spring Boot, but these days I build mostly with TypeScript, Python, React, and Next.js. Right now, my main focus is writing solid SQL and figuring out how to actually make AI models work inside real apps using FastAPI. At the end of the day, I just care about shipping code that doesn't break and keeping a public log of how I build things.",
     socialLinks: [
       {
