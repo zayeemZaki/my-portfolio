@@ -87,6 +87,7 @@ export const portfolioData: PortfolioData = {
       id: 'exp-7',
       role: 'Founding Full Stack Software Engineer',
       company: 'Munchkins AI',
+      companyUrl: 'https://www.munchkins.ai/about-us',
       location: 'Remote',
       startDate: '2026-01',
       endDate: 'Present',
