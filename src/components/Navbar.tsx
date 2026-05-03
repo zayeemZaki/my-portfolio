@@ -4,12 +4,14 @@ import { Sun, Moon, Download, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../store/data';
 import { useTheme } from '../context/ThemeContext';
+import { useResumeModal } from '../context/ResumeModalContext';
 import { Button } from './ui';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { openModal } = useResumeModal();
   const navigate = useNavigate();
 
   const navLinks = [
@@ -116,8 +118,7 @@ const Navbar = () => {
               <Button
                 variant="outline"
                 size="sm"
-                href={portfolioData.personalInfo.resumeUrl}
-                download
+                onClick={openModal}
                 icon={Download}
                 className="!px-4"
               >
@@ -234,8 +235,7 @@ const Navbar = () => {
 
                 <div className="pt-4">
                   <Button
-                    href={portfolioData.personalInfo.resumeUrl}
-                    download
+                    onClick={() => { openModal(); setIsMobileMenuOpen(false); }}
                     icon={Download}
                     fullWidth
                   >

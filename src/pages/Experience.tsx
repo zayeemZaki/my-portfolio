@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Building2, MapPin, Calendar, ExternalLink, ChevronRight, Download } from 'lucide-react';
 import { portfolioData } from '../store/data';
+import { useResumeModal } from '../context/ResumeModalContext';
 
 const Experience = () => {
-  const { experiences, personalInfo } = portfolioData;
+  const { experiences } = portfolioData;
+  const { openModal } = useResumeModal();
 
   // Container animation variants
   const containerVariants = {
@@ -49,9 +51,8 @@ const Experience = () => {
           >
             A comprehensive overview of my career journey and key achievements
           </motion.p>
-          <motion.a
-            href={personalInfo.resumeUrl}
-            download
+          <motion.button
+            onClick={openModal}
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -61,8 +62,8 @@ const Experience = () => {
             className="inline-flex items-center space-x-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white font-semibold rounded-lg shadow-lg shadow-indigo-500/25 transition-all duration-200"
           >
             <Download size={20} />
-            <span>Download Full Resume</span>
-          </motion.a>
+            <span>View Full Resume</span>
+          </motion.button>
         </motion.header>
 
         {/* Timeline */}

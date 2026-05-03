@@ -2,9 +2,11 @@ import { Github, Linkedin, Mail, Download, NotebookText, ArrowUpRight } from 'lu
 import { Link } from 'react-router-dom';
 import { portfolioData } from '../store/data';
 import { Button } from './ui';
+import { useResumeModal } from '../context/ResumeModalContext';
 
 const Footer = () => {
   const { personalInfo } = portfolioData;
+  const { openModal } = useResumeModal();
   const currentYear = new Date().getFullYear();
 
   const iconMap: Record<string, any> = {
@@ -75,8 +77,7 @@ const Footer = () => {
               <Button
                 variant="outline"
                 size="sm"
-                href={personalInfo.resumeUrl}
-                download
+                onClick={openModal}
                 icon={Download}
               >
                 Resume

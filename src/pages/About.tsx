@@ -268,7 +268,9 @@ const About = () => {
                   <GraduationCap className="text-accent-secondary" size={20} />
                   <Heading level={4}>Education</Heading>
                 </div>
-                <Text variant="small" color="muted">B.S. Computer Science</Text>
+                <Text variant="small" color="muted">M.S. Computer Science</Text>
+                <Text variant="caption" color="muted">Georgia Tech · In Progress</Text>
+                <Text variant="small" color="muted" className="mt-2">B.S. Computer Science</Text>
                 <Text variant="caption" color="muted">Graduated Dec 2025</Text>
               </Card>
 

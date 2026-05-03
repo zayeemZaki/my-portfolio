@@ -84,6 +84,27 @@ export const portfolioData: PortfolioData = {
       technologies: ['TypeScript', 'Next.js', 'AWS', 'AI Agents', 'Healthcare Automation']
     },
     {
+      id: 'exp-7',
+      role: 'Founding Full Stack Software Engineer',
+      company: 'Munchkins AI',
+      location: 'Remote',
+      startDate: '2026-01',
+      endDate: 'Present',
+      current: true,
+      bullets: [
+        {
+          text: 'Built an AI recruitment platform using Next.js and AWS, reducing manual candidate screening by 90% with Voice AI interviews.',
+        },
+        {
+          text: 'Designed a multi-tenant dashboard with role-based access, supporting real-time tracking across 5 candidate lifecycle stages.',
+        },
+        {
+          text: 'Integrated Voice AI interview workflows with webhook-driven post-interview analysis, delivering transcript and audio scoring.',
+        }
+      ],
+      technologies: ['Next.js', 'AWS', 'TypeScript', 'Voice AI', 'Multi-tenant']
+    },
+    {
       id: 'exp-1',
       role: 'Full-Stack Software Engineering Intern',
       company: 'CCC Intelligent Solutions',

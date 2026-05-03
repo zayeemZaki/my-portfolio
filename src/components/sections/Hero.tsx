@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Download, Mail } from 'lucide-react';
 import { portfolioData } from '../../store/data';
 import { Button } from '../ui';
+import { useResumeModal } from '../../context/ResumeModalContext';
 
 const Hero = () => {
   const { personalInfo } = portfolioData;
+  const { openModal } = useResumeModal();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -77,8 +79,7 @@ const Hero = () => {
               
               <Button
                 variant="outline"
-                href={personalInfo.resumeUrl}
-                download
+                onClick={openModal}
                 icon={Download}
               >
                 Resume

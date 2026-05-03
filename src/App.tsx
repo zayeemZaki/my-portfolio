@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ResumeModal from './components/ResumeModal';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -10,6 +11,7 @@ import Experience from './pages/Experience';
 import ProjectDetails from './pages/ProjectDetails';
 import Mentorship from './pages/Mentorship';
 import NotFound from './pages/NotFound';
+import { ResumeModalProvider } from './context/ResumeModalContext';
 
 function App() {
   // Preload external assets for performance
@@ -28,8 +30,10 @@ function App() {
   }, []);
 
   return (
+    <ResumeModalProvider>
     <Router>
       <ScrollToTop />
+      <ResumeModal />
       <div className="relative min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 transition-colors duration-300 overflow-x-hidden">
         {/* Dot Grid Background Pattern */}
         <div 
@@ -59,6 +63,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </ResumeModalProvider>
   );
 }
 
